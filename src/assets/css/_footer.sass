@@ -1,0 +1,26 @@
+.footer
+    padding: 64px 0 10px 0
+    .footer_top
+        display: grid
+        grid-template-columns: 1fr 1fr
+        .menu
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            grid-gap: 22px
+            .link_footer
+                text-decoration: none
+                +g-b
+                color: #ffffff
+                font-size: 14px
+                line-height: 20px
+    .footer_bottom
+        margin-top: 11px
+        display: flex
+        justify-content: flex-end
+        .logo
+            display: none
+        .all_reserved
+            +g-r
+            color: #FFFFFF
+            font-size: 12px
+            line-height: 20px
