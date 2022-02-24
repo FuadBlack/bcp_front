@@ -1,0 +1,119 @@
+.portofolio_main
+    .breadcrumb_container
+        padding-bottom: 54px
+        .breadcrumb
+            padding-bottom: 5.5px
+            border-bottom: 1px solid #5E5E5E
+            align-items: center
+            .breadcrumb_item_link
+                color: #ECF0E6
+                text-decoration: none
+                font-size: 14px
+                line-height: 16.98px
+                +g-r
+            .breadcrumb-item.active
+                color: #E6A250
+                font-size: 14px
+                line-height: 17.15px
+                +g-sb
+            .breadcrumb-item.active::before
+                content: ">"
+                color: #ECF0E6
+    .portfolio_container
+        .title
+            color: #E6A250
+            +g-b
+            font-size: 65px
+            line-height: 67px
+            margin-bottom: 25px
+        .nav
+            justify-content: space-between
+            .nav-link
+                color: #808080
+            .nav-link.active
+                color: #1BB1A1 !important
+                background: none
+                border: none
+        .tab-content
+            .tab-pane
+                .allourwork
+                    .work_title
+                        +g-b
+                        font-size: 30px
+                        color: #ECF0E6
+                        height: auto
+                        line-height: 37.14px
+                        sup
+                            +g-sb
+                            font-size: 12px
+                            line-height: 14.7px
+                            margin-bottom: 30px
+                            color: #E6A250
+                    .workItems
+                        display: flex
+                        flex-direction: column
+                        grid-gap: 33px
+                        .workItem
+                            display: grid
+                            grid-template-columns: repeat(3 , auto)
+                            grid-gap: 38px
+                            text-decoration: none
+                            .name_portfolio
+                                display: flex
+                                align-items: center
+                                div
+                                    width: max-content
+                                    height: 50px
+                                    display: flex
+                                    grid-gap: 10px
+                                    position: relative
+                                    &::before
+                                        content: url(../img/name_portfolio.svg)
+                                        position: absolute
+                                        z-index: 0
+                                        left: 19px
+                                    span
+                                        +g-r
+                                        font-size: 14px
+                                        color: #ECF0E6
+                                        line-height: 16.98px
+                                        z-index: 1
+                                        letter-spacing: 1px
+                                        &:last-child
+                                            display: flex
+                                            align-items: flex-end
+                            .content
+                                .title
+                                    color: #E6A250
+                                    +g-b
+                                    font-size: 45px
+                                    line-height: 45px
+                                p
+                                    +g-r
+                                    font-size: 16px
+                                    line-height: 22px
+                                    color: #468680
+                                    width: 100%
+                                    margin-bottom: 34px
+                                .link_more_port
+                                    text-decoration: none
+                                    +g-r
+                                    font-size: 14px
+                                    line-height: 16.98px
+                                    color: #ECF0E6
+                                    display: flex
+                                    grid-gap: 11px
+        .button_div
+            display: flex
+            justify-content: center
+            margin-top: 35px
+            .load_more
+                background: none
+                border: #F4A442 1px solid
+                color: #F4A442
+                font-size: 14px
+                line-height: 14px
+                +g-r
+                border-radius: 40px
+                height: 40px
+                width: 183px
