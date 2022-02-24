@@ -1,0 +1,90 @@
+@import "./_mixin.sass"
+.header
+    position: relative
+    padding: 10px 30px
+    @include flexColumn
+    .langLogoBar
+        @include flexCenter
+
+    ul
+        display: flex
+        padding: 0 10px
+        li
+            list-style: none
+            a
+                color: #9B9B9B
+                padding: 0 10px
+                text-decoration: none
+                &.activeLang
+                    color: #ECF0E6
+    #burgerMenu
+        @include flexColumn
+        padding: 0 10px
+        &:hover
+            span
+                &:nth-child(1)
+                    transform: translateX(0)
+                &:nth-child(3)
+                    transform: translateX(0)
+        span
+            background-color: #ECF0E6
+            width: 30px
+            height: 4px
+            margin: 4px
+            border-radius: 2px
+            transition: all ease .3s
+            &:nth-child(1)
+                transform: translateX(12px)
+            &:nth-child(3)
+                transform: translateX(-12px)
+        &.open
+            span
+                &:nth-child(1)
+                    transform: rotate(45deg) translateY(17px)
+                &:nth-child(2)
+                    opacity: 0
+                &:nth-child(3)
+                    transform: rotate(-45deg) translateY(-18px)
+
+    .links
+        background-image: url("../images/Group120.png")
+        background-position: top right  left
+        position: absolute
+        width: 90%
+        visibility: hidden
+        opacity: 0
+        transition: opacity .2s, visibility .5s
+        display: flex
+        padding: 30px 80px
+        top: 100%
+        &.linksActive
+            opacity: 1
+            z-index: 1
+            visibility: visible
+        nav
+            display: flex
+            &::after
+                width: 2px
+                height: 262px
+                content: ""
+                border-right: 1px solid #1BB1A1
+                margin-left: 10px
+            .link1
+                @include flexColumn
+                li
+                    margin: 10px 0
+                    a
+                        color: #F4A442
+                        font-size: 20px
+                        font-weight: 700
+        .link2
+            margin: auto 0
+            width: 100%
+            height: 100px
+            @include flexColumn
+            flex-wrap: wrap
+            justify-content: center
+            li
+                a
+                    font-size: 16px
+                    color: #F4A442
