@@ -16,30 +16,69 @@
             font-size: 16px
             color: #9B9B9B
             text-decoration: none
-    .row
-        .swiper
-            justify-self: self-start
-            text-align: start
-            width: 100%
-            height: 100%
-            .swiper-button-next ,
-            .swiper-button-prev
-            
+    .slider
+        padding: 40px
+        position: relative
+        .col-md-6
+            display: flex
+            align-items: start
 
-                
-            .swiper-slide
-                left: 0
-                text-align: start
-                font-size: 18px
-                display: -webkit-box
-                display: -ms-flexbox
-                display: -webkit-flex
-                display: flex
-                -webkit-box-pack: center
-                -ms-flex-pack: center
-                -webkit-justify-content: space-between
-                justify-content: space-between
-                -webkit-box-align: start
-                -ms-flex-align: start
-                -webkit-align-items: start
-                align-items: start
+        img
+            width: 700px
+            height: 400px
+        h3
+            color: white
+            font-size: 35px
+            font-weight: 700
+            margin-top: 30px
+            transform: translateX(-30px)
+        .buttons
+            cursor: pointer
+            width: 200px
+            transform: translateX(90px) translateY(70px)
+            p
+                color: #9B9B9B
+                font-size: 30px
+                font-weight: 400
+
+            .left,.right
+                position: relative
+                .shape
+                    position: absolute
+                    transform: translateX(-45px) translateY(40px)
+            .right
+                transform: translateX(60px) translateY(-60px)
+        .slide
+            opacity: 0
+            transition: opacity 1s ease
+        .slide-active
+            opacity: 1
+            transition: opacity 1s
+            transform: scale(1.08)
+    .sliderMobile
+        display: none
+
+@media screen and ( max-width: 600px )
+.homePortfolio
+    padding: 10px
+    .title
+        padding: 0
+        margin: 0
+        display: flex
+        justify-content: space-between
+        h2
+            font-size: 30px
+    .slider
+        display: none
+    .sliderMobile
+        display: block
+        img
+            margin: 30px auto
+            width: 420px
+            display: flex
+        h3
+            color: white
+            font-size: 20px
+        p
+            color: #9B9B9B
+            font-size: 15px

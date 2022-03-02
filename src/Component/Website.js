@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import data from './data';
+import data from '../data';
 
 function Website(props) {
   const { element } = props;

@@ -1,14 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import footer_logo from './assets/img/footer_logo.svg';
+import React from "react";
+import { Link } from "react-router-dom";
+import footer_logo from "../assets/img/footer_logo.svg";
+import "../assets/css/_footer.sass";
+import "../assets/css/App.css";
 
 function Footer() {
   return (
     <div className="footer">
       <div className="footer_top">
-        <div className="logo">
+        <Link to="/" className="logo">
           <img src={footer_logo} />
-        </div>
+        </Link>
         <div className="menu">
           <Link className="link_footer" to="/">
             Portfolio
