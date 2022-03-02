@@ -1,19 +1,18 @@
 @import "./_mixin.sass"
 .header
     position: relative
-    padding: 10px 30px
     @include flexColumn
+    margin: 49px 0 23px 0
     .langLogoBar
         @include flexCenter
-
     ul
         display: flex
-        padding: 0 10px
+        padding: 0 0px
+        grid-gap: 15px
         li
             list-style: none
             a
                 color: #9B9B9B
-                padding: 0 10px
                 text-decoration: none
                 &.activeLang
                     color: #ECF0E6
@@ -40,7 +39,7 @@
         &.open
             span
                 &:nth-child(1)
-                    transform: rotate(45deg) translateY(17px)
+                    transform: rotate(45deg) translateY(16px)
                 &:nth-child(2)
                     opacity: 0
                 &:nth-child(3)
@@ -48,14 +47,13 @@
 
     .links
         background-image: url("../images/Group120.png")
-        background-position: top right  left
+        background-position: top right left
         position: absolute
         width: 90%
         visibility: hidden
         opacity: 0
         transition: opacity .2s, visibility .5s
         display: flex
-        padding: 30px 80px
         top: 100%
         &.linksActive
             opacity: 1

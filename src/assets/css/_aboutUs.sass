@@ -1,0 +1,90 @@
+.about_us
+    .breadcrumb_container
+        padding-bottom: 54px
+        .breadcrumb
+            padding-bottom: 5.5px
+            border-bottom: 1px solid #5E5E5E
+            align-items: center
+            .breadcrumb_item_link
+                color: #ECF0E6
+                text-decoration: none
+                font-size: 14px
+                line-height: 16.98px
+                +g-r
+            .breadcrumb-item.active
+                color: #E6A250
+                font-size: 14px
+                line-height: 17.15px
+                +g-sb
+                margin-top: 3px
+            .breadcrumb-item.active::before
+                content: ">"
+                color: #ECF0E6
+    .about_us_container
+        .about_us_title
+            display: grid
+            grid-template-columns: repeat(12, 1fr)
+            .title
+                grid-column-start: 1
+                grid-column-end: 5
+                color: #F4A442
+                font-size: 65px
+                line-height: 67px
+                +g-b
+            .content
+                grid-column-start: 8
+                grid-column-end: 12
+                font-size: 18px
+                color: #ECF0E6
+                line-height: 35px
+                +g-r
+        .video
+            img
+                width: 100%
+        .bcp_team_container
+            display: grid
+            grid-template-columns: repeat(12, 1fr)
+            padding: 30px 0 70px 0
+            border-bottom: 1px solid #757575
+            .team_name
+                grid-column-start: 1
+                grid-column-end: 2
+                display: grid
+                grid-template-columns: 1fr
+                height: max-content
+                +g-r
+                span
+                    font-size: 14px
+                    line-height: 16px
+                    padding-bottom: 6px
+                    &:first-child
+                        color: #FFFFFF
+                    &:last-child
+                        color: #E6A250
+            .content
+                grid-column-start: 6
+                grid-column-end: 13
+                color: #ECF0E6
+                +g-r
+                font-size: 18px
+                line-height: 35px
+        .showreel
+            padding-top: 56px
+            display: flex
+            grid-gap: 27px
+            .showreel_title
+                display: flex
+                grid-gap: 47px
+                align-items: center
+                .content
+                    display: flex
+                    flex-direction: column
+                    color: #F4A442
+                    span
+                        font-size: 65px
+                        line-height: 67px
+                        +g-b
+                    .for
+                        text-align: end
+                        margin-right: 75px
+                        +g-r

@@ -1,0 +1,68 @@
+.ourServices_inner
+    .breadcrumb_container
+        padding-bottom: 54px
+        .breadcrumb
+            padding-bottom: 5.5px
+            border-bottom: 1px solid #5E5E5E
+            align-items: center
+            .breadcrumb_item_link
+                color: #ECF0E6
+                text-decoration: none
+                font-size: 14px
+                line-height: 16.98px
+                +g-r
+            .breadcrumb-item.active
+                color: #E6A250
+                font-size: 14px
+                line-height: 17.15px
+                margin-top: 3px
+                +g-sb
+            .breadcrumb-item.active::before
+                content: url('../img/breadcrumb.svg')
+    .ourServices_inner_container
+        .ourServices_inner_title
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            p
+                color: #F4A442
+                font-size: 65px
+                line-height: 67px
+                grid-column-start: 1
+                grid-column-end: 3
+                +g-b
+        .ourServices_inner_content
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            padding-bottom: 50px
+            border-bottom: 1px #757575 solid
+            p
+                grid-column-start: 2
+                grid-column-end: 4
+                color: #ECF0E6
+                font-size: 20px
+                line-height: 35px
+                +g-r
+        .about_company
+            display: grid
+            grid-template-columns: repeat(2, auto)
+            grid-gap: 84px
+            padding: 58px 0 49px 0
+            border-bottom: 1px solid #757575
+            .content
+                p
+                    color: #ECF0E6
+                    font-size: 16px
+                    line-height: 30px
+                    +g-r
+        .content_bottom
+            padding: 49px 0 49px 0
+            border-bottom: 1px solid #757575
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            p
+                grid-column-start: 2
+                grid-column-end: 4
+                color: #ECF0E6
+                font-size: 20px
+                line-height: 35px
+                +g-r

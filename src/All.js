@@ -13,7 +13,7 @@ function All(props) {
       <div className="workItems">
         {slice.map((item, index) => {
           return (
-            <Link to="/RiconContraction" className="workItem" key={index}>
+            <Link to="RiconConstruction" className="workItem" key={index}>
               <div className="name_portfolio">
                 <div>
                   <span>{item.name_portfolio_1span}</span>

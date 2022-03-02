@@ -1,14 +1,17 @@
 import './assets/css/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import Portfolio from './Porfolio';
+import Portfolio from './Portfolio';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import Footer from './Footer';
-import Footerinput from './FooterInput';
-import RiconConstraction from './RiconConstruction';
+import RiconConstraction from './RiconConstraction';
 import './App.sass';
 import { Home } from './Component/Home';
 import { Header } from './Component/Header';
+import AboutUs from './aboutUs';
+import OurServices from './OurServices';
+import OurServicesInner from './OurServices_inner';
+
 
 function App() {
   return (
@@ -17,7 +20,17 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/RiconConstraction" element={<RiconConstraction />} />
+            <Route path="Portfolio" element={<Portfolio />} />
+            <Route
+              path="Portfolio/RiconConstruction"
+              element={<RiconConstraction />}
+            />
+            <Route path="aboutUs" element={<AboutUs />} />
+            <Route path="OurServices" element={<OurServices />} />
+            <Route
+              path="OurServices/OurServices_inner"
+              element={<OurServicesInner />}
+            />
           </Route>
         </Routes>
       </BrowserRouter>
@@ -30,9 +43,9 @@ function Layout() {
     <div className="section">
       <div className="container">
         <div className="row">
-          <Portfolio />
-          <Footer />
+          <Header />
           <Outlet />
+          <Footer />
         </div>
       </div>
     </div>

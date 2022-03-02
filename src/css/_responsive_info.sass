@@ -1,0 +1,67 @@
+@media (max-width:1200px)
+    .info
+        .title
+            h1
+                font-size: 60px
+                line-height: 60px
+@media (max-width: 991px)
+    .info
+        grid-template-columns: repeat(1, 1fr)
+        grid-template-rows: 3fr
+        .title
+            h1
+                font-size: 55px
+                line-height: 55px
+        .brain
+            grid-row-start: 2
+            grid-row-end: 3
+            .brainImg
+                width: 523px
+            .socialLinks
+                display: none
+        .info_content
+            grid-row-start: 3
+
+@media (max-width: 768px)
+    .info
+        .title
+            h1
+                font-size: 50px
+                line-height: 50px
+@media (max-width: 576px)
+    .info
+        .title
+            h1
+                font-size: 45px
+                line-height: 45px
+        .brain
+            .brainImg
+                width: 369px
+            .dot_brain
+                &:nth-child(1)
+                    left: 212px
+                    top: 109px
+                &:nth-child(2)
+                    top: 88px
+                    left: 90px
+                &:nth-child(3)
+                    left: 293px
+                    top: 140px
+                &:nth-child(4)
+                    left: 270px
+                    top: 260px
+                &:nth-child(5)
+                    left: 153px
+                    top: 210px
+                &:nth-child(6)
+                    left: 222px
+                    top: 205px
+                &:nth-child(7)
+                    left: 70px
+                    top: 158px
+@media (max-width: 400px)
+    .info
+        .title
+            h1
+                font-size: 40px
+                line-height: 40px

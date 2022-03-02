@@ -30,7 +30,7 @@
             width: 100%
             left: 0
             bottom: 4px
-            z-index: 0
+            z-index: -1
     .phone_number_container
         display: flex
         grid-gap: 9.46px
@@ -64,6 +64,7 @@
                         border: none
                         border-bottom: 1px #F4A442 solid
                         padding-left: 15px
+                        color: #FFFFFF
                     input::placeholder
                         color: #FFFFFF
                         font-size: 18px
@@ -79,6 +80,7 @@
                         border: none
                         border-bottom: 1px #F4A442 solid
                         padding-left: 15px
+                        color: #FFFFFF
                         &[type='file']
                             &::-webkit-file-upload-button
                                 background: none
@@ -89,6 +91,8 @@
                                 +g-r
                             span
                                 display: none
+                        &::-webkit-inner-spin-button
+                            display: none
                     input::placeholder
                         color: #FFFFFF
                         font-size: 18px
@@ -102,6 +106,7 @@
                 border: #F4A442 1px solid
                 border-radius: 5px
                 padding: 9px 0 0 15px
+                color: #FFFFFF
                 &::placeholder
                     color: #FFFFFF
                     font-size: 18px
