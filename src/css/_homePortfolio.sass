@@ -4,6 +4,7 @@
     .title
         margin-left: 50px
         display: flex
+        transform: translateX(-40px)
         align-items: center
         h2
             font-family: Arial, Helvetica, sans-serif
@@ -37,10 +38,10 @@
             width: 200px
             transform: translateX(90px) translateY(70px)
             p
+                transform: translateY(-30px)
                 color: #9B9B9B
                 font-size: 30px
                 font-weight: 400
-
             .left,.right
                 position: relative
                 .shape
@@ -51,34 +52,35 @@
         .slide
             opacity: 0
             transition: opacity 1s ease
-        .slide-active
+        .slideActive
             opacity: 1
             transition: opacity 1s
             transform: scale(1.08)
     .sliderMobile
         display: none
 
-@media screen and ( max-width: 600px )
-.homePortfolio
-    padding: 10px
-    .title
-        padding: 0
-        margin: 0
-        display: flex
-        justify-content: space-between
-        h2
-            font-size: 30px
-    .slider
-        display: none
-    .sliderMobile
-        display: block
-        img
-            margin: 30px auto
-            width: 420px
+@media screen and ( max-width: 600px)
+    .homePortfolio
+        padding: 10px
+        .title
+            padding: 0
+            margin: 0
             display: flex
-        h3
-            color: white
-            font-size: 20px
-        p
-            color: #9B9B9B
-            font-size: 15px
+            justify-content: space-between
+        .slider
+            display: none
+        .sliderMobile
+            display: block
+            img
+                margin: auto
+                width: 380px
+                display: flex
+            h3
+                color: white
+                font-size: 25px
+                margin: 5px 20px
+            p
+                color: #9B9B9B
+                font-size: 20px
+                font-weight: 400
+                margin: 2px 20px 30px

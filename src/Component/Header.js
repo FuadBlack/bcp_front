@@ -15,8 +15,6 @@ const langs = [
   { id: 3, name: "en" },
 ];
 export const Header = () => {
-  const [openMenu, setOpenMenu] = useState("close");
-
   const [changLang, setChangLang] = useState(
     localStorage.getItem("language") || "az"
   );
@@ -25,6 +23,7 @@ export const Header = () => {
     setChangLang(id);
   };
 
+  const [openMenu, setOpenMenu] = useState("close");
   const toggleBurger = () => {
     setOpenMenu(openMenu === "open" ? "close" : "open");
   };

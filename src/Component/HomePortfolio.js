@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../css/_homePortfolio.sass";
 import { sliderImages } from "./sliderImages";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+
 
 export const HomePortfolio = () => {
   const [current, setCurrent] = useState(0);
@@ -34,7 +32,7 @@ export const HomePortfolio = () => {
         <div className="col-md-8">
           {sliderImages.map((val, index) => (
             <div
-              className={index === current ? "slide-active" : "slide"}
+              className={index === current ? "slideActive" : "slide"}
               key={index}
             >
               {index === current && <img key={index} src={val.image} alt="" />}
