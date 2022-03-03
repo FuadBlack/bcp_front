@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FooterContact from "./FooterContact";
-import { HeaderWithBtn } from "./HeaderWithBtn";
 import "../css/_contact.sass";
-//import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 
 export const Contact = () => {
   return (
@@ -21,16 +19,7 @@ export const Contact = () => {
         </nav>
       </div>
 
-      {/* <div className="map">
-        <Map
-          google={google}
-          style={{ width: "100%", height: "100%" }}
-          zoom={20}
-          initialCenter={{ lat: 41.00824, lng: 28.978359 }}
-        >
-          <Marker position={{ lat: 41.00824, lng: 28.978359 }} />
-        </Map>
-      </div> */}
+ 
 
       <FooterContact />
 
@@ -47,7 +36,3 @@ export const Contact = () => {
     </div>
   );
 };
-
-// export default GoogleApiWrapper({
-//   apiKey: "AIzaSyCgRSTj2q-zR2lz4VnUQfZbG6NmCbWy9uc",
-// })(Contact);
