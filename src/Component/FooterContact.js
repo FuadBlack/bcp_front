@@ -9,11 +9,9 @@ import facebook from "../assets/img/facebook-icon.svg";
 import briefBlank from "../assets/img/Brief_blank.svg";
 import { Link } from "react-router-dom";
 import "../assets/css/_footerContact.sass";
-import * as yup from "yup";
-import { Form, Col, InputGroup, Button, Row } from "react-bootstrap";
 
-  firstName: yup.string().required("Имя является обязательным полем"),
-  city: yup.string().required("Город является обязательным полем"),
+
+
 
 function FooterContact() {
   return (
@@ -57,7 +55,7 @@ function FooterContact() {
         </div>
       </div>
       <div className="right_side col-md-6">
-        {/* <FormComp /> */}
+      
 
      <form>
           <div className="right_top">
