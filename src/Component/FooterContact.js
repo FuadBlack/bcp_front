@@ -10,16 +10,10 @@ import briefBlank from "../assets/img/Brief_blank.svg";
 import { Link } from "react-router-dom";
 import "../assets/css/_footerContact.sass";
 import * as yup from "yup";
-import { Formik } from "formik";
 import { Form, Col, InputGroup, Button, Row } from "react-bootstrap";
-import { FormComp } from "./FormComp";
 
-const schema = yup.object().shape({
   firstName: yup.string().required("Имя является обязательным полем"),
-  lastName: yup.string().required("Фамилия является обязательным полем"),
-  username: yup.string().required("Почта является обязательным полем"),
   city: yup.string().required("Город является обязательным полем"),
-});
 
 function FooterContact() {
   return (
