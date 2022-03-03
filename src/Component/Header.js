@@ -15,11 +15,12 @@ const langs = [
   { id: 3, name: "en" },
 ];
 export const Header = () => {
+
   const [changLang, setChangLang] = useState(
-    localStorage.getItem("language") || "az"
+    localStorage.getItem('language') || 'az'
   );
   const changeLanguage = (id) => {
-    localStorage.setItem("language", id);
+    localStorage.setItem('language', id);
     setChangLang(id);
   };
 
@@ -225,6 +226,7 @@ export const Header = () => {
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );

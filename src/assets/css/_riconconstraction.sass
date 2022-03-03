@@ -1,0 +1,70 @@
+.ricon_constraction
+    .breadcrumb_container
+        padding-bottom: 54px
+        .breadcrumb
+            padding-bottom: 5.5px
+            border-bottom: 1px solid #5E5E5E
+            align-items: center
+            .breadcrumb_item_link
+                color: #ECF0E6
+                text-decoration: none
+                font-size: 14px
+                line-height: 16.98px
+                +g-r
+            .breadcrumb-item.active
+                color: #E6A250
+                font-size: 14px
+                line-height: 17.15px
+                margin-top: 3px
+                +g-sb
+            .breadcrumb-item.active::before
+                content: url('../img/breadcrumb.svg')
+    .ricon_constraction_contain
+        display: flex
+        flex-direction: column
+        grid-gap: 25px
+        .title
+            color: #E6A250
+            font-size: 65px
+            line-height: 65px
+            padding-bottom: 35px
+            border-bottom: 1px solid #1BB1A1
+        .grid_content
+            display: grid
+            grid-template-columns: repeat(12, 1fr)
+            .content_item
+                grid-column-start: 7
+                grid-column-end: 13
+                display: flex
+                align-items: center
+                grid-gap: 78px
+                .content
+                    color: #ECF0E6
+                    font-size: 16px
+                    line-height: 27px
+        .image_bussines_cards
+            display: grid
+            grid-template-columns: auto
+            grid-gap: 25px
+            .ricon_bussines_card
+                grid-column-start: 1
+                grid-column-end: 3
+                width: 100%
+                border-radius: 5px
+            .wibty_image1
+                width: 100%
+                grid-column-start: 1
+                grid-column-end: 2
+            .wibty_image
+                width: 100%
+                grid-column-start: 2
+                grid-column-end: 3
+        .branding
+            display: grid
+            grid-template-columns: repeat(12, 1fr)
+            .about_branding
+                grid-column-start: 7
+                grid-column-end: 13
+                color: #ECF0E6
+                font-size: 16px
+                line-height: 27px
