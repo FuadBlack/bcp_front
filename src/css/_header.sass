@@ -1,21 +1,45 @@
 @import "./_mixin.sass"
-.header
+.headerDesktop
+    padding-top: 10px
     position: relative
     @include flexColumn
-    margin: 49px 0 23px 0
+
     .langLogoBar
         @include flexCenter
-    ul
-        display: flex
-        padding: 0 0px
-        grid-gap: 15px
-        li
-            list-style: none
-            a
-                color: #9B9B9B
-                text-decoration: none
-                &.activeLang
-                    color: #ECF0E6
+        ul
+            display: flex
+            padding: 0
+            li
+                list-style: none
+                padding: 0 10px
+                a
+                    font-size: 16px
+                    font-weight: 400
+                    font-family: sans-serif
+                    color: #9B9B9B
+                    text-decoration: none
+                    &.activeLang
+                        color: #ECF0E6
+        .logoBcp
+            transform: translateX(170px)
+
+        .btnVisible
+            transform: translateX(220px)
+            visibility: visible
+            color: white
+            background: #1BB1A1
+            padding: 5px 20px
+            border: none
+            border-radius: 20px
+        .btnInvisible
+            transform: translateX(220px)
+            visibility: hidden
+            color: white
+            background: #1BB1A1
+            padding: 10px
+            border: none
+            border-radius: 20px
+
     #burgerMenu
         @include flexColumn
         padding: 0 10px
@@ -49,40 +73,157 @@
         background-image: url("../images/Group120.png")
         background-position: top right left
         position: absolute
-        width: 90%
+        width: 1100px
         visibility: hidden
         opacity: 0
         transition: opacity .2s, visibility .5s
         display: flex
         top: 100%
+        padding: 40px
+        z-index: 12
         &.linksActive
             opacity: 1
-            z-index: 1
             visibility: visible
         nav
             display: flex
             &::after
                 width: 2px
-                height: 262px
+                height: auto
                 content: ""
                 border-right: 1px solid #1BB1A1
-                margin-left: 10px
+                margin: 0 50px
             .link1
                 @include flexColumn
                 li
+                    list-style: none
                     margin: 10px 0
                     a
+                        text-decoration: none
                         color: #F4A442
                         font-size: 20px
                         font-weight: 700
         .link2
             margin: auto 0
-            width: 100%
-            height: 100px
             @include flexColumn
+            height: 200px
+            width: 80%
             flex-wrap: wrap
-            justify-content: center
             li
+                list-style: none
+                width: 20%
                 a
+                    text-decoration: none
                     font-size: 16px
                     color: #F4A442
+.headerMobile
+    display: none
+
+.hideScroll
+    overflow: hidden !important
+
+@media screen and ( max-width: 600px)
+    .headerDesktop
+        display: none
+    .headerMobile
+        display: block
+        .langLogoBar
+            z-index: 12
+            @include flexCenter()
+            ul
+                display: flex
+                padding: 0 10px
+                li
+                    list-style: none
+                    a
+                        color: #9B9B9B
+                        padding: 0 10px
+                        text-decoration: none
+                        &.activeLang
+                            color: #ECF0E6
+            #burgerMenuMobile
+                @include flexColumn
+                padding: 0 10px
+                &:hover
+                    span
+                        &:nth-child(1)
+                            transform: translateX(0)
+                        &:nth-child(3)
+                            transform: translateX(0)
+                span
+                    background-color: #ECF0E6
+                    width: 30px
+                    height: 4px
+                    margin: 4px
+                    border-radius: 2px
+                    transition: all ease .3s
+                    &:nth-child(1)
+                        transform: translateX(12px)
+                    &:nth-child(3)
+                        transform: translateX(-12px)
+                &.open
+                    span
+                        &:nth-child(1)
+                            transform: rotate(45deg) translateY(17px)
+                        &:nth-child(2)
+                            opacity: 0
+                        &:nth-child(3)
+                            transform: rotate(-45deg) translateY(-18px)
+        .mobile
+            position: fixed
+            right: -100%
+            height: 100%
+            overflow: auto
+            z-index: 12
+            transition: all .3s linear
+            width: 100%
+            background-image: url("../images/Group120.png")
+            align-items: center
+            padding-top: 40px
+            top: 0
+            .socialLinks
+                ul
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-between
+                    li
+                        a
+                            display: inline-block
+                            font-size: 29px
+            nav
+                .link1
+                    li
+                        padding: 20px 0
+                        a
+                            font-size: 25px
+                            font-weight: 700
+                            padding: 20px
+                            color: #F4A442
+                .link2
+                    padding-bottom: 10px
+                    border-bottom: 1px solid #4D5B5A
+                    margin-right: 20px
+
+                    li
+                        a
+                            font-size: 16px
+
+            &.mobileActive
+                right: 0
+
+            .langLogoBar
+                margin: 0
+                padding: 0
+                ul
+                    display: flex
+                    flex-direction: row
+            ul
+                display: flex
+                flex-direction: column
+                li
+                    list-style: none
+                    a
+
+                        padding: 0 10px
+                        text-decoration: none
+                        &.activeLang
+                            color: #ECF0E6

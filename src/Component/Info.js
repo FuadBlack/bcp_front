@@ -1,20 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../css/_info.sass';
-import brain from '../images/brain1.png';
-import insta from '../images/insta.svg';
-import dribble from '../images/dribble.svg';
-import youtube from '../images/youtube.svg';
-import behance from '../images/behance.svg';
-import linkedin from '../images/linkedin.svg';
-import facebook from '../images/facebook.svg';
-import "../css/_responsive_info.sass"
+import React from "react";
+import { Link } from "react-router-dom";
+import "../css/_info.sass";
+import brain from "../images/brain1.png";
+import insta from "../images/insta.svg";
+import dribble from "../images/dribble.svg";
+import youtube from "../images/youtube.svg";
+import behance from "../images/behance.svg";
+import linkedin from "../images/linkedin.svg";
+import facebook from "../images/facebook.svg";
+import "../css/_responsive_info.sass";
 
-export const Info = () => {
+export const Info = ({data}) => {
+  
+
+
   return (
     <div className="info">
       <div className="title">
-        <h1>Xəyal etdiyiniz hər şey gerçəkdir.</h1>
+        <h1>{data?.slogan?.az}</h1>
         <Link to="#">
           <button>layihəyə başla</button>
         </Link>
@@ -94,8 +97,7 @@ export const Info = () => {
           </svg>
 
           <span>
-            Biz yaxşı dizaynla problemləri həll edirik.Seçim sənindir. Biz yaxşı
-            dizaynla problemləri həll edirik.Seçim sənindir.
+           {data?.sm_text?.az}
           </span>
         </p>
       </div>
