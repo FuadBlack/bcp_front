@@ -11,15 +11,16 @@ import ricon from "../images/Ricon.png";
 
 export const HomeProjects = () => {
   return (
-    <div className="homeProjects">
+    <div className="homeProjects mt-4">
       <div className="title">
         <h2>Layihələrimiz</h2>
         <Link to="/projects">hamısına bax</Link>
       </div>
 
       <div className="projects">
-        <div className="info col-md-5">
-          <div className="header">Wibty ilk musiqi və sosial şəbəkə</div>
+        <div className="row">
+          <div  className="info col-md-5">
+          <h3 className="header">Wibty ilk musiqi və sosial şəbəkə</h3>
           <p>
             Wibty ilk musiqi və sosial platforması wibty ilk musiqi və sosial
             platforması ilk musiqi və sosial ...
@@ -40,7 +41,7 @@ export const HomeProjects = () => {
                 <img src={ricon} alt="" />
               </SwiperSlide>
             </Swiper>
-        </div>
+        </div></div>
       </div>
     </div>
   );

@@ -29,9 +29,10 @@ export const Header = () => {
   const toggleBurger = () => {
     let bodyClass = document.querySelector("body").classList;
     setOpenMenu(openMenu === "open" ? "close" : "open");
+
     if (openMenu === "open") {
       setOpenMenu("close");
-      bodyClass.add("hideScroll");
+      bodyClass.remove("hideScroll");
     } else {
       setOpenMenu("open");
       bodyClass.add("hideScroll");

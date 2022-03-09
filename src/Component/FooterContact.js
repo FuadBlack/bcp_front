@@ -10,7 +10,7 @@ import briefBlank from "../assets/img/Brief_blank.svg";
 import { Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 
-function FooterContact() {
+function FooterContact({data}) {
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
@@ -68,13 +68,13 @@ function FooterContact() {
             <div className="right_top">
               <div className="name_mail ">
                 <Form.Group name="name" controlId="validationCustom01">
-                  <Form.Control required type="text" placeholder="Adınız" />
+                  <Form.Control required type="text" placeholder={data?.placeholders?.name?.az} />
                   <Form.Control.Feedback type="invalid">
                     səhvdir
                   </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group name="email" controlId="validationCustom02">
-                  <Form.Control required type="email" placeholder="E-poçt" />
+                  <Form.Control required type="email" placeholder={data?.placeholders?.email?.az} />
                   <Form.Control.Feedback type="invalid">
                     səhvdir
                   </Form.Control.Feedback>
@@ -82,7 +82,7 @@ function FooterContact() {
               </div>
               <div className="number_brief">
                 <Form.Group name="phone">
-                  <Form.Control required type="number" placeholder="Nömrəniz" />
+                  <Form.Control required type="number"placeholder={data?.placeholders?.phone?.az} />
                   <Form.Control.Feedback type="invalid">
                     səhvdir
                   </Form.Control.Feedback>
@@ -99,7 +99,7 @@ function FooterContact() {
               <Form.Control
                 required
                 as="textarea"
-                placeholder="Layihə haqqında"
+                placeholder={data?.placeholders?.textarea?.az}
               />
               <Form.Control.Feedback type="invalid">
                 səhvdir

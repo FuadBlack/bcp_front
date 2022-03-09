@@ -16,7 +16,7 @@
             color: #9B9B9B
             text-decoration: none
     .services
-        margin-top: 79px
+        margin: 80px
         .services_item
             display: grid
             grid-template-columns: repeat(3, 1fr)
@@ -26,6 +26,7 @@
                 display: flex
                 flex-direction: column
                 grid-gap: 85px
+                text-overflow: clip
             a
                 text-decoration: none
                 display: flex
@@ -51,98 +52,124 @@
                     color: white
                     font-family: Arial, Helvetica, sans-serif
                     z-index: 2
+                    text-overflow: clip
                 svg
                     position: absolute
                     left: -31px
                     top: -22px
             .website
+                svg
+                    *
+                        transition: transform .3s ease
                 &:hover
                     svg
                         path
-                            transition: transform .3s ease-out
                             &:nth-child(1)
                                 transform: translateX(-12px) translateY(12px)
             .marketing
+                svg
+                    *
+                        transition: transform .3s ease
                 &:hover
                     svg
                         path
-                            transition: transform .3s ease-out
                             &:nth-child(1)
                                 transform: translateX(18px)
                             &:nth-child(2)
                                 transform: translateX(-18px)
             .design
+                svg
+                    *
+                        transition: transform .3s ease
                 &:hover
                     svg
                         path
-                            transition: transform .3s ease-out
                             &:nth-child(1)
                                 transform: translateY(27px)
 
             .video
+                svg
+                    *
+                        transition: transform .3s ease
                 &:hover
                     svg
                         path
                             transform: translateY(4px)
                         circle
-                            transition: transform .3s ease-out
+
                             transform: translateY(-8px)
             .brending
+                svg
+                    *
+                        transition: transform .3s ease
                 &:hover
                     svg
                         path
-                            transition: all .3s ease-out
                             &:nth-child(2)
                                 transform: translateX(12px) translateY(4px)
             .film
+                svg
+                    *
+                        transition: transform .3s ease
                 &:hover
                     svg
-                        transition: all .3s ease-out
                         fill: #468680
             .teqdimat
+                svg
+                    *
+                        transition: transform .3s ease
                 &:hover
                     svg
                         path
-                            transition: all .3s ease-out
                             &:nth-child(2)
                                 transform: translateX(-30px)
 
             .it
+                svg
+                    *
+                        transition: transform .3s ease
                 &:hover
                     svg
                         path
-                            transition: all .3s ease-out
                             &:nth-child(2)
                                 transform: translateX(-14px) translateY(5px)
             .mobilapp
+                svg
+                    *
+                        transition: transform .3s ease
                 &:hover
                     svg
                         circle
-                            transition: all .3s ease-out
                             fill: none
                             stroke: #468680
             .server
+                svg
+                    *
+                        transition: transform .3s ease
                 &:hover
                     svg
                         path
-                            transition: all .3s ease-out
                             &:nth-child(1)
                                 transform: translateY(32px)
 
             .record
+                svg
+                    *
+                        transition: transform .3s ease
                 &:hover
                     svg
                         path
-                            transition: all .3s ease-out
                             &:nth-child(2)
                                 transform: translateX(19px)
                             &:nth-child(1)
                                 transform: translateX(-19px)
 
             .threeD
+                svg
+                    *
+                        transition: transform .3s ease
                 &:hover
                     svg
                         path
-                            transition: all .3s ease-out
                             &:nth-child(2)
                                 transform: translateX(-14px)

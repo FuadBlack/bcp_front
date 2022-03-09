@@ -12,13 +12,12 @@ import "../css/_responsive_info.sass";
 
 export const Info = ({data}) => {
   
-  let lang = localStorage.getItem("language")
 
-  console.log(data)
+
   return (
     <div className="info">
       <div className="title">
-        <h1>{data?.title?.az}</h1>
+        <h1>{data?.slogan?.az}</h1>
         <Link to="#">
           <button>layihəyə başla</button>
         </Link>
@@ -98,8 +97,7 @@ export const Info = ({data}) => {
           </svg>
 
           <span>
-            Biz yaxşı dizaynla problemləri həll edirik.Seçim sənindir. Biz yaxşı
-            dizaynla problemləri həll edirik.Seçim sənindir.
+           {data?.sm_text?.az}
           </span>
         </p>
       </div>

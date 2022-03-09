@@ -5,7 +5,7 @@
 
 .homeProjects
     .title
-        margin-left: 60px
+
         display: flex
         justify-content: between
         align-items: center
@@ -24,19 +24,20 @@
         display: flex
         margin: 0
         padding: 0
-        .header
-            width: 600px
-            color: white
-            font-size: 70px
-            font-weight: 700
-            z-index: 1
-            poisition: relative
-            &::before,&::after
-                content: ""
-                color: #F4A442
-                border-top: 1px solid #F4A442
-                width: 180px
-                margin: 10px 0
+        .info
+            h3
+                width: 600px
+                color: white
+                font-size: 70px
+                font-weight: 700
+                z-index: 1
+                poisition: relative
+                &::before,&::after
+                    content: ""
+                    color: #F4A442
+                    border-top: 1px solid #F4A442
+                    width: 180px
+                    margin: 10px 0
 
         p
             margin-left: 20px
@@ -50,8 +51,8 @@
         .info
             position: relative
             z-index: 1
+            display: block
         .image
-
             padding: 0
             object-fit: fill
             padding: 0
@@ -62,7 +63,6 @@
             width: 100%
             height: 500px
             background: transparent
-
             .swiper-slide
                 width: 100%
                 padding: 0
@@ -87,3 +87,25 @@
                     padding: 0
                     width: 100%
                     object-fit: contain
+
+@media screen and ( max-width: 600px)
+    .homeProjects
+        .projects
+            .info
+                h3
+                    font-size: 35px
+                    width: 220px
+                p
+                    transform: translateX(-20px)
+                a
+                    transform: translateX(-70px)
+
+            .image
+                display: flex
+                .swiper
+                    width: 440px
+                    height: 440px
+                    padding: 0 20px
+                    .swiper-slide
+                        img
+                            background: transparent

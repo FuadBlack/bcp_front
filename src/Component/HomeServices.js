@@ -1,12 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../css/_homeServices.sass';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "../css/_homeServices.sass";
+import axios from "axios";
+
+
 
 export const HomeServices = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    await axios
+      .get("http://pony.bcptest.online/api/home")
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="homeServices">
       <div className="title">
-        <h2>Xidmətlərimiz</h2>
+        <h2>{data?.title?.az}</h2>
         <Link to="/services">hamısına bax</Link>
       </div>
 

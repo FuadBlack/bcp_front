@@ -9,16 +9,20 @@ import axios from "axios";
 
 export const Home = () => {
   const [data, setData] = useState([]);
-  
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    await axios.get("http://pony.bcptest.online/api/home").then((response) => {
-      setData(response.data);
-    });
+    await axios
+      .get("http://pony.bcptest.online/api/home")
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -28,7 +32,7 @@ export const Home = () => {
       <HomePortfolio />
       <HomeServices />
       <HomeProjects />
-      <FooterContact />
+      <FooterContact data={data} />
     </div>
   );
 };
