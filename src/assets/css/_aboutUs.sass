@@ -1,0 +1,89 @@
+.about_us
+    .breadcrumb_container
+        padding-bottom: 54px
+        .breadcrumb
+            padding-bottom: 5.5px
+            border-bottom: 1px solid #5E5E5E
+            align-items: center
+            .breadcrumb_item_link
+                color: #ECF0E6
+                text-decoration: none
+                font-size: 14px
+                line-height: 16.98px
+
+            .breadcrumb-item.active
+                color: #E6A250
+                font-size: 14px
+                line-height: 17.15px
+                margin-top: 3px
+            .breadcrumb-item.active::before
+                content: ">"
+                color: #ECF0E6
+    .about_us_container
+        .row
+            .title
+                h4
+                    color: #F4A442
+                    font-size: 65px
+                    line-height: 67px
+            .content
+                p
+                    font-size: 18px
+                    color: #ECF0E6
+                    line-height: 35px
+
+        .video
+            img
+                width: 100%
+        .bcpTeam
+            padding: 20px 0
+            p
+                font-size: 14px
+                line-height: 16px
+                padding-bottom: 6px
+                &:first-child
+                    color: #FFFFFF
+                &:last-child
+                    color: #E6A250
+            .content2
+                p
+                    font-size: 18px
+                    color: #ECF0E6
+                    line-height: 35px
+
+        .showreel
+            padding-top: 56px
+            display: flex
+            grid-gap: 27px
+            .showreel_title
+                display: flex
+                grid-gap: 47px
+                align-items: center
+                .content
+                    display: flex
+                    flex-direction: column
+                    color: #F4A442
+                    span
+                        font-size: 65px
+                        line-height: 67px
+                    .for
+                        text-align: end
+                        margin-right: 75p
+
+    @media screen and ( max-width: 600px )
+        .about_us_container
+            .bcpTeam
+                padding: 10px 0
+                .title2
+                    display: flex
+                    justify-content: space-between
+                    p
+                        margin: 0
+                        padding: 0
+                .content2
+                    margin: 20px 0
+                    width: 620px
+                    p
+                        font-size: 16px
+                        line-height: 24px
+                        color: #ECF0E6

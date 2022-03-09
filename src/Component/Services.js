@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { HeaderWithBtn } from "./HeaderWithBtn";
 import "../css/_services.sass";
 import { HomeServices } from "./HomeServices";
 import FooterContact from "./FooterContact";

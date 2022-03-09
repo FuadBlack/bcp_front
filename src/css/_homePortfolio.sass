@@ -1,8 +1,8 @@
 @import "./_mixin"
 .homePortfolio
-    padding: 20px
+    padding: 30px
     .title
-        margin-left: 50px
+        margin: 15px 10px
         display: flex
         transform: translateX(-40px)
         align-items: center
@@ -18,7 +18,7 @@
             color: #9B9B9B
             text-decoration: none
     .slider
-        padding: 40px
+        padding-top: 20px
         position: relative
         .col-md-6
             display: flex
@@ -33,15 +33,24 @@
             font-weight: 700
             margin-top: 30px
             transform: translateX(-30px)
-        .buttons
-            cursor: pointer
+        .right
+            margin: 0
+            padding: 0
             width: 200px
-            transform: translateX(90px) translateY(70px)
             p
-                transform: translateY(-30px)
+                transform: translateY(-30px) translateX(140px)
                 color: #9B9B9B
                 font-size: 30px
                 font-weight: 400
+                margin: 0
+                padding: 0
+
+        .buttons
+            cursor: pointer
+            width: 200px
+            transform: translateX(150px)
+            margin: 0
+
             .left,.right
                 position: relative
                 .shape

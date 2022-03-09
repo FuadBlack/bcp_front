@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import fill_form_phonenumber from "../assets/img/fill_form_phonenumber.svg";
 import youtubeicon from "../assets/img/youtube_icon.svg";
 import linkendin from "../assets/img/linkedin.svg";
@@ -8,89 +8,113 @@ import instagram from "../assets/img/instagram_icon.svg";
 import facebook from "../assets/img/facebook-icon.svg";
 import briefBlank from "../assets/img/Brief_blank.svg";
 import { Link } from "react-router-dom";
-import "../assets/css/_footerContact.sass";
+import { Form, Button } from "react-bootstrap";
 
+function FooterContact({data}) {
+  const [validated, setValidated] = useState(false);
 
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
 
-
-function FooterContact() {
+    setValidated(true);
+  };
   return (
-    <div className="footer_input row">
-      <div className="left_side col-md-6">
-        <div className="fill_form">
-          <span>Bu</span> formanı <br></br> doldurun <span>və</span>
-        </div>
-        <div className="we_call_back">
-          <span>biz geri zəng</span>
-          <span>edəcəyik</span>
-        </div>
-        <div className="phone_number_container">
-          <div className="fill_form_number_icon">
-            <img src={fill_form_phonenumber} />
+    <div className="footer_input">
+      <div className="row">
+        <div className="left_side col-md-6">
+          <div className="fill_form">
+            <span>Bu</span> formanı <br></br> doldurun <span>və</span>
           </div>
-          <div className="phone_number">
-            <span>+994 77 600 1937</span>
-            <span>+994 77 600 1937</span>
+          <div className="we_call_back">
+            <span>biz geri zəng</span>
+            <span>edəcəyik</span>
           </div>
-        </div>
-        <div className="social_icon">
-          <Link to="/">
-            <img src={youtubeicon} />
-          </Link>
-          <Link to="/">
-            <img src={linkendin} />
-          </Link>
-          <Link to="/">
-            <img src={dribble} />
-          </Link>
-          <Link to="/">
-            <img src={behance} />
-          </Link>
-          <Link to="/">
-            <img src={instagram} />
-          </Link>
-          <Link to="/">
-            <img src={facebook} />
-          </Link>
-        </div>
-      </div>
-      <div className="right_side col-md-6">
-      
-
-     <form>
-          <div className="right_top">
-            <div className="name_mail">
-              <input
-                type="text"
-                name="name"
-                placeholder="Adınız"
-                
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="E-poçt"
-                
-              />
+          <div className="phone_number_container">
+            <div className="fill_form_number_icon">
+              <img src={fill_form_phonenumber} />
             </div>
-            <div className="number_brief">
-              <input
-                type="number"
-                name="phone"
-                placeholder="Nömrəniz"
-                
-              />
-              <input type="file" name="Brief"  />
+            <div className="phone_number">
+              <span>+994 77 600 1937</span>
+              <span>+994 77 600 1937</span>
             </div>
           </div>
-          <textarea placeholder="Layihə haqqında" />
-          <div className="button_send">
-            <Link to="/" target="_blank" download className="briefDownload">
-              Öz brief-ni hazırla <img src={briefBlank} />
+          <div className="social_icon">
+            <Link to="/">
+              <img src={youtubeicon} />
             </Link>
-            <button className="send_button">Göndər</button>
+            <Link to="/">
+              <img src={linkendin} />
+            </Link>
+            <Link to="/">
+              <img src={dribble} />
+            </Link>
+            <Link to="/">
+              <img src={behance} />
+            </Link>
+            <Link to="/">
+              <img src={instagram} />
+            </Link>
+            <Link to="/">
+              <img src={facebook} />
+            </Link>
           </div>
-        </form> 
+        </div>
+        <div className="right_side col-md-6">
+          <Form noValidate onSubmit={handleSubmit} validated={validated}>
+            <div className="right_top">
+              <div className="name_mail ">
+                <Form.Group name="name" controlId="validationCustom01">
+                  <Form.Control required type="text" placeholder={data?.placeholders?.name?.az} />
+                  <Form.Control.Feedback type="invalid">
+                    səhvdir
+                  </Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group name="email" controlId="validationCustom02">
+                  <Form.Control required type="email" placeholder={data?.placeholders?.email?.az} />
+                  <Form.Control.Feedback type="invalid">
+                    səhvdir
+                  </Form.Control.Feedback>
+                </Form.Group>
+              </div>
+              <div className="number_brief">
+                <Form.Group name="phone">
+                  <Form.Control required type="number"placeholder={data?.placeholders?.phone?.az} />
+                  <Form.Control.Feedback type="invalid">
+                    səhvdir
+                  </Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group name="Brief">
+                  <Form.Control required type="file" aria-hidden="false" />
+                  <Form.Control.Feedback type="invalid">
+                    səhvdir
+                  </Form.Control.Feedback>
+                </Form.Group>
+              </div>
+            </div>
+            <Form.Group name="textarea">
+              <Form.Control
+                required
+                as="textarea"
+                placeholder={data?.placeholders?.textarea?.az}
+              />
+              <Form.Control.Feedback type="invalid">
+                səhvdir
+              </Form.Control.Feedback>
+            </Form.Group>
+            <div className="button_send">
+              <Link to="/" target="_blank" download className="briefDownload">
+                Öz brief-ni hazırla <img src={briefBlank} />
+              </Link>
+              <Button type="submit" className="send_button">
+                Göndər
+              </Button>
+            </div>
+          </Form>
+        </div>
       </div>
     </div>
   );

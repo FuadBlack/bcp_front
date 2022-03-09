@@ -8,7 +8,6 @@ import Tab from "react-bootstrap/Tab";
 import All from "./All";
 import Website from "./Website";
 import FooterContact from "./FooterContact";
-import { HeaderWithBtn } from "./HeaderWithBtn";
 import "../css/_header.sass";
 import "../assets/css/_portfolio.sass"
 

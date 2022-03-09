@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "../css/_header.sass";
 import logoBcp from "../images/Group48.svg";
 import { navLinks } from "./navLinks";
@@ -9,6 +9,7 @@ import youtube from "../images/youtube.svg";
 import behance from "../images/behance.svg";
 import linkedin from "../images/linkedin.svg";
 import facebook from "../images/facebook.svg";
+
 const langs = [
   { id: 1, name: "az" },
   { id: 2, name: "ru" },
@@ -18,6 +19,7 @@ export const Header = () => {
   const [changLang, setChangLang] = useState(
     localStorage.getItem("language") || "az"
   );
+
   const changeLanguage = (id) => {
     localStorage.setItem("language", id);
     setChangLang(id);
@@ -25,8 +27,23 @@ export const Header = () => {
 
   const [openMenu, setOpenMenu] = useState("close");
   const toggleBurger = () => {
+    let bodyClass = document.querySelector("body").classList;
     setOpenMenu(openMenu === "open" ? "close" : "open");
+
+    if (openMenu === "open") {
+      setOpenMenu("close");
+      bodyClass.remove("hideScroll");
+    } else {
+      setOpenMenu("open");
+      bodyClass.add("hideScroll");
+    }
   };
+
+  let location = useLocation();
+
+  useEffect(() => {
+    setOpenMenu("close");
+  }, [location]);
 
   return (
     <div className="header">
@@ -48,20 +65,38 @@ export const Header = () => {
               })}
             </ul>
           </div>
-          <div>
+          <div className="logoBcp">
             <Link to="/">
               <img src={logoBcp} alt="" />
             </Link>
           </div>
-          <div
-            id="burgerMenu"
-            className={openMenu}
-            role="button"
-            onClick={() => setOpenMenu(openMenu === "open" ? "close" : "open")}
+          <button
+            type="button"
+            className={
+              location.pathname === "/projects" ||
+              location.pathname === "/services" ||
+              location.pathname === "/aboutUs" ||
+              location.pathname === "/riconConstruction"
+                ? "btnVisible"
+                : "btnInvisible"
+            }
           >
-            <span></span>
-            <span></span>
-            <span></span>
+            layihəyə başla
+          </button>
+
+          <div className="d-flex">
+            <div
+              id="burgerMenu"
+              className={openMenu}
+              role="button"
+              onClick={() =>
+                setOpenMenu(openMenu === "open" ? "close" : "open")
+              }
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
         </div>
 
@@ -69,19 +104,19 @@ export const Header = () => {
           <nav>
             <ul className="link1">
               <li>
-                <Link to="/services">Xidmətlər</Link>
+                <Link to="services">Xidmətlər</Link>
               </li>
               <li>
-                <Link to="/portfolio">Portfolio</Link>
+                <Link to="portfolio">Portfolio</Link>
               </li>
               <li>
-                <Link to="/about">Haqqımızda</Link>
+                <Link to="aboutUs">Haqqımızda</Link>
               </li>
               <li>
-                <Link to="/projects">Layihələr</Link>
+                <Link to="projects">Layihələr</Link>
               </li>
               <li>
-                <Link to="/contact">Əlaqə</Link>
+                <Link to="contact">Əlaqə</Link>
               </li>
             </ul>
           </nav>
@@ -179,10 +214,10 @@ export const Header = () => {
                   <Link to="/portfolio">Portfolio</Link>
                 </li>
                 <li>
-                  <Link to="/about">Haqqımızda</Link>
+                  <Link to="/aboutUs">Haqqımızda</Link>
                 </li>
                 <li>
-                  <Link to="/about">Haqqımızda</Link>
+                  <Link to="/about">Layihələr</Link>
                 </li>
                 <li>
                   <Link to="/contact">Əlaqə</Link>

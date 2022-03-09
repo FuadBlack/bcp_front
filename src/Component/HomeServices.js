@@ -1,19 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../css/_homeServices.sass";
+import axios from "axios";
+
+
 
 export const HomeServices = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    await axios
+      .get("http://pony.bcptest.online/api/home")
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="homeServices">
       <div className="title">
-        <h2>Xidmətlərimiz</h2>
+        <h2>{data?.title?.az}</h2>
         <Link to="/services">hamısına bax</Link>
       </div>
 
       <div className="services">
-        <div className="row d-flex align-items-center">
-          <div className="col-md-4">
-            <div className="website">
+        <div className="services_item">
+          <div className="services_inner">
+            <Link to="OurServices_inner" className="website">
               <div className="name">
                 <svg
                   width="74"
@@ -37,8 +57,8 @@ export const HomeServices = () => {
                 Business audit, marketing strategy, positioning, check cashing
                 franchise
               </p>
-            </div>
-            <div className="marketing">
+            </Link>
+            <Link to="OurServices_inner" className="marketing">
               <div className="name">
                 <svg
                   width="37"
@@ -58,14 +78,14 @@ export const HomeServices = () => {
                   />
                 </svg>
 
-                <h3>Veb saytlar</h3>
+                <h3>Rəqəmsal marketinq</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
                 franchise
               </p>
-            </div>
-            <div className="design">
+            </Link>
+            <Link to="OurServices_inner" className="design">
               <div className="name">
                 <svg
                   width="31"
@@ -83,14 +103,14 @@ export const HomeServices = () => {
                     fill="#468680"
                   />
                 </svg>
-                <h3>Veb saytlar</h3>
+                <h3>UX/UI dizayn</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
                 franchise
               </p>
-            </div>
-            <div className="video">
+            </Link>
+            <Link to="OurServices_inner" className="video">
               <div className="name">
                 <svg
                   width="35"
@@ -111,16 +131,16 @@ export const HomeServices = () => {
                     fill="#468680"
                   />
                 </svg>
-                <h3>Veb saytlar</h3>
+                <h3>Video çəkilişlər</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
                 franchise
               </p>
-            </div>
+            </Link>
           </div>
-          <div className="col-md-4">
-            <div className="brending">
+          <div className="services_inner">
+            <Link to="OurServices_inner" className="brending">
               <div className="name">
                 <svg
                   width="39"
@@ -138,14 +158,14 @@ export const HomeServices = () => {
                     fill="#468680"
                   />
                 </svg>
-                <h3>Veb saytlar</h3>
+                <h3>Brendinq</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
                 franchise
               </p>
-            </div>
-            <div className="film">
+            </Link>
+            <Link to="OurServices_inner" className="film">
               <div className="name">
                 <svg
                   width="37"
@@ -162,14 +182,14 @@ export const HomeServices = () => {
                     strokeWidth="2"
                   />
                 </svg>
-                <h3>Veb saytlar</h3>
+                <h3>Film çəkilişləri</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
                 franchise
               </p>
-            </div>
-            <div className="teqdimat">
+            </Link>
+            <Link to="OurServices_inner" className="teqdimat">
               <div className="name">
                 <svg
                   width="63"
@@ -188,14 +208,14 @@ export const HomeServices = () => {
                     strokeWidth="2"
                   />
                 </svg>
-                <h3>Veb saytlar</h3>
+                <h3>BTL və Təqdimatlar</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
                 franchise
               </p>
-            </div>
-            <div className="it">
+            </Link>
+            <Link to="OurServices_inner" className="it">
               <div className="name">
                 <svg
                   width="42"
@@ -214,16 +234,16 @@ export const HomeServices = () => {
                     strokeWidth="2"
                   />
                 </svg>
-                <h3>Veb saytlar</h3>
+                <h3>İT-Kommunikasiya</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
                 franchise
               </p>
-            </div>
+            </Link>
           </div>
-          <div className="col-md-4">
-            <div className="mobilapp">
+          <div className="services_inner">
+            <Link to="OurServices_inner" className="mobilapp">
               <div className="name">
                 <svg
                   width="36"
@@ -234,14 +254,14 @@ export const HomeServices = () => {
                 >
                   <circle cx="18" cy="18" r="18" fill="#468680" />
                 </svg>
-                <h3>Veb saytlar</h3>
+                <h3>Mobil tətbiqlər</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
                 franchise
               </p>
-            </div>
-            <div className="server">
+            </Link>
+            <Link to="OurServices_inner" className="server">
               <div className="name">
                 <svg
                   width="36"
@@ -259,14 +279,14 @@ export const HomeServices = () => {
                     fill="#468680"
                   />
                 </svg>
-                <h3>Veb saytlar</h3>
+                <h3>Server / Hostinq</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
                 franchise
               </p>
-            </div>
-            <div className="record">
+            </Link>
+            <Link to="OurServices_inner" className="record">
               <div className="name">
                 <svg
                   width="39"
@@ -284,14 +304,14 @@ export const HomeServices = () => {
                     stroke="#468680"
                   />
                 </svg>
-                <h3>Veb saytlar</h3>
+                <h3>Səsyazma və musiqi xidməti</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
                 franchise
               </p>
-            </div>
-            <div className="threeD">
+            </Link>
+            <Link to="OurServices_inner" className="threeD">
               <div className="name">
                 <svg
                   width="38"
@@ -310,13 +330,13 @@ export const HomeServices = () => {
                     fill="#468680"
                   />
                 </svg>
-                <h3>Veb saytlar</h3>
+                <h3>3d modelləmə</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
                 franchise
               </p>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
