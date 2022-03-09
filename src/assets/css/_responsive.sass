@@ -2,18 +2,18 @@
     .section
         .portofolio_main
             .portfolio_container
-                .title
-                    font-size: 59px
-                    line-height: 61px
-                .tab-content
-                    .tab-pane
-                        .allourwork
-                            .workItems
-                                .workItem
-                                    .content
-                                        .title
-                                            font-size: 37px
-                                            line-height: 37px
+                .title_container
+                    h1
+                        font-size: 59px
+                        line-height: 61px
+                div
+                    .allourwork
+                        .workItems
+                            .workItem
+                                .content
+                                    .title
+                                        font-size: 37px
+                                        line-height: 37px
         .footer_input
             .fill_form
                 font-size: 40px
@@ -42,26 +42,26 @@
     .section
         .portofolio_main
             .portfolio_container
-                .title
-                    font-size: 53px
-                    line-height: 56px
-                .tab-content
-                    .tab-pane
-                        .allourwork
-                            .work_title
-                                font-size: 28px
-                                line-height: 34px
-                            .workItems
-                                .workItem
-                                    grid-template-columns: repeat(2,auto)
-                                    grid-gap: 30px 20px
-                                    .name_portfolio
-                                        grid-column-start: 1
-                                        grid-column-end: 3
-                                    .content
-                                        .title
-                                            font-size: 35px
-                                            line-height: 35px
+                .title_container
+                    h1
+                        font-size: 53px
+                        line-height: 56px
+                div
+                    .allourwork
+                        .work_title
+                            font-size: 28px
+                            line-height: 34px
+                        .workItems
+                            .workItem
+                                grid-template-columns: repeat(2,auto)
+                                grid-gap: 30px 20px
+                                .name_portfolio
+                                    grid-column-start: 1
+                                    grid-column-end: 3
+                                .content
+                                    .title
+                                        font-size: 35px
+                                        line-height: 35px
         .footer_input
             flex-direction: column
             grid-gap: 50px
@@ -112,24 +112,28 @@
     .section
         .portofolio_main
             .portfolio_container
-                .title
-                    font-size: 47px
-                    line-height: 50px
-                .tab-content
-                    .tab-pane
-                        .allourwork
-                            .work_title
-                                font-size: 26px
-                                line-height: 31px
-                            .workItems
-                                .workItem
-                                    grid-template-columns: auto
-                                    .content
-                                        grid-column-start: 1
-                                        grid-column-end: 3
-                                        .title
-                                            font-size: 32px
-                                            line-height: 32px
+                .title_container
+                    h1
+                        font-size: 47px
+                        line-height: 50px
+                    .filter_icon
+                        display: flex
+                div
+                    .button_container
+                        display: none
+                    .allourwork
+                        .work_title
+                            font-size: 26px
+                            line-height: 31px
+                        .workItems
+                            .workItem
+                                grid-template-columns: auto
+                                .content
+                                    grid-column-start: 1
+                                    grid-column-end: 3
+                                    .title
+                                        font-size: 32px
+                                        line-height: 32px
         .ricon_constraction
             .ricon_constraction_contain
                 .title
@@ -179,29 +183,29 @@
     .section
         .portofolio_main
             .portfolio_container
-                .title
-                    font-size: 41px
-                    line-height: 44px
-                .tab-content
-                    .tab-pane
-                        .allourwork
-                            .work_title
-                                font-size: 24px
-                                line-height: 28px
-                            .workItems
-                                .workItem
-                                    grid-template-columns: 1fr
-                                    grid-gap: 30px 0px
-                                    .image
-                                        grid-column: 1 / 3
-                                        img
-                                            width: 100%
-                                    .content
-                                        grid-column-start: 1
-                                        grid-column-end: 3
-                                        .title
-                                            font-size: 30px
-                                            line-height: 30px
+                .title_container
+                    h1
+                        font-size: 41px
+                        line-height: 44px
+                div
+                    .allourwork
+                        .work_title
+                            font-size: 24px
+                            line-height: 28px
+                        .workItems
+                            .workItem
+                                grid-template-columns: 1fr
+                                grid-gap: 30px 0px
+                                .image
+                                    grid-column: 1 / 3
+                                    img
+                                        width: 100%
+                                .content
+                                    grid-column-start: 1
+                                    grid-column-end: 3
+                                    .title
+                                        font-size: 30px
+                                        line-height: 30px
         .footer_input
             .left_side
                 .fill_form
@@ -284,30 +288,30 @@
     .section
         .portofolio_main
             .portfolio_container
-                .title
-                    font-size: 35px
-                    line-height: 38px
-                .tab-content
-                    .tab-pane
-                        .allourwork
-                            .work_title
-                                font-size: 22px
-                                line-height: 24px
-                            .workItems
-                                .workItem
-                                    align-items: center
-                                    .name_portfolio
-                                        grid-row-start: 2
-                                        grid-column-start: 2
-                                    .content
-                                        grid-row-start: 2
-                                        .title
-                                            font-size: 27px
-                                            line-height: 27px
-                                        p
-                                            display: none
-                                        .link_more_port
-                                            display: none
+                .title_container
+                    h1
+                        font-size: 35px
+                        line-height: 38px
+                div
+                    .allourwork
+                        .work_title
+                            font-size: 22px
+                            line-height: 24px
+                        .workItems
+                            .workItem
+                                align-items: center
+                                .name_portfolio
+                                    grid-row-start: 2
+                                    grid-column-start: 2
+                                .content
+                                    grid-row-start: 2
+                                    .title
+                                        font-size: 27px
+                                        line-height: 27px
+                                    p
+                                        display: none
+                                    .link_more_port
+                                        display: none
         .footer_input
             .left_side
                 .fill_form
@@ -351,21 +355,21 @@
     .section
         .portofolio_main
             .portfolio_container
-                .title
-                    font-size: 30px
-                    line-height: 30px
-                .tab-content
-                    .tab-pane
-                        .allourwork
-                            .work_title
-                                font-size: 20px
-                                line-height: 20px
-                            .workItems
-                                .workItem
-                                    .content
-                                        .title
-                                            font-size: 25px
-                                            line-height: 25px
+                .title_container
+                    h1
+                        font-size: 30px
+                        line-height: 30px
+                div
+                    .allourwork
+                        .work_title
+                            font-size: 20px
+                            line-height: 20px
+                        .workItems
+                            .workItem
+                                .content
+                                    .title
+                                        font-size: 25px
+                                        line-height: 25px
         .ricon_constraction
             .ricon_constraction_contain
                 .title

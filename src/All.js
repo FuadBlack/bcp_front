@@ -1,19 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import data from './data';
 
-function All(props) {
-  const { element } = props;
-  const slice = data.itemData.slice(0, element);
+
+function All({ menuItem }) {
   return (
     <div className="allourwork">
       <h1 className="work_title">
         Bütün işlərimiz<sup>55</sup>
       </h1>
       <div className="workItems">
-        {slice.map((item, index) => {
+        {menuItem.map((item) => {
           return (
-            <Link to="RiconConstruction" className="workItem" key={index}>
+            <Link to="RiconConstruction" className="workItem" key={item.id}>
               <div className="name_portfolio">
                 <div>
                   <span>{item.name_portfolio_1span}</span>
