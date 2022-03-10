@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Footerinput from './FooterInput';
-import TabsContainer from './TabsContainer';
+import TabsContainer from '../TabsContainer';
 import filterIcon from './assets/img/filter_icon.svg';
 import { Axios } from 'axios';
 

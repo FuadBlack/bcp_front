@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import All from './All';
-import Data from './data';
-import Button from './Button';
+import Data from './Component/data';
+import Button from './Component/Button';
 const allCategories = ['Hamısı', ...new Set(Data.map((item) => item.category))];
 console.log(allCategories);
 
