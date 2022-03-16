@@ -8,6 +8,8 @@ import {
   Routes,
 } from "react-router-dom";
 import "./App.sass";
+import './i18n';
+
 import { Home } from "./Component/Home";
 import { Header } from "./Component/Header";
 import AboutUs from "./Component/aboutUs";
@@ -20,13 +22,9 @@ import RiconConstraction from "./Component/RiconConstraction";
 import OurServicesInner from "./Component/OurServices_inner";
 import { Context } from "./Context";
 import axios from "axios";
-import "./i18n";
-function App() {
-  //Change language
-  const [changLang, setChangLang] = useState(
-    localStorage.getItem("language") || "az"
-  );
 
+
+function App() {
   //Api
   const [data, setData] = useState([]);
 
@@ -51,7 +49,7 @@ function App() {
         <Context.Provider value={{ data, setData }}>
           <Router>
             <Routes>
-              <Route path="/" element={<Layout changLang={changLang} />}>
+              <Route path="/" element={<Layout/>}>
                 <Route path="/" element={<Home />} />
                 <Route path="portfolio" element={<Portfolio />} />
                 <Route
@@ -75,7 +73,7 @@ function App() {
   );
 }
 
-function Layout({ changLang }) {
+function Layout() {
   return (
     <div className="sectionn container">
       <Header />

@@ -9,18 +9,13 @@ import youtube from "../images/youtube.svg";
 import behance from "../images/behance.svg";
 import linkedin from "../images/linkedin.svg";
 import facebook from "../images/facebook.svg";
-import i18next from "i18next";
+import { useTranslation } from 'react-i18next';
 
 export const Header = () => {
-  //Change Lang
-
-  const [changLang, setChangLang] = useState(
-    localStorage.getItem("language") || "az"
-  );
+  const { i18n, t } = useTranslation();
 
   const changeLang = (lng) => {
-    i18next.changeLang(lng);
-    console.log(`Language changed to ${lng}`);
+    i18n.changeLanguage(lng);
   };
 
   //Open Menu
@@ -44,7 +39,6 @@ export const Header = () => {
 
   useEffect(() => {
     setOpenMenu("close");
-    console.log(changLang);
   }, [location]);
 
   return (
@@ -53,14 +47,14 @@ export const Header = () => {
         <div className="langLogoBar">
           <div>
             <ul>
-              <li onClick={() => changeLang("az")}>
-                <a href="#">az</a>
+              <li>
+                <button type="button" className={i18n.language === 'az' && 'activeLang'} onClick={() => changeLang('az')}>az</button>
               </li>
-              <li onClick={() => changeLang("ru")}>
-                <a href="#">ru</a>
+              <li>
+                <button type="button" className={i18n.language === 'ru' && 'activeLang'} onClick={() => changeLang('ru')}>ru</button>
               </li>
-              <li onClick={() => changeLang("en")}>
-                <a href="#">en</a>
+              <li>
+                <button type="button" className={i18n.language === 'en' && 'activeLang'} onClick={() => changeLang('en')}>en</button>
               </li>
             </ul>
           </div>
@@ -73,9 +67,9 @@ export const Header = () => {
             type="button"
             className={
               location.pathname === "/projects" ||
-              location.pathname === "/services" ||
-              location.pathname === "/aboutUs" ||
-              location.pathname === "/riconConstruction"
+                location.pathname === "/services" ||
+                location.pathname === "/aboutUs" ||
+                location.pathname === "/riconConstruction"
                 ? "btnVisible"
                 : "btnInvisible"
             }
@@ -103,19 +97,19 @@ export const Header = () => {
           <nav>
             <ul className="link1">
               <li>
-                <Link to="services">Xidmətlər</Link>
+                <Link to="services">{t('services')}</Link>
               </li>
               <li>
-                <Link to="portfolio">Portfolio</Link>
+                <Link to="portfolio">{t('portfolio')}</Link>
               </li>
               <li>
-                <Link to="aboutUs">Haqqımızda</Link>
+                <Link to="aboutUs">{t('about')}</Link>
               </li>
               <li>
-                <Link to="projects">Layihələr</Link>
+                <Link to="projects">{t('projects')}</Link>
               </li>
               <li>
-                <Link to="contact">Əlaqə</Link>
+                <Link to="contact">{t('contact')}</Link>
               </li>
             </ul>
           </nav>
@@ -189,7 +183,7 @@ export const Header = () => {
             <nav>
               <ul className="link1">
                 <li>
-                  <Link to="/services">Xidmətlər</Link>
+                  <Link to="/services">{t('services')}</Link>
                 </li>
                 <ul className="link2">
                   {navLinks.links
@@ -203,16 +197,16 @@ export const Header = () => {
                     ))}
                 </ul>
                 <li>
-                  <Link to="/portfolio">Portfolio</Link>
+                  <Link to="/portfolio">{t('portfolio')}</Link>
                 </li>
                 <li>
-                  <Link to="/aboutUs">Haqqımızda</Link>
+                  <Link to="/aboutUs">{t('about')}</Link>
                 </li>
                 <li>
-                  <Link to="/about">Layihələr</Link>
+                  <Link to="/about">{t('projects')}</Link>
                 </li>
                 <li>
-                  <Link to="/contact">Əlaqə</Link>
+                  <Link to="/contact">{t('contact')}</Link>
                 </li>
               </ul>
             </nav>
