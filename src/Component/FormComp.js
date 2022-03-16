@@ -16,37 +16,34 @@ const validationSchema = yup.object().shape({
     .integer("")
     .min(4, "Minimum 4 rəqəm"),
   email: yup.string().required("Zəhmət olmasa bu xananı doldurun"),
-  file: yup.string().required("Zəhmət olmasa bu xananı doldurun"),
+  file: yup.mixed().required("Zəhmət olmasa bu xananı doldurun"),
 });
 
 export const FormComp = () => {
-  const fileRef = useRef(null);
-  const [selectFile, setSelectFile] = useState(null);
-
-  const handleSubmit = (data) => {
-    fileRef.current.click();
-    console.log(data);
+  
+  const handleSubmit = async (data) => {    
     let formData = new FormData();
     formData.append("name", data.name);
     formData.append("email", data.email);
     formData.append("phone", data.phone);
     formData.append("textarea", data.textarea);
-    formData.append("file", data.selectFile);
-    axios({
+    formData.append("file", data.file);
+      
+    await axios({
       method: "post",
       url: "http://192.168.1.25:5555/api/add",
       data: formData,
       config: { headers: { "Content-Type": "multipart/form-data" } },
     })
-      .then(function (response) {
-        //handle success
-        console.log(response);
-        alert("New User Successfully Added.");
-      })
-      .catch(function (response) {
-        //handle error
-        console.log(response);
-      });
+    .then(function (response) {
+      //handle success
+      console.log(response);
+      alert("New User Successfully Added.");
+    })
+    .catch(function (response) {
+      //handle error
+      console.log(response);
+    });
   };
 
   const initialValues = {
@@ -62,8 +59,8 @@ export const FormComp = () => {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
-      >
-        {({ resetForm, data, setSelectFile }) => (
+      > 
+        {({ setFieldValue }) => (
           <Form>
             <div className="form">
               <div className="row">
@@ -104,14 +101,14 @@ export const FormComp = () => {
                       Brief yüklə
                       <Field
                         id="file"
-                        ref={fileRef}
                         name="file"
                         type="file"
                         placeholder="Brief yüklə"
-                        onChange={(e) =>
-                          setSelectFile("file", e.target.files[0])
-                        }
-                      />
+                        value={undefined}
+                        onChange={(event) => {
+                          setFieldValue('file', event.currentTarget.files[0]);
+                        }}
+                      />                        
                     </label>
                     <ErrorMessage
                       name="file"
