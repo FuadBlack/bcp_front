@@ -1,8 +1,8 @@
-import React from 'react';
-import wibty from './images/wibty.png';
-import ricon_constraction from './images/ricon_constraction_bc.png';
-import content from './images/content.svg';
-import { Link } from 'react-router-dom';
+import React from "react";
+import wibty from "../images/wibty.png";
+import ricon_constraction from "../images/ricon_constraction_bc.png";
+import content from "../images/content.svg";
+import { Link } from "react-router-dom";
 
 const RiconConstraction = () => {
   return (

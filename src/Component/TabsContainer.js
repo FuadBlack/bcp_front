@@ -1,15 +1,15 @@
-import { React, useState } from 'react';
-import All from './All';
-import Data from './Component/data';
-import Button from './Component/Button';
-const allCategories = ['Hamısı', ...new Set(Data.map((item) => item.category))];
+import { React, useState } from "react";
+import All from "./All";
+import Data from "./data";
+import Button from "./Button";
+const allCategories = ["Hamısı", ...new Set(Data.map((item) => item.category))];
 console.log(allCategories);
 
 const TabsContainer = () => {
   const [menuItem, setMenuItem] = useState(Data);
   const [buttons, setButtons] = useState(allCategories);
   const filter = (button) => {
-    if (button === 'Hamısı') {
+    if (button === "Hamısı") {
       setMenuItem(Data);
       return;
     }

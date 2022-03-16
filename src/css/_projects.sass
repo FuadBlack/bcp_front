@@ -22,29 +22,35 @@
         font-size: 55px
         font-weight: 700
         font-family: Arial, Helvetica, sans-serif
-    .row
-        margin: 50px 0
-        display: flex
-        align-items: center
-        .header
-            color: white
-            font-size: 40px
-            width: 90%
-            font-weight: 700
-        .infoDiv
+    .project
+        .row
+            margin-top: 70px
             display: flex
             align-items: center
-            flex-direction: column
-            .info
-                color: #9B9B9B
-                font-size: 20px
-                width: 350px
 
-            .goTo
-                transform: translateX(-90px)
-                a
-                    text-decoration: none
-                    color: white
+            .header
+                color: white
+                font-size: 40px
+                width: 90%
+                font-weight: 700
+               
+                overflow: hidden
+                text-overflow: ellipsis
+                height: 400px
+            .infoDiv
+                display: flex
+                align-items: center
+                flex-direction: column
+                .info
+                    color: #9B9B9B
+                    font-size: 20px
+                    width: 350px
+
+                .goTo
+                    transform: translateX(-90px)
+                    a
+                        text-decoration: none
+                        color: white
 
         .image
             img
@@ -65,7 +71,6 @@
                 .goTo
                     transform: translateX(-45px)
             .image
-              
+
                 img
                     width: 400px
-                    

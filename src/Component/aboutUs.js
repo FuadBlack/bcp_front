@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import video from "../assets/img/bcp_team.png";
 import showreel_music from "../assets/img/showreel_music.png";
 import showreel_img from "../assets/img/showreel_img.svg";
 import { Link } from "react-router-dom";
 import "../assets/css/_aboutUs.sass";
+import axios from "axios";
+
+
 const AboutUs = () => {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    await axios
+      .get("http://pony.bcptest.online/api/about")
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="about_us">
       <div className="breadcrumb_container">
@@ -24,47 +45,27 @@ const AboutUs = () => {
       <div className="about_us_container">
         <div className="row">
           <div className="title col-md-6">
-            <h4>Haqqımızda</h4>
+            <h4>{data?.title?.az}</h4>
           </div>
           <div className="content col-md-6">
             <p>
-              Şirkət yarandığı gündən, müştərilərimizə öz bizneslərini inkişaf
-              etdirmək üçün rəqəmsal həllər təklif edib. Həmçinin, bu müddətdə
-              yaddaqalan brendlər və müasir dizaynlar hazırlayırıq. Hər il öz
-              texniki bazamızı biraz daha gücləndiririk. Güclü texniki baza və
-              təcrübə hazırladığımız məhsulları ən yaxşı şəkildə ortaya
-              çıxarmağa kömək edir.
+            {data?.sm_text?.az}
             </p>
           </div>
         </div>
 
         <div className="video">
-          <img src={video} />
+          <img src={data?.cover} />
         </div>
 
         <div className="bcpTeam row">
           <div className="title2 col-md-6 ">
             <p>BCP Komandası</p>
-            <p>2021 noyabr</p>
+            <p>{data?.starter_date}</p>
           </div>
           <div className="content2 col-md-6">
             <p>
-              Şirkət yarandığı gündən, müştərilərimizə öz bizneslərini inkişaf
-              etdirmək üçün rəqəmsal həllər təklif edib. Həmçinin, bu müddətdə
-              yaddaqalan brendlər və müasir dizaynlar hazırlayırıq. Hər il öz
-              texniki bazamızı biraz daha gücləndiririk. Güclü texniki baza və
-              təcrübə hazırladığımız məhsulları ən yaxşı şəkildə ortaya
-              çıxarmağa kömək edir. Şirkət yarandığı gündən, müştərilərimizə öz
-              bizneslərini inkişaf etdirmək üçün rəqəmsal həllər təklif edib.
-              Həmçinin, bu müddətdə yaddaqalan brendlər və müasir dizaynlar
-              hazırlayırıq. Hər il öz texniki bazamızı biraz daha gücləndiririk.
-              Güclü texniki baza və təcrübə hazırladığımız məhsulları ən yaxşı
-              şəkildə ortaya çıxarmağa kömək edir. Şirkət yarandığı gündən,
-              müştərilərimizə öz bizneslərini inkişaf etdirmək üçün rəqəmsal
-              həllər təklif edib. Həmçinin, bu müddətdə yaddaqalan brendlər və
-              müasir dizaynlar hazırlayırıq. Hər il öz texniki bazamızı biraz
-              daha gücləndiririk. Güclü texniki baza və təcrübə hazırladığımız
-              məhsulları şəkildə ortaya çıxarmağa kömək edir.
+              {data?.long_text?.az}
             </p>
           </div>
         </div>
@@ -75,9 +76,7 @@ const AboutUs = () => {
               <img src={showreel_img} />
             </div>
             <div className="content">
-              <span>Showreel</span>
-              <span className="for">üçün</span>
-              <span>yer qoymuşam</span>
+           {data?.show_reel_text?.az}
             </div>
           </div>
         </div>
@@ -86,4 +85,3 @@ const AboutUs = () => {
   );
 };
 export default AboutUs;
-

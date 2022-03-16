@@ -1,8 +1,34 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import microphone from './assets/img/microphone.png';
+import microphone from '../assets/img/microphone.png';
 
 const OurServicesInner = () => {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    await axios
+      .get("http://pony.bcptest.online/api/services")
+      .then((res) => {
+        setData(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+
+
+
+
+
+
   return (
     <div className="ourServices_inner">
       <div className="breadcrumb_container">
@@ -21,9 +47,9 @@ const OurServicesInner = () => {
       </div>
       <div className="ourServices_inner_container">
         <div className="ourServices_inner_title">
-          <p>
+          <h1>
             Səsyazma <br /> və musiqi xidməti
-          </p>
+          </h1>
         </div>
         <div className="ourServices_inner_content">
           <p>

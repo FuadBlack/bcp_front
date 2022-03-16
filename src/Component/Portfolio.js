@@ -1,10 +1,10 @@
-import './assets/css/App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Footerinput from './FooterInput';
-import TabsContainer from '../TabsContainer';
-import filterIcon from './assets/img/filter_icon.svg';
+import "../assets/css/App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
+import { Link } from "react-router-dom";
+import TabsContainer from "./TabsContainer";
+import filterIcon from "../assets/img/filter_icon.svg";
+import FooterContact from "./FooterContact";
 
 function Portfolio() {
   return (
@@ -33,7 +33,7 @@ function Portfolio() {
         </div>
         <TabsContainer />
       </div>
-      <Footerinput />
+      <FooterContact />
     </div>
   );
 }

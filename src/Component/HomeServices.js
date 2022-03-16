@@ -26,7 +26,7 @@ export const HomeServices = () => {
   return (
     <div className="homeServices">
       <div className="title">
-        <h2>{data?.title?.az}</h2>
+        <h2>Xidmətlərimiz</h2>
         <Link to="/services">hamısına bax</Link>
       </div>
 
@@ -208,7 +208,7 @@ export const HomeServices = () => {
                     strokeWidth="2"
                   />
                 </svg>
-                <h3>BTL və Təqdimatlar</h3>
+                <h3>{}</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing

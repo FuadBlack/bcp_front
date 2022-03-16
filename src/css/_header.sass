@@ -1,9 +1,10 @@
+
 @import "./_mixin.sass"
+
 .headerDesktop
     padding-top: 10px
     position: relative
     @include flexColumn
-
     .langLogoBar
         @include flexCenter
         ul
@@ -40,34 +41,34 @@
             border: none
             border-radius: 20px
 
-    #burgerMenu
-        @include flexColumn
-        padding: 0 10px
-        &:hover
+        #burgerMenu
+            @include flexColumn
+            padding: 0 10px
+            &:hover
+                span
+                    &:nth-child(1)
+                        transform: translateX(0)
+                    &:nth-child(3)
+                        transform: translateX(0)
             span
+                background-color: #ECF0E6
+                width: 30px
+                height: 4px
+                margin: 4px
+                border-radius: 2px
+                transition: all ease .3s
                 &:nth-child(1)
-                    transform: translateX(0)
+                    transform: translateX(12px)
                 &:nth-child(3)
-                    transform: translateX(0)
-        span
-            background-color: #ECF0E6
-            width: 30px
-            height: 4px
-            margin: 4px
-            border-radius: 2px
-            transition: all ease .3s
-            &:nth-child(1)
-                transform: translateX(12px)
-            &:nth-child(3)
-                transform: translateX(-12px)
-        &.open
-            span
-                &:nth-child(1)
-                    transform: rotate(45deg) translateY(16px)
-                &:nth-child(2)
-                    opacity: 0
-                &:nth-child(3)
-                    transform: rotate(-45deg) translateY(-18px)
+                    transform: translateX(-12px)
+            &.open
+                span
+                    &:nth-child(1)
+                        transform: rotate(45deg) translateY(16px)
+                    &:nth-child(2)
+                        opacity: 0
+                    &:nth-child(3)
+                        transform: rotate(-45deg) translateY(-18px)
 
     .links
         background-image: url("../images/Group120.png")

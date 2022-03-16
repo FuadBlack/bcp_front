@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../css/_info.sass";
 import brain from "../images/brain1.png";
@@ -9,17 +9,22 @@ import behance from "../images/behance.svg";
 import linkedin from "../images/linkedin.svg";
 import facebook from "../images/facebook.svg";
 import "../css/_responsive_info.sass";
+import { Context } from "../Context";
+import { useTranslation } from "react-i18next";
 
-export const Info = ({data}) => {
-  
+export const Info = () => {
+  //get data
+  const { data, setData } = useContext(Context);
 
+  //get translator
+  const { t, i18n } = useTranslation();
 
   return (
     <div className="info">
       <div className="title">
         <h1>{data?.slogan?.az}</h1>
         <Link to="#">
-          <button>layihəyə başla</button>
+          <button>{t("layiheyebasla")}</button>
         </Link>
       </div>
       <div className="brain">
@@ -96,9 +101,7 @@ export const Info = ({data}) => {
             />
           </svg>
 
-          <span>
-           {data?.sm_text?.az}
-          </span>
+          <span>{data?.sm_text?.az}</span>
         </p>
       </div>
     </div>

@@ -51,8 +51,6 @@
   text-decoration: none;
   font-size: 14px;
   line-height: 16.98px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .portofolio_main .breadcrumb_container .breadcrumb .breadcrumb-item.active {
@@ -60,8 +58,6 @@
   font-size: 14px;
   line-height: 17.15px;
   margin-top: 3px;
-  font-family: "g-sb", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .portofolio_main .breadcrumb_container .breadcrumb .breadcrumb-item.active::before {
@@ -79,8 +75,6 @@
 
 .portofolio_main .portfolio_container .title_container h1 {
   color: #E6A250;
-  font-family: "g-b", "Arial", "sans-serif";
-  font-weight: 400;
   font-size: 65px;
   line-height: 67px;
   margin-bottom: 25px;
@@ -96,8 +90,6 @@
 }
 
 .portofolio_main .portfolio_container .title_container .filter_icon span {
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
   font-size: 15px;
   line-height: 12px;
   color: #808080;
@@ -115,8 +107,6 @@
 
 .portofolio_main .portfolio_container .tabs .button_container .btn {
   color: #808080;
-  font-family: "g-sb", "Arial", "sans-serif";
-  font-weight: 400;
   font-size: 16px;
   line-height: 19.6px;
 }
@@ -128,8 +118,6 @@
 }
 
 .portofolio_main .portfolio_container .tabs .allourwork .work_title {
-  font-family: "g-b", "Arial", "sans-serif";
-  font-weight: 400;
   font-size: 30px;
   color: #ECF0E6;
   height: auto;
@@ -137,8 +125,6 @@
 }
 
 .portofolio_main .portfolio_container .tabs .allourwork .work_title sup {
-  font-family: "g-sb", "Arial", "sans-serif";
-  font-weight: 400;
   font-size: 12px;
   line-height: 14.7px;
   margin-bottom: 30px;
@@ -194,8 +180,6 @@
 }
 
 .portofolio_main .portfolio_container .tabs .allourwork .workItems .workItem .name_portfolio div span {
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
   font-size: 14px;
   color: #ECF0E6;
   line-height: 16.98px;
@@ -214,15 +198,11 @@
 
 .portofolio_main .portfolio_container .tabs .allourwork .workItems .workItem .content .title {
   color: #E6A250;
-  font-family: "g-b", "Arial", "sans-serif";
-  font-weight: 400;
   font-size: 45px;
   line-height: 45px;
 }
 
 .portofolio_main .portfolio_container .tabs .allourwork .workItems .workItem .content p {
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
   font-size: 16px;
   line-height: 22px;
   color: #468680;
@@ -232,8 +212,6 @@
 
 .portofolio_main .portfolio_container .tabs .allourwork .workItems .workItem .content .link_more_port {
   text-decoration: none;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
   font-size: 14px;
   line-height: 16.98px;
   color: #ECF0E6;
@@ -259,35 +237,27 @@
   color: #F4A442;
   font-size: 14px;
   line-height: 14px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
   border-radius: 40px;
   height: 40px;
   width: 183px;
 }
 
 .footer_input {
+  width: 1100px;
+  padding: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 113px;
 }
 
 .footer_input .fill_form {
   width: 400px;
   color: #ECF0E6;
-  font-family: "g-sb", "Arial", "sans-serif";
-  font-weight: 400;
   font-size: 45px;
   line-height: 45px;
-}
-
-.footer_input .fill_form span {
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .footer_input .we_call_back {
@@ -303,9 +273,7 @@
 
 .footer_input .we_call_back span {
   color: #ECF0E6;
-  font-family: "g-eb", "Arial", "sans-serif";
-  font-weight: 400;
-  font-size: 65px;
+  fon-size: 65px;
   line-height: 75px;
   padding: 0 43px 0 63px;
   position: relative;
@@ -346,8 +314,6 @@
 }
 
 .footer_input .phone_number_container .phone_number span {
-  font-family: "g-b", "Arial", "sans-serif";
-  font-weight: 400;
   font-size: 30px;
   line-height: 35px;
   color: #ECF0E6;
@@ -358,7 +324,23 @@
   display: -ms-flexbox;
   display: flex;
   grid-gap: 27px;
-  padding: 23px 0 0 89px;
+  margin: 20px;
+  margin-left: 60px;
+}
+
+.footer_input .social_icon a {
+  padding: 10px;
+}
+
+.footer_input .right_side form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  grid-gap: 20px;
 }
 
 .footer_input .right_side form .right_top {
@@ -393,32 +375,24 @@
   color: #FFFFFF;
   font-size: 18px;
   line-height: 20px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .footer_input .right_side form .right_top .name_mail input:-ms-input-placeholder {
   color: #FFFFFF;
   font-size: 18px;
   line-height: 20px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .footer_input .right_side form .right_top .name_mail input::-ms-input-placeholder {
   color: #FFFFFF;
   font-size: 18px;
   line-height: 20px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .footer_input .right_side form .right_top .name_mail input::placeholder {
   color: #FFFFFF;
   font-size: 18px;
   line-height: 20px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .footer_input .right_side form .right_top .number_brief {
@@ -448,8 +422,6 @@
   color: #FFFFFF;
   font-size: 18px;
   line-height: 20px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .footer_input .right_side form .right_top .number_brief input[type='file'] span {
@@ -464,75 +436,60 @@
   color: #FFFFFF;
   font-size: 18px;
   line-height: 20px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .footer_input .right_side form .right_top .number_brief input:-ms-input-placeholder {
   color: #FFFFFF;
   font-size: 18px;
   line-height: 20px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .footer_input .right_side form .right_top .number_brief input::-ms-input-placeholder {
   color: #FFFFFF;
   font-size: 18px;
   line-height: 20px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .footer_input .right_side form .right_top .number_brief input::placeholder {
   color: #FFFFFF;
   font-size: 18px;
   line-height: 20px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .footer_input .right_side form textarea {
+  margin: 30px 0;
   width: 100%;
   height: 122px;
   background: none;
-  margin: 22px 0 10px 0;
-  border: #F4A442 1px solid;
+  margin: 22px 0 10px 0olid;
   border-radius: 5px;
+  border-color: #F4A442;
   padding: 9px 0 0 15px;
-  color: #FFFFFF;
+  color: #F4A442;
 }
 
 .footer_input .right_side form textarea::-webkit-input-placeholder {
   color: #FFFFFF;
   font-size: 18px;
   line-height: 20px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .footer_input .right_side form textarea:-ms-input-placeholder {
   color: #FFFFFF;
   font-size: 18px;
   line-height: 20px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .footer_input .right_side form textarea::-ms-input-placeholder {
   color: #FFFFFF;
   font-size: 18px;
   line-height: 20px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .footer_input .right_side form textarea::placeholder {
   color: #FFFFFF;
   font-size: 18px;
   line-height: 20px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .footer_input .right_side form .button_send {
@@ -550,8 +507,6 @@
 .footer_input .right_side form .button_send .briefDownload {
   text-decoration: none;
   color: #1BB1A1;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
   font-size: 14px;
   line-height: 14px;
 }
@@ -562,15 +517,13 @@
   border: none;
   border-radius: 40px;
   background-color: #F4A442;
-  font-family: "g-b", "Arial", "sans-serif";
-  font-weight: 400;
   font-size: 18px;
   line-height: 20px;
   color: #ffffff;
 }
 
 .footer {
-  padding: 64px 0 10px 0;
+  padding: 30px;
 }
 
 .footer .footer_top {
@@ -590,8 +543,6 @@
 
 .footer .footer_top .menu .link_footer {
   text-decoration: none;
-  font-family: "g-b", "Arial", "sans-serif";
-  font-weight: 400;
   color: #ffffff;
   font-size: 14px;
   line-height: 20px;
@@ -611,9 +562,7 @@
   display: none;
 }
 
-.footer .footer_bottom .all_reserved {
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
+.footer .footer_bottom g-r {
   color: #FFFFFF;
   font-size: 12px;
   line-height: 20px;
@@ -761,16 +710,12 @@
   text-decoration: none;
   font-size: 14px;
   line-height: 16.98px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .about_us .breadcrumb_container .breadcrumb .breadcrumb-item.active {
   color: #E6A250;
   font-size: 14px;
   line-height: 17.15px;
-  font-family: "g-sb", "Arial", "sans-serif";
-  font-weight: 400;
   margin-top: 3px;
 }
 
@@ -779,85 +724,43 @@
   color: #ECF0E6;
 }
 
-.about_us .about_us_container .about_us_title {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[12];
-      grid-template-columns: repeat(12, 1fr);
-}
-
-.about_us .about_us_container .about_us_title .title {
-  -ms-grid-column: 1;
-      grid-column-start: 1;
-  grid-column-end: 5;
+.about_us .about_us_container .row .title h4 {
   color: #F4A442;
   font-size: 65px;
   line-height: 67px;
-  font-family: "g-b", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
-.about_us .about_us_container .about_us_title .content {
-  -ms-grid-column: 8;
-      grid-column-start: 8;
-  grid-column-end: 12;
+.about_us .about_us_container .row .content p {
   font-size: 18px;
   color: #ECF0E6;
   line-height: 35px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .about_us .about_us_container .video img {
   width: 100%;
 }
 
-.about_us .about_us_container .bcp_team_container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[12];
-      grid-template-columns: repeat(12, 1fr);
-  padding: 30px 0 70px 0;
-  border-bottom: 1px solid #757575;
+.about_us .about_us_container .bcpTeam {
+  padding: 20px 0;
 }
 
-.about_us .about_us_container .bcp_team_container .team_name {
-  -ms-grid-column: 1;
-      grid-column-start: 1;
-  grid-column-end: 2;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
-}
-
-.about_us .about_us_container .bcp_team_container .team_name span {
+.about_us .about_us_container .bcpTeam p {
   font-size: 14px;
   line-height: 16px;
   padding-bottom: 6px;
 }
 
-.about_us .about_us_container .bcp_team_container .team_name span:first-child {
+.about_us .about_us_container .bcpTeam p:first-child {
   color: #FFFFFF;
 }
 
-.about_us .about_us_container .bcp_team_container .team_name span:last-child {
+.about_us .about_us_container .bcpTeam p:last-child {
   color: #E6A250;
 }
 
-.about_us .about_us_container .bcp_team_container .content {
-  -ms-grid-column: 6;
-      grid-column-start: 6;
-  grid-column-end: 13;
-  color: #ECF0E6;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
+.about_us .about_us_container .bcpTeam .content2 p {
   font-size: 18px;
+  color: #ECF0E6;
   line-height: 35px;
 }
 
@@ -893,15 +796,38 @@
 .about_us .about_us_container .showreel .showreel_title .content span {
   font-size: 65px;
   line-height: 67px;
-  font-family: "g-b", "Arial", "sans-serif";
-  font-weight: 400;
 }
 
 .about_us .about_us_container .showreel .showreel_title .content .for {
   text-align: end;
-  margin-right: 75px;
-  font-family: "g-r", "Arial", "sans-serif";
-  font-weight: 400;
+  margin-right: 75p;
+}
+
+@media screen and (max-width: 600px) {
+  .about_us .about_us_container .bcpTeam {
+    padding: 10px 0;
+  }
+  .about_us .about_us_container .bcpTeam .title2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .about_us .about_us_container .bcpTeam .title2 p {
+    margin: 0;
+    padding: 0;
+  }
+  .about_us .about_us_container .bcpTeam .content2 {
+    margin: 20px 0;
+    width: 620px;
+  }
+  .about_us .about_us_container .bcpTeam .content2 p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #ECF0E6;
+  }
 }
 
 .ourServices .breadcrumb_container {
@@ -979,7 +905,7 @@
       grid-template-columns: repeat(3, 1fr);
 }
 
-.ourServices_inner .ourServices_inner_container .ourServices_inner_title p {
+.ourServices_inner .ourServices_inner_container .ourServices_inner_title h1 {
   color: #F4A442;
   font-size: 65px;
   line-height: 67px;
@@ -1049,165 +975,165 @@
 }
 
 @media (max-width: 1400px) {
-  .section .portofolio_main .portfolio_container .title_container h1 {
+  .sectionn .portofolio_main .portfolio_container .title_container h1 {
     font-size: 59px;
     line-height: 61px;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content .title {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content .title {
     font-size: 37px;
     line-height: 37px;
   }
-  .section .footer_input .fill_form {
+  .sectionn .footer_input .fill_form {
     font-size: 40px;
     line-height: 40px;
     width: 300px;
   }
-  .section .footer_input .we_call_back span {
+  .sectionn .footer_input .we_call_back span {
     font-size: 60px;
   }
-  .section .about_us .about_us_container .about_us_title .title {
+  .sectionn .about_us .about_us_container .about_us_title .title {
     font-size: 58px;
     line-height: 58px;
   }
-  .section .about_us .about_us_container .bcp_team_container .team_name {
+  .sectionn .about_us .about_us_container .bcp_team_container .team_name {
     grid-column-end: 3;
   }
-  .section .ourServices_inner .ourServices_inner_container .ourServices_inner_title p {
+  .sectionn .ourServices_inner .ourServices_inner_container .ourServices_inner_title p {
     font-size: 60px;
     line-height: 60px;
   }
 }
 
 @media (max-width: 1200px) {
-  .section .portofolio_main .portfolio_container .title_container h1 {
+  .sectionn .portofolio_main .portfolio_container .title_container h1 {
     font-size: 53px;
     line-height: 56px;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .work_title {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .work_title {
     font-size: 28px;
     line-height: 34px;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem {
     -ms-grid-columns: (auto)[2];
         grid-template-columns: repeat(2, auto);
     grid-gap: 30px 20px;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem .name_portfolio {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem .name_portfolio {
     -ms-grid-column: 1;
         grid-column-start: 1;
     grid-column-end: 3;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content .title {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content .title {
     font-size: 35px;
     line-height: 35px;
   }
-  .section .footer_input {
+  .sectionn .footer_input {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     grid-gap: 50px;
   }
-  .section .footer_input .right_side form .right_top {
+  .sectionn .footer_input .right_side form .right_top {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .section .ricon_constraction .ricon_constraction_contain .title {
+  .sectionn .ricon_constraction .ricon_constraction_contain .title {
     font-size: 51px !important;
     line-height: 51px !important;
   }
-  .section .ricon_constraction .ricon_constraction_contain .grid_content .content_item {
+  .sectionn .ricon_constraction .ricon_constraction_contain .grid_content .content_item {
     -ms-grid-column: 5 !important;
         grid-column-start: 5 !important;
   }
-  .section .ricon_constraction .ricon_constraction_contain .branding .about_branding {
+  .sectionn .ricon_constraction .ricon_constraction_contain .branding .about_branding {
     -ms-grid-column: 6 !important;
         grid-column-start: 6 !important;
   }
-  .section .about_us .about_us_container .about_us_title .title {
+  .sectionn .about_us .about_us_container .about_us_title .title {
     font-size: 52px;
     line-height: 52px;
   }
-  .section .about_us .about_us_container .about_us_title .content {
+  .sectionn .about_us .about_us_container .about_us_title .content {
     -ms-grid-column: 7;
         grid-column-start: 7;
   }
-  .section .about_us .about_us_container .showreel .showreel_title .content span {
+  .sectionn .about_us .about_us_container .showreel .showreel_title .content span {
     font-size: 47px;
     line-height: 47px;
   }
-  .section .ourServices_inner .ourServices_inner_container .about_company {
+  .sectionn .ourServices_inner .ourServices_inner_container .about_company {
     -ms-grid-rows: (1fr)[1];
         grid-template-rows: repeat(1, 1fr);
     grid-gap: 12px;
   }
-  .section .ourServices_inner .ourServices_inner_container .about_company .content {
+  .sectionn .ourServices_inner .ourServices_inner_container .about_company .content {
     grid-row-end: 3;
     grid-row-end: 4;
   }
-  .section .ourServices_inner .ourServices_inner_container .about_company .microphone {
+  .sectionn .ourServices_inner .ourServices_inner_container .about_company .microphone {
     -ms-grid-row: 1;
         grid-row-start: 1;
     grid-row-end: 2;
   }
-  .section .ourServices_inner .ourServices_inner_container .about_company .microphone img {
+  .sectionn .ourServices_inner .ourServices_inner_container .about_company .microphone img {
     width: 100%;
   }
 }
 
 @media (max-width: 991px) {
-  .section .portofolio_main .portfolio_container .title_container h1 {
+  .sectionn .portofolio_main .portfolio_container .title_container h1 {
     font-size: 47px;
     line-height: 50px;
   }
-  .section .portofolio_main .portfolio_container .title_container .filter_icon {
+  .sectionn .portofolio_main .portfolio_container .title_container .filter_icon {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .section .portofolio_main .portfolio_container div .button_container {
+  .sectionn .portofolio_main .portfolio_container div .button_container {
     display: none;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .work_title {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .work_title {
     font-size: 26px;
     line-height: 31px;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content {
     -ms-grid-column: 1;
         grid-column-start: 1;
     grid-column-end: 3;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content .title {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content .title {
     font-size: 32px;
     line-height: 32px;
   }
-  .section .ricon_constraction .ricon_constraction_contain .title {
+  .sectionn .ricon_constraction .ricon_constraction_contain .title {
     font-size: 51px !important;
     line-height: 51px !important;
   }
-  .section .ricon_constraction .ricon_constraction_contain .grid_content .content_item {
+  .sectionn .ricon_constraction .ricon_constraction_contain .grid_content .content_item {
     -ms-grid-column: 5 !important;
         grid-column-start: 5 !important;
   }
-  .section .ricon_constraction .ricon_constraction_contain .branding .about_branding {
+  .sectionn .ricon_constraction .ricon_constraction_contain .branding .about_branding {
     -ms-grid-column: 6 !important;
         grid-column-start: 6 !important;
   }
-  .section .about_us .about_us_container .about_us_title .title {
+  .sectionn .about_us .about_us_container .about_us_title .title {
     font-size: 46px;
     line-height: 46px;
   }
-  .section .about_us .about_us_container .about_us_title .content {
+  .sectionn .about_us .about_us_container .about_us_title .content {
     -ms-grid-column: 6;
         grid-column-start: 6;
     grid-column-end: 13;
   }
-  .section .about_us .about_us_container .bcp_team_container {
+  .sectionn .about_us .about_us_container .bcp_team_container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1217,7 +1143,7 @@
             flex-direction: column;
     grid-gap: 35px;
   }
-  .section .about_us .about_us_container .bcp_team_container .team_name {
+  .sectionn .about_us .about_us_container .bcp_team_container .team_name {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1225,21 +1151,21 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .section .about_us .about_us_container .showreel {
+  .sectionn .about_us .about_us_container .showreel {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .section .ourServices_inner .ourServices_inner_container .ourServices_inner_title p {
+  .sectionn .ourServices_inner .ourServices_inner_container .ourServices_inner_title p {
     font-size: 50px;
     line-height: 50px;
   }
-  .section .ourServices_inner .ourServices_inner_container .ourServices_inner_content p {
+  .sectionn .ourServices_inner .ourServices_inner_container .ourServices_inner_content p {
     -ms-grid-column: 1;
         grid-column-start: 1;
   }
-  .section .homeServices .services .services_item {
+  .sectionn .homeServices .services .services_item {
     display: -ms-grid !important;
     display: grid !important;
     -ms-grid-columns: (1fr)[2];
@@ -1249,69 +1175,69 @@
 }
 
 @media (max-width: 768px) {
-  .section .portofolio_main .portfolio_container .title_container h1 {
+  .sectionn .portofolio_main .portfolio_container .title_container h1 {
     font-size: 41px;
     line-height: 44px;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .work_title {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .work_title {
     font-size: 24px;
     line-height: 28px;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     grid-gap: 30px 0px;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem .image {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem .image {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-column: 1 / 3;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem .image img {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem .image img {
     width: 100%;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content {
     -ms-grid-column: 1;
         grid-column-start: 1;
     grid-column-end: 3;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content .title {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content .title {
     font-size: 30px;
     line-height: 30px;
   }
-  .section .footer_input .left_side .fill_form {
+  .sectionn .footer_input .left_side .fill_form {
     font-size: 35px;
     line-height: 35px;
   }
-  .section .footer_input .left_side .we_call_back span {
+  .sectionn .footer_input .left_side .we_call_back span {
     font-size: 55px;
   }
-  .section .footer_input .left_side .phone_number_container {
+  .sectionn .footer_input .left_side .phone_number_container {
     padding-left: 0;
   }
-  .section .footer_input .left_side .phone_number_container .phone_number span {
+  .sectionn .footer_input .left_side .phone_number_container .phone_number span {
     font-size: 25px;
     line-height: 25px;
   }
-  .section .footer_input .right_side form {
+  .sectionn .footer_input .right_side form {
     width: 100%;
   }
-  .section .footer_input .right_side form .right_top {
+  .sectionn .footer_input .right_side form .right_top {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .section .footer_input .right_side form .right_top input {
+  .sectionn .footer_input .right_side form .right_top input {
     width: 100%;
   }
-  .section .footer .footer_top {
+  .sectionn .footer .footer_top {
     display: block;
   }
-  .section .footer .footer_top .logo {
+  .sectionn .footer .footer_top .logo {
     display: none;
   }
-  .section .footer .footer_bottom {
+  .sectionn .footer .footer_bottom {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -1319,22 +1245,22 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  .section .footer .footer_bottom .logo {
+  .sectionn .footer .footer_bottom .logo {
     display: block;
   }
-  .section .ricon_constraction .ricon_constraction_contain .title {
+  .sectionn .ricon_constraction .ricon_constraction_contain .title {
     font-size: 44px !important;
     line-height: 44px !important;
   }
-  .section .ricon_constraction .ricon_constraction_contain .grid_content .content_item {
+  .sectionn .ricon_constraction .ricon_constraction_contain .grid_content .content_item {
     -ms-grid-column: 4 !important;
         grid-column-start: 4 !important;
   }
-  .section .ricon_constraction .ricon_constraction_contain .branding .about_branding {
+  .sectionn .ricon_constraction .ricon_constraction_contain .branding .about_branding {
     -ms-grid-column: 4 !important;
         grid-column-start: 4 !important;
   }
-  .section .about_us .about_us_container .about_us_title {
+  .sectionn .about_us .about_us_container .about_us_title {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1343,30 +1269,30 @@
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .section .about_us .about_us_container .about_us_title .title {
+  .sectionn .about_us .about_us_container .about_us_title .title {
     font-size: 40px;
     line-height: 40px;
   }
-  .section .ourServices_inner .ourServices_inner_container .ourServices_inner_title p {
+  .sectionn .ourServices_inner .ourServices_inner_container .ourServices_inner_title p {
     font-size: 45px;
     line-height: 45px;
     grid-column-end: 4;
   }
-  .section .ourServices_inner .ourServices_inner_container .ourServices_inner_content p {
+  .sectionn .ourServices_inner .ourServices_inner_container .ourServices_inner_content p {
     font-size: 16px;
     line-height: 30px;
   }
-  .section .ourServices_inner .ourServices_inner_container .content_bottom p {
+  .sectionn .ourServices_inner .ourServices_inner_container .content_bottom p {
     font-size: 16px;
     line-height: 30px;
     -ms-grid-column: 1;
         grid-column-start: 1;
   }
-  .section .homeServices .services .services_item {
+  .sectionn .homeServices .services .services_item {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
   }
-  .section .homeServices .services .services_item .services_inner {
+  .sectionn .homeServices .services .services_item .services_inner {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -1374,119 +1300,118 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  .section .header .langLogoBar .language_side {
+  .sectionn .header .langLogoBar .language_side {
     display: none;
   }
 }
 
 @media (max-width: 576px) {
-  .section .portofolio_main .portfolio_container .title_container h1 {
+  .sectionn .portofolio_main .portfolio_container .title_container h1 {
     font-size: 35px;
     line-height: 38px;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .work_title {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .work_title {
     font-size: 22px;
     line-height: 24px;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem .name_portfolio {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem .name_portfolio {
     -ms-grid-row: 2;
         grid-row-start: 2;
     -ms-grid-column: 2;
         grid-column-start: 2;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content {
     -ms-grid-row: 2;
         grid-row-start: 2;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content .title {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content .title {
     font-size: 27px;
     line-height: 27px;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content p {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content p {
     display: none;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content .link_more_port {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content .link_more_port {
     display: none;
   }
-  .section .footer_input .left_side .fill_form {
+  .sectionn .footer_input .left_side .fill_form {
     font-size: 30px;
     line-height: 30px;
   }
-  .section .footer_input .left_side .we_call_back span {
+  .sectionn .footer_input .left_side .we_call_back span {
     font-size: 50px;
   }
-  .section .ricon_constraction .ricon_constraction_contain .title {
+  .sectionn .ricon_constraction .ricon_constraction_contain .title {
     font-size: 37px !important;
     line-height: 37px !important;
   }
-  .section .ricon_constraction .ricon_constraction_contain .grid_content .content_item {
+  .sectionn .ricon_constraction .ricon_constraction_contain .grid_content .content_item {
     -webkit-box-align: start !important;
         -ms-flex-align: start !important;
             align-items: flex-start !important;
     -ms-grid-column: 2 !important;
         grid-column-start: 2 !important;
   }
-  .section .ricon_constraction .ricon_constraction_contain .branding .about_branding {
+  .sectionn .ricon_constraction .ricon_constraction_contain .branding .about_branding {
     -ms-grid-column: 3 !important;
         grid-column-start: 3 !important;
   }
-  .section .about_us .about_us_container .about_us_title .title {
+  .sectionn .about_us .about_us_container .about_us_title .title {
     font-size: 35px;
     line-height: 35px;
   }
-  .section .about_us .about_us_container .showreel .showreel_title .content span {
+  .sectionn .about_us .about_us_container .showreel .showreel_title .content span {
     font-size: 40px;
     line-height: 40px;
   }
-  .section .ourServices_inner .ourServices_inner_container .ourServices_inner_title p {
+  .sectionn .ourServices_inner .ourServices_inner_container .ourServices_inner_title p {
     font-size: 40px;
     line-height: 40px;
   }
 }
 
 @media (max-width: 400px) {
-  .section .portofolio_main .portfolio_container .title_container h1 {
+  .sectionn .portofolio_main .portfolio_container .title_container h1 {
     font-size: 30px;
     line-height: 30px;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .work_title {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .work_title {
     font-size: 20px;
     line-height: 20px;
   }
-  .section .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content .title {
+  .sectionn .portofolio_main .portfolio_container div .allourwork .workItems .workItem .content .title {
     font-size: 25px;
     line-height: 25px;
   }
-  .section .ricon_constraction .ricon_constraction_contain .title {
+  .sectionn .ricon_constraction .ricon_constraction_contain .title {
     font-size: 30px !important;
     line-height: 30px !important;
   }
-  .section .ricon_constraction .ricon_constraction_contain .grid_content .content_item {
+  .sectionn .ricon_constraction .ricon_constraction_contain .grid_content .content_item {
     -ms-grid-column: 1 !important;
         grid-column-start: 1 !important;
     grid-gap: 51px !important;
   }
-  .section .ricon_constraction .ricon_constraction_contain .branding .about_branding {
+  .sectionn .ricon_constraction .ricon_constraction_contain .branding .about_branding {
     -ms-grid-column: 2 !important;
         grid-column-start: 2 !important;
   }
-  .section .about_us .about_us_container .about_us_title .title {
+  .sectionn .about_us .about_us_container .about_us_title .title {
     font-size: 30px;
     line-height: 30px;
   }
-  .section .ourServices_inner .ourServices_inner_container .ourServices_inner_title p {
+  .sectionn .ourServices_inner .ourServices_inner_container .ourServices_inner_title p {
     font-size: 30px;
     line-height: 30px;
   }
 }
 
-.section {
-  background: url("../img/background_img.png");
+.sectionn {
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;

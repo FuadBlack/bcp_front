@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../css/_header.sass";
 import logoBcp from "../images/Group48.svg";
@@ -9,25 +9,26 @@ import youtube from "../images/youtube.svg";
 import behance from "../images/behance.svg";
 import linkedin from "../images/linkedin.svg";
 import facebook from "../images/facebook.svg";
+import i18next from "i18next";
 
-const langs = [
-  { id: 1, name: "az" },
-  { id: 2, name: "ru" },
-  { id: 3, name: "en" },
-];
 export const Header = () => {
+  //Change Lang
+
   const [changLang, setChangLang] = useState(
     localStorage.getItem("language") || "az"
   );
 
-  const changeLanguage = (id) => {
-    localStorage.setItem("language", id);
-    setChangLang(id);
+  const changeLang = (lng) => {
+    i18next.changeLang(lng);
+    console.log(`Language changed to ${lng}`);
   };
 
+  //Open Menu
   const [openMenu, setOpenMenu] = useState("close");
+
+  //togleBurger
   const toggleBurger = () => {
-    let bodyClass = document.querySelector("body").classList;
+    let bodyClass = document.getElementById("root").classList;
     setOpenMenu(openMenu === "open" ? "close" : "open");
 
     if (openMenu === "open") {
@@ -43,6 +44,7 @@ export const Header = () => {
 
   useEffect(() => {
     setOpenMenu("close");
+    console.log(changLang);
   }, [location]);
 
   return (
@@ -51,18 +53,15 @@ export const Header = () => {
         <div className="langLogoBar">
           <div>
             <ul>
-              {langs.map((lang, id) => {
-                return (
-                  <li key={id} onClick={() => changeLanguage(id)}>
-                    <Link
-                      className={changLang == id ? "activeLang" : " "}
-                      to="/"
-                    >
-                      {lang.name}
-                    </Link>
-                  </li>
-                );
-              })}
+              <li onClick={() => changeLang("az")}>
+                <a href="#">az</a>
+              </li>
+              <li onClick={() => changeLang("ru")}>
+                <a href="#">ru</a>
+              </li>
+              <li onClick={() => changeLang("en")}>
+                <a href="#">en</a>
+              </li>
             </ul>
           </div>
           <div className="logoBcp">
@@ -139,18 +138,11 @@ export const Header = () => {
               </Link>
             </div>
             <ul>
-              {langs.map((lang, id) => {
-                return (
-                  <li key={id} onClick={() => changeLanguage(id)}>
-                    <Link
-                      className={changLang == id ? "activeLang" : " "}
-                      to="/"
-                    >
-                      {lang.name}
-                    </Link>
-                  </li>
-                );
-              })}
+              {/* <li>
+                <Link className={changLang == id ? "activeLang" : " "} to="/">
+                  {lang.name}
+                </Link>
+              </li> */}
             </ul>
             <div
               id="burgerMenuMobile"
@@ -168,9 +160,9 @@ export const Header = () => {
           >
             <div className="langLogoBar d-flex justify-content-between">
               <ul>
-                {langs.map((lang, id) => {
+                {/* {langs.map((lang, id) => {
                   return (
-                    <li key={id} onClick={() => changeLanguage(id)}>
+                    <li key={id}>
                       <Link
                         className={changLang == id ? "activeLang" : " "}
                         to="/"
@@ -179,7 +171,7 @@ export const Header = () => {
                       </Link>
                     </li>
                   );
-                })}
+                })} */}
               </ul>
               <div
                 id="burgerMenuMobile"
