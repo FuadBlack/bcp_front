@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../css/_projects.sass";
 import shape from "../images/Shape.svg";
-import wibty from "../images/wibty.png";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 export const Projects = () => {
+  const { t, i18n } = useTranslation();
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -14,7 +15,7 @@ export const Projects = () => {
 
   const fetchData = async () => {
     await axios
-      .get("http://192.168.1.25:5555/api/projects")
+      .get("http://192.168.1.8:5555/api/projects")
       .then((res) => {
         setData(res.data);
       })
@@ -40,14 +41,14 @@ export const Projects = () => {
             </ol>
           </nav>
         </div>
-        <h2>Porfoliomuz</h2>
+        <h2>Layihələrimiz</h2>
         <div className="project">
           {data.map((project, id) => (
             <div key={id} className="row">
               <div className="col-md-8 d-flex align-items-center">
-                <h3 className="header">{project?.data?.title?.az}</h3>
+                <h3 className="header">{project?.data?.title?.[i18n.language]}</h3>
                 <div className="infoDiv">
-                  <p className="info">{project?.data?.text?.az}</p>
+                  <p className="info">{project?.data?.text?.[i18n.language]}</p>
                   <div className="goTo">
                     <Link to={project?.data?.url}>keçid et</Link>
                     <img src={shape} alt="" />

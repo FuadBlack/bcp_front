@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 
 function Button({ button, filter }) {
-  const [btn, setCahngeButton] = useState('btn');
+  const [btn, setCahngeButton] = useState('');
   console.log(setCahngeButton);
   return (
     <div className="button_container">
       {button.map((cat, i) => {
         return (
           <button
+            key={i}
             type="button"
             onClick={() => {
-              filter(cat);
-              setCahngeButton(btn === 'btn' ? 'btn active' : 'btn');
+              filter(cat.slug);
+              setCahngeButton(cat.slug);
             }}
-            className={btn}
+            className={btn === cat.slug ? 'btn active' : 'btn'}
           >
-            {cat}
+            {cat.slug}
           </button>
         );
       })}

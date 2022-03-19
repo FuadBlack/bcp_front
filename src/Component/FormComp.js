@@ -1,8 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as yup from "yup";
 import axios from "axios";
-
+import { Context } from "../Context";
+import { useTranslation } from "react-i18next";
 const validationSchema = yup.object().shape({
   name: yup
     .string()
@@ -14,36 +15,39 @@ const validationSchema = yup.object().shape({
     .required("Zəhmət olmasa bu xananı doldurun")
     .positive()
     .integer("")
-    .min(4, "Minimum 4 rəqəm"),
+    .min(4, "Minimum 4 rəqəm olamalıdır"),
   email: yup.string().required("Zəhmət olmasa bu xananı doldurun"),
   file: yup.mixed().required("Zəhmət olmasa bu xananı doldurun"),
 });
 
 export const FormComp = () => {
-  
-  const handleSubmit = async (data) => {    
+  const { data, setData } = useContext(Context);
+  const { i18n, t } = useTranslation();
+
+  const handleSubmit = async (data) => {
     let formData = new FormData();
+    console.log(data);
     formData.append("name", data.name);
     formData.append("email", data.email);
     formData.append("phone", data.phone);
-    formData.append("textarea", data.textarea);
+    formData.append("text", data.text);
     formData.append("file", data.file);
-      
+
     await axios({
       method: "post",
-      url: "http://192.168.1.25:5555/api/add",
+      url: "http://192.168.1.8:5555/api/add",
       data: formData,
       config: { headers: { "Content-Type": "multipart/form-data" } },
     })
-    .then(function (response) {
-      //handle success
-      console.log(response);
-      alert("New User Successfully Added.");
-    })
-    .catch(function (response) {
-      //handle error
-      console.log(response);
-    });
+      .then(function (response) {
+        //handle success
+        console.log(response);
+        alert("New User Successfully Added.");
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response);
+      });
   };
 
   const initialValues = {
@@ -51,7 +55,7 @@ export const FormComp = () => {
     phone: "",
     email: "",
     file: "",
-    textarea: "",
+    text: "",
   };
   return (
     <div className="">
@@ -59,7 +63,7 @@ export const FormComp = () => {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
-      > 
+      >
         {({ setFieldValue }) => (
           <Form>
             <div className="form">
@@ -70,7 +74,7 @@ export const FormComp = () => {
                       name="name"
                       autofill
                       type="text"
-                      placeholder="Adınız"
+                      placeholder={t("adiniz")}
                     />
                     <ErrorMessage
                       name="name"
@@ -79,7 +83,7 @@ export const FormComp = () => {
                     />
                   </div>
                   <div className="email form-group">
-                    <Field name="email" type="email" placeholder="E-poçt" />
+                    <Field name="email" type="email" placeholder={t("mail")} />
                     <ErrorMessage
                       name="email"
                       component="div"
@@ -89,7 +93,11 @@ export const FormComp = () => {
                 </div>
                 <div className="col-md-6">
                   <div className="phone form-group">
-                    <Field name="phone" type="text" placeholder="Nömrəniz" />
+                    <Field
+                      name="phone"
+                      type="text"
+                      placeholder={t("nomreniz")}
+                    />
                     <ErrorMessage
                       name="phone"
                       component="div"
@@ -103,12 +111,12 @@ export const FormComp = () => {
                         id="file"
                         name="file"
                         type="file"
-                        placeholder="Brief yüklə"
+                        placeholder={t("brief")}
                         value={undefined}
                         onChange={(event) => {
-                          setFieldValue('file', event.currentTarget.files[0]);
+                          setFieldValue("file", event.currentTarget.files[0]);
                         }}
-                      />                        
+                      />
                     </label>
                     <ErrorMessage
                       name="file"
@@ -120,19 +128,21 @@ export const FormComp = () => {
                 <div className="textarea form-group">
                   <Field
                     as="textarea"
-                    name="textarea"
-                    placeholder="Layihə haqqında"
-                    cols="30"
-                    row="5"
+                    name="text"
+                    placeholder={t("layihehaqqinda")}
+                    cols="30" 
+                    row="3"
                   />
                   <ErrorMessage
-                    name="textarea"
+                    name="text"
                     component="div"
-                    className="text-danger"
+                    classNam
+                    e="text-danger"
                   />
-                </div>
-                <div className="form-group">
-                  <button type="submit">Göndər</button>
+                  <div className="form-group d-flex justify-content-between">
+                    <div></div>
+                    <button type="submit">{t("gonder")}</button>
+                  </div>
                 </div>
               </div>
             </div>

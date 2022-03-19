@@ -1,4 +1,3 @@
-import "./assets/css/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { Suspense, useEffect, useState } from "react";
 import {
@@ -8,7 +7,7 @@ import {
   Routes,
 } from "react-router-dom";
 import "./App.sass";
-import './i18n';
+import "./i18n";
 
 import { Home } from "./Component/Home";
 import { Header } from "./Component/Header";
@@ -23,7 +22,6 @@ import OurServicesInner from "./Component/OurServices_inner";
 import { Context } from "./Context";
 import axios from "axios";
 
-
 function App() {
   //Api
   const [data, setData] = useState([]);
@@ -34,7 +32,7 @@ function App() {
 
   const fetchData = async () => {
     await axios
-      .get("http://192.168.1.25:5555/api/main")
+      .get("http://192.168.1.8:5555/api/main")
       .then((res) => {
         setData(res.data);
       })
@@ -45,30 +43,28 @@ function App() {
 
   return (
     <div className="App">
-      <Suspense fallback={null}>
-        <Context.Provider value={{ data, setData }}>
-          <Router>
-            <Routes>
-              <Route path="/" element={<Layout/>}>
-                <Route path="/" element={<Home />} />
-                <Route path="portfolio" element={<Portfolio />} />
-                <Route
-                  path="portfolio/riconConstraction"
-                  element={<RiconConstraction />}
-                />
-                <Route
-                  path="services/OurServices_inner"
-                  element={<OurServicesInner />}
-                />
-                <Route path="projects" element={<Projects />} />
-                <Route path="contact" element={<Contact />} />
-                <Route path="aboutUs" element={<AboutUs />} />
-                <Route path="services" element={<Services />} />
-              </Route>
-            </Routes>
-          </Router>
-        </Context.Provider>
-      </Suspense>
+      <Context.Provider value={{ data, setData }}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="portfolio" element={<Portfolio />} />
+              <Route
+                path="portfolio/riconConstraction"
+                element={<RiconConstraction />}
+              />
+              <Route
+                path="services/OurServices_inner"
+                element={<OurServicesInner />}
+              />
+              <Route path="projects" element={<Projects />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="aboutUs" element={<AboutUs />} />
+              <Route path="services" element={<Services />} />
+            </Route>
+          </Routes>
+        </Router>
+      </Context.Provider>
     </div>
   );
 }

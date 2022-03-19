@@ -1,3 +1,4 @@
+@import "./_vars.sass"
 .about_us
     .breadcrumb_container
         padding-bottom: 54px
@@ -62,13 +63,15 @@
                 .content
                     display: flex
                     flex-direction: column
-                    color: #F4A442
+
                     span
+                        +g-b
                         font-size: 65px
                         line-height: 67px
+                        color: #E6A250
                     .for
-                        text-align: end
-                        margin-right: 75p
+                        +g-r
+                        margin-left: 60px
 
     @media screen and ( max-width: 600px )
         .about_us_container

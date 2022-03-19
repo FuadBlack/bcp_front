@@ -70,16 +70,27 @@
 
 @media screen and ( max-width: 600px)
     .homePortfolio
-        padding: 10px
+        display: flex
+        flex-direction: column
+        align-items: center
+
         .title
-            padding: 0
-            margin: 0
+            margin-bottom: 20px
+
             display: flex
             justify-content: space-between
+            h2
+                font-size: 30px
+                transform: translateX(-7px)
+
+            a
+                transform: translateX(70px)
+
         .slider
             display: none
         .sliderMobile
             display: block
+            transform: translateX(-10px)
             img
                 margin: auto
                 width: 380px

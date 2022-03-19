@@ -2,15 +2,10 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../css/_info.sass";
 import brain from "../images/brain1.png";
-import insta from "../images/insta.svg";
-import dribble from "../images/dribble.svg";
-import youtube from "../images/youtube.svg";
-import behance from "../images/behance.svg";
-import linkedin from "../images/linkedin.svg";
-import facebook from "../images/facebook.svg";
 import "../css/_responsive_info.sass";
 import { Context } from "../Context";
 import { useTranslation } from "react-i18next";
+import { Socials } from "./Socials";
 
 export const Info = () => {
   //get data
@@ -22,7 +17,7 @@ export const Info = () => {
   return (
     <div className="info">
       <div className="title">
-        <h1>{data?.slogan?.az}</h1>
+        <h1>{data?.slogan?.[i18n.language]}</h1>
         <Link to="#">
           <button>{t("layiheyebasla")}</button>
         </Link>
@@ -49,38 +44,9 @@ export const Info = () => {
         <div className="dot_brain">
           <a href="#"></a>
         </div>
-        <ul className="socialLinks">
-          <li>
-            <Link to="/">
-              <img src={insta} alt="" />
-            </Link>
-          </li>
-          <li>
-            <Link to="/">
-              <img src={dribble} alt="" />
-            </Link>
-          </li>
-          <li>
-            <Link to="/">
-              <img src={youtube} alt="" />
-            </Link>
-          </li>
-          <li>
-            <Link to="/">
-              <img src={behance} alt="" />
-            </Link>
-          </li>
-          <li>
-            <Link to="/">
-              <img src={linkedin} alt="" />
-            </Link>
-          </li>
-          <li>
-            <Link to="/">
-              <img src={facebook} alt="" />
-            </Link>
-          </li>
-        </ul>
+        <div className="socialLinks">
+          <Socials/>
+        </div>
       </div>
       <div className="info_content">
         <p>
@@ -101,7 +67,7 @@ export const Info = () => {
             />
           </svg>
 
-          <span>{data?.sm_text?.az}</span>
+          <span>{data?.text?.[i18n.language]}</span>
         </p>
       </div>
     </div>

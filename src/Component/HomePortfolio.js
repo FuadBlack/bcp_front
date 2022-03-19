@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../css/_homePortfolio.sass";
 import { sliderImages } from "./sliderImages";
+import { useTranslation } from "react-i18next";
 
 export const HomePortfolio = () => {
+  const { i18n, t } = useTranslation();
+
   const [current, setCurrent] = useState(0);
   const length = sliderImages.length;
 
@@ -23,21 +26,22 @@ export const HomePortfolio = () => {
   return (
     <div className="homePortfolio ">
       <div className="title">
-        <h2>Portfoliomuz</h2>
-        <Link to="/portfolio">hamısına bax</Link>
+        <h2>{t("portfoliomuz")}</h2>
+        <Link to="/portfolio">{t("hamisinabax")}</Link>
       </div>
 
       <div className="slider row">
         <div className="col-md-8">
           {sliderImages.map((val, index) => (
-            <div
-              className={index === current ? "slideActive" : "slide"}
-              key={index}
-            >
-              {index === current && <img key={index} src={val.image} alt="" />}
+            <div key={index}>
+              <div className={index === current ? "slideActive" : "slide"}>
+                {index === current && (
+                  <img key={index} src={val.image} alt="" />
+                )}
+              </div>
+              <h3>{val.name}</h3>
             </div>
           ))}
-          <h3>Ricon constraction</h3>
         </div>
         <div className="right col-md-4">
           <p>Brendinq</p>
@@ -110,8 +114,10 @@ export const HomePortfolio = () => {
         {sliderImages.map((images, id) => (
           <div key={id}>
             <img src={images.image} alt="" width="370px" />
-            <h3>{images.name}</h3>
-            <p>{images.info}</p>
+            <div className="info text-start">
+              <h3>{images.name}</h3>
+              <p>{images.info}</p>
+            </div>
           </div>
         ))}
       </div>

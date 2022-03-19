@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 
 function All({ menuItem }) {
+
+console.log(menuItem)
+
   return (
     <div className="allourwork">
       <h1 className="work_title">

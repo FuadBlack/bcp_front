@@ -1,7 +1,7 @@
-import i18next from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import { en, az, ru } from './locales';
+import i18next from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+import { az, en, ru } from "./locales";
 
 const resources = {
   az,
@@ -11,15 +11,15 @@ const resources = {
 
 const detectionOptions = {
   // order and from where user language should be detected
-  order: ['localStorage', 'path', 'cookie'],
+  order: ["localStorage", "path", "cookie"],
 
   // keys or params to lookup language from
-  lookupCookie: 'i18next',
-  lookupLocalStorage: 'i18nextLnguage',
+  lookupCookie: "i18next",
+  lookupLocalStorage: "i18nextLnguage",
   lookupFromPathIndex: 0,
 
   // cache user language on
-  caches: ['localStorage', 'cookie'],
+  caches: ["localStorage", "cookie"],
 
   // optional expire and domain for set cookie
   cookieMinutes: 10000,
@@ -31,11 +31,11 @@ i18next
   .use(initReactI18next)
   .init({
     resources,
-    // lng: 'az',
-    fallbackLng: 'az',
-    load: 'languageOnly',
-    whitelist: ['az', 'ru', 'en'],
-    // keySeparator: false,
+    //lng: "az",
+    fallbackLng: "az",
+    load: "languageOnly",
+    whitelist: ["az", "en", "ru"],
+    // keySeparator:  false,
     detection: detectionOptions,
     interpolation: {
       escapeValue: false,

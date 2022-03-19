@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import video from "../assets/img/bcp_team.png";
+import React, { useState, useEffect, useRef } from "react";
 import showreel_music from "../assets/img/showreel_music.png";
 import showreel_img from "../assets/img/showreel_img.svg";
 import { Link } from "react-router-dom";
 import "../assets/css/_aboutUs.sass";
 import axios from "axios";
-
+import { useTranslation } from "react-i18next";
 
 const AboutUs = () => {
+  const { t, i18n } = useTranslation();
 
   const [data, setData] = useState([]);
 
@@ -17,7 +17,7 @@ const AboutUs = () => {
 
   const fetchData = async () => {
     await axios
-      .get("http://pony.bcptest.online/api/about")
+      .get("http://192.168.1.8:5555/api/about")
       .then((res) => {
         setData(res.data);
       })
@@ -45,38 +45,44 @@ const AboutUs = () => {
       <div className="about_us_container">
         <div className="row">
           <div className="title col-md-6">
-            <h4>{data?.title?.az}</h4>
+            <h4>Haqqmızda</h4>
           </div>
           <div className="content col-md-6">
-            <p>
-            {data?.sm_text?.az}
-            </p>
+            <p>{data?.text_up?.[i18n.language]}</p>
           </div>
         </div>
 
         <div className="video">
-          <img src={data?.cover} />
+          <img src={data?.image} />
         </div>
 
         <div className="bcpTeam row">
           <div className="title2 col-md-6 ">
             <p>BCP Komandası</p>
-            <p>{data?.starter_date}</p>
+            <p>2021 noyabr</p>
           </div>
           <div className="content2 col-md-6">
-            <p>
-              {data?.long_text?.az}
-            </p>
+            <p>{data?.text_end?.[i18n.language]}</p>
           </div>
         </div>
         <div className="showreel">
-          <img src={showreel_music} />
-          <div className="showreel_title">
-            <div>
-              <img src={showreel_img} />
+          <div className="row">
+            <div className="col-md-6">
+              <img src={showreel_music} />
             </div>
-            <div className="content">
-           {data?.show_reel_text?.az}
+            <div className="col-md-6">
+              <div className="showreel_title">
+                <div>
+                  <img src={showreel_img} />
+                </div>
+                <div className="content">
+                  <span>{data?.text?.[i18n.language].split(" ", 3)}</span>
+                  <span className="for">
+                    {data?.text?.[i18n.language].split(" ", 2)}
+                  </span>
+                  <span>{data?.text?.[i18n.language].split(" ", 7)}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

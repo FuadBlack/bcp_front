@@ -7,26 +7,6 @@ import axios from "axios";
 
 export const Services = () => {
 
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    await axios
-      .get("http://pony.bcptest.online/api/services")
-      .then((res) => {
-        setData(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-
-
 
 
   return (

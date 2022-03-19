@@ -4,7 +4,7 @@
 .headerDesktop
     padding-top: 10px
     position: relative
-    @include flexColumn
+
     .langLogoBar
         @include flexCenter
         ul
@@ -31,14 +31,19 @@
             visibility: visible
             color: white
             background: #1BB1A1
-            padding: 5px 20px
+            padding: 5px 20px 5.5px 20px
             border: none
             border-radius: 20px
+            text-align: center
+            display: flex
+            align-self: center
+            transition: all .2s ease
+            &:hover
+                background: #E6A250
         .btnInvisible
             transform: translateX(220px)
             visibility: hidden
             color: white
-            background: #1BB1A1
             padding: 10px
             border: none
             border-radius: 20px
@@ -74,9 +79,8 @@
 
     .links
         background-image: url("../images/Group120.png")
-        background-position: top right left
         position: absolute
-        width: 1100px
+        width: 1150px
         visibility: hidden
         opacity: 0
         transition: opacity .2s, visibility .5s
@@ -107,17 +111,12 @@
                         font-weight: 700
         .link2
             margin: auto 0
-            @include flexColumn
-            height: 200px
             width: 80%
             flex-wrap: wrap
-            li
-                list-style: none
-                width: 20%
-                a
-                    text-decoration: none
-                    font-size: 16px
-                    color: #F4A442
+            a
+                text-decoration: none
+                font-size: 16px
+                color: #F4A442
 .headerMobile
     display: none
 
@@ -129,6 +128,7 @@
         display: none
     .headerMobile
         display: block
+        padding-top: 20px
         .langLogoBar
             z-index: 12
             @include flexCenter()
