@@ -7,23 +7,22 @@
     .fill_form
         width: 400px
         color: #ECF0E6
-
         font-size: 45px
         line-height: 45px
         span
-            g-r
+            +g-r
     .we_call_back
         display: flex
         flex-direction: column
         padding: 16px 0 56px 0
         span
             color: #ECF0E6
-            g-eb
-            fon-size: 65px
+            +g-eb
+            font-size: 65px
             line-height: 75px
             padding: 0 43px 0 63px
             position: relative
-            z-index: 10
+            z-index: 1
         span::before
             content: ''
             position: absolute
@@ -43,7 +42,7 @@
             flex-direction: column
             grid-gap: 11px
             span
-                g-b
+                +g-b
                 font-size: 30px
                 line-height: 35px
                 color: #ECF0E6
@@ -53,6 +52,9 @@
         padding: 23px 0 0 89px
     .right_side
         form
+            display: flex
+            flex-direction: column
+            grid-gap: 20px
             .right_top
                 display: flex
                 grid-gap: 42px
@@ -72,7 +74,7 @@
                         color: #FFFFFF
                         font-size: 18px
                         line-height: 20px
-                        g-r
+                        +g-r
                 .number_brief
                     display: flex
                     flex-direction: column
@@ -86,14 +88,8 @@
                         color: #FFFFFF
                         border-radius: 0px
                         &[type='file']
+                            display: none
                             &::-webkit-file-upload-button
-                                background: none
-                                border: none
-                                color: #FFFFFF
-                                font-size: 18px
-                                line-height: 20px
-                                g-r
-                            span
                                 display: none
                         &::-webkit-inner-spin-button
                             display: none
@@ -101,7 +97,7 @@
                         color: #FFFFFF
                         font-size: 18px
                         line-height: 20px
-                    g-r
+                        +g-r
             textarea
                 width: 100%
                 height: 122px
@@ -110,11 +106,12 @@
                 border-radius: 5px
                 padding: 9px 0 0 15px
                 color: #FFFFFF
-                &::placeholder
-                    color: #FFFFFF
-                    font-size: 18px
-                    line-height: 20px
-                    g-r
+                border: 1px #F4A442 solid
+            textarea::placeholder
+                color: #FFFFFF
+                font-size: 18px
+                line-height: 20px
+                +g-r
             .button_send
                 display: flex
                 justify-content: space-between
@@ -122,7 +119,7 @@
                 .briefDownload
                     text-decoration: none
                     color: #1BB1A1
-                    g-r
+                    +g-r
                     font-size: 14px
                     line-height: 14px
                 .send_button
@@ -131,9 +128,7 @@
                     border: none
                     border-radius: 40px
                     background-color: #F4A442
-                    g-b
+                    +g-b
                     font-size: 18px
                     line-height: 20px
                     color: #ffffff
-
-

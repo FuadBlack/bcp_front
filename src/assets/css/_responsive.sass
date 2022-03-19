@@ -1,5 +1,5 @@
 @media (max-width:1400px)
-    .section
+    .sectionn
         .portofolio_main
             .portfolio_container
                 .title_container
@@ -39,7 +39,7 @@
                         line-height: 60px
 
 @media (max-width:1200px)
-    .section
+    .sectionn
         .portofolio_main
             .portfolio_container
                 .title_container
@@ -109,18 +109,15 @@
                             width: 100%
 
 @media (max-width: 991px)
-    .section
+    .sectionn
         .portofolio_main
             .portfolio_container
                 .title_container
                     h1
                         font-size: 47px
                         line-height: 50px
-                    .filter_icon
-                        display: flex
+
                 div
-                    .button_container
-                        display: none
                     .allourwork
                         .work_title
                             font-size: 26px
@@ -128,6 +125,11 @@
                         .workItems
                             .workItem
                                 grid-template-columns: auto
+                                .image
+                                    grid-column-start: 1
+                                    grid-column-end: 3
+                                    img
+                                        width: 100%
                                 .content
                                     grid-column-start: 1
                                     grid-column-end: 3
@@ -180,14 +182,18 @@
                     grid-gap: 115px
 
 @media (max-width: 768px)
-    .section
+    .sectionn
         .portofolio_main
             .portfolio_container
                 .title_container
                     h1
                         font-size: 41px
                         line-height: 44px
+                    .filter_icon
+                        display: flex
                 div
+                    .button_container
+                        display: none
                     .allourwork
                         .work_title
                             font-size: 24px
@@ -285,7 +291,7 @@
                     display: none
 
 @media (max-width: 576px)
-    .section
+    .sectionn
         .portofolio_main
             .portfolio_container
                 .title_container
@@ -300,6 +306,7 @@
                         .workItems
                             .workItem
                                 align-items: center
+                                grid-template-columns: 1fr 1fr
                                 .name_portfolio
                                     grid-row-start: 2
                                     grid-column-start: 2
@@ -352,7 +359,7 @@
                         line-height: 40px
 
 @media (max-width: 400px)
-    .section
+    .sectionn
         .portofolio_main
             .portfolio_container
                 .title_container
