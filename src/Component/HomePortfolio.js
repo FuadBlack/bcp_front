@@ -54,7 +54,7 @@ export const HomePortfolio = () => {
         <div className="right col-md-4">
           <p>Brendinq</p>
           <div className="buttons">
-            <button className="left" onClick={handlePrev}>
+            <button type="button" className="left" onClick={handlePrev}>
               <span className="button">
                 <svg
                   width="60"
@@ -85,7 +85,7 @@ export const HomePortfolio = () => {
                 </svg>
               </span>
             </button>
-            <div className="right" onClick={handleNext}>
+            <button type="button" className="right" onClick={handleNext}>
               <span className="button">
                 <svg
                   width="60"
@@ -114,7 +114,7 @@ export const HomePortfolio = () => {
                   />
                 </svg>
               </span>
-            </div>
+            </button>
           </div>
         </div>
       </div>
