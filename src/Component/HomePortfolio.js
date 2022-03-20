@@ -3,26 +3,32 @@ import { Link } from "react-router-dom";
 import "../css/_homePortfolio.sass";
 import { sliderImages } from "./sliderImages";
 import { useTranslation } from "react-i18next";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
 
 export const HomePortfolio = () => {
   const { i18n, t } = useTranslation();
 
-  const [current, setCurrent] = useState(0);
   const length = sliderImages.length;
 
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-  };
+  const sliderRef = React.useRef(null);
 
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
+  const handlePrev = React.useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slidePrev();
+  }, []);
 
-  console.log(current);
+  const handleNext = React.useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slideNext();
+  }, []);
 
   if (!Array.isArray(sliderImages) || length <= 0) {
     return null;
   }
+
+
   return (
     <div className="homePortfolio ">
       <div className="title">
@@ -32,21 +38,23 @@ export const HomePortfolio = () => {
 
       <div className="slider row">
         <div className="col-md-8">
-          {sliderImages.map((val, index) => (
-            <div key={index}>
-              <div className={index === current ? "slideActive" : "slide"}>
-                {index === current && (
+            <Swiper
+              spaceBetween={50}
+              slidesPerView={1}
+              ref={sliderRef}
+            >
+              {sliderImages.map((val, index) => (
+                <SwiperSlide>
                   <img key={index} src={val.image} alt="" />
-                )}
-              </div>
-              <h3>{val.name}</h3>
-            </div>
-          ))}
+                  <h3>{val.name}</h3>
+                </SwiperSlide>
+              ))}
+          </Swiper>
         </div>
         <div className="right col-md-4">
           <p>Brendinq</p>
           <div className="buttons">
-            <div className="left" onClick={prevSlide}>
+            <button className="left" onClick={handlePrev}>
               <span className="button">
                 <svg
                   width="60"
@@ -76,8 +84,8 @@ export const HomePortfolio = () => {
                   />
                 </svg>
               </span>
-            </div>
-            <div className="right" onClick={nextSlide}>
+            </button>
+            <div className="right" onClick={handleNext}>
               <span className="button">
                 <svg
                   width="60"
