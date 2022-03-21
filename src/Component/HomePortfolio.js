@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useCallback } from "react";
 import { Link } from "react-router-dom";
 import "../css/_homePortfolio.sass";
 import { sliderImages } from "./sliderImages";
 import { useTranslation } from "react-i18next";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import 'swiper/css';
+import "swiper/css";
 
 export const HomePortfolio = () => {
   const { i18n, t } = useTranslation();
@@ -14,12 +14,12 @@ export const HomePortfolio = () => {
 
   const sliderRef = React.useRef(null);
 
-  const handlePrev = React.useCallback(() => {
+  const handlePrev = useCallback(() => {
     if (!sliderRef.current) return;
     sliderRef.current.swiper.slidePrev();
   }, []);
 
-  const handleNext = React.useCallback(() => {
+  const handleNext = useCallback(() => {
     if (!sliderRef.current) return;
     sliderRef.current.swiper.slideNext();
   }, []);
@@ -27,7 +27,6 @@ export const HomePortfolio = () => {
   if (!Array.isArray(sliderImages) || length <= 0) {
     return null;
   }
-
 
   return (
     <div className="homePortfolio ">
@@ -38,21 +37,19 @@ export const HomePortfolio = () => {
 
       <div className="slider row">
         <div className="col-md-8">
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={1}
-              ref={sliderRef}
-            >
-              {sliderImages.map((val, index) => (
+          <Swiper spaceBetween={50} slidesPerView={1} ref={sliderRef}>
+            {sliderImages.map((val, index) => (
+              <div className="swiper">
                 <SwiperSlide>
                   <img key={index} src={val.image} alt="" />
                   <h3>{val.name}</h3>
                 </SwiperSlide>
-              ))}
+              </div>
+            ))}
           </Swiper>
         </div>
         <div className="right col-md-4">
-          <p>Brendinq</p>
+          <p>Brending</p>
           <div className="buttons">
             <button type="button" className="left" onClick={handlePrev}>
               <span className="button">
@@ -115,6 +112,19 @@ export const HomePortfolio = () => {
                 </svg>
               </span>
             </button>
+          </div>
+          <div
+            class="progress"
+            style={{ height: "1px", transform: "translateX(110px)" }}
+          >
+            <div
+              className="progress-bar"
+              role="progressbar"
+              style={{ width: "25%", backgroundColor: "#F4A442" }}
+              aria-valuenow="25"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
           </div>
         </div>
       </div>
