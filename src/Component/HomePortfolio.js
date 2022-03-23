@@ -1,4 +1,4 @@
-import React, { useState,useCallback } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "../css/_homePortfolio.sass";
 import { sliderImages } from "./sliderImages";
@@ -12,21 +12,30 @@ export const HomePortfolio = () => {
 
   const length = sliderImages.length;
 
+  const [slide, setActiveSlide] = useState({
+    active: 1,
+    multiplier: 100 / length 
+  });
+
   const sliderRef = React.useRef(null);
 
   const handlePrev = useCallback(() => {
     if (!sliderRef.current) return;
     sliderRef.current.swiper.slidePrev();
+    setActiveSlide(prev => ({ ...prev, active: sliderRef.current.swiper.activeIndex + 1}));
   }, []);
 
   const handleNext = useCallback(() => {
     if (!sliderRef.current) return;
     sliderRef.current.swiper.slideNext();
+    setActiveSlide(prev => ({ ...prev, active: sliderRef.current.swiper.activeIndex + 1}));
   }, []);
 
   if (!Array.isArray(sliderImages) || length <= 0) {
     return null;
   }
+
+  
 
   return (
     <div className="homePortfolio ">
@@ -120,7 +129,7 @@ export const HomePortfolio = () => {
             <div
               className="progress-bar"
               role="progressbar"
-              style={{ width: "25%", backgroundColor: "#F4A442" }}
+              style={{ width: `${slide.multiplier * slide.active }%`, backgroundColor: "#F4A442" }}
               aria-valuenow="25"
               aria-valuemin="0"
               aria-valuemax="100"
