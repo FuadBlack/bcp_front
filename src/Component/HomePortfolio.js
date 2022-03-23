@@ -58,7 +58,9 @@ export const HomePortfolio = () => {
           </Swiper>
         </div>
         <div className="right col-md-4">
-          <p>Brending</p>
+          <p>
+            {sliderImages[slide.active - 1].name || null}
+          </p>
           <div className="buttons">
             <button type="button" className="left" onClick={handlePrev}>
               <span className="button">
