@@ -64,9 +64,9 @@ export const HomePortfolio = () => {
         <div className="right col-md-4">
           <p>{sliderImages[slide.active - 1].name || null}</p>
           <div className="buttons">
-            <button type="button" className="left" onClick={handlePrev}>
+            <button type="button" className="left" >
               {slide.active <= 1 ? (
-              <span>
+              <span onClick={handlePrev}>
                 <svg
                   width="60"
                   height="118"
@@ -86,7 +86,7 @@ export const HomePortfolio = () => {
                 </svg>
               </span>
               ) : (
-              <span>
+              <span onClick={handlePrev}>
                 <svg
                   width="60"
                   height="118"
@@ -106,9 +106,9 @@ export const HomePortfolio = () => {
               </span>
               )}
             </button>
-            <button type="button" className="right" onClick={handleNext}>
+            <button type="button" className="right" >
                 {slide.active < length ? (
-                <span>
+                <span onClick={handleNext}>
                   <svg
                     width="60"
                     height="118"
@@ -127,7 +127,7 @@ export const HomePortfolio = () => {
                   </svg>
                 </span>
                 ) : (
-                <span>
+                <span onClick={handleNext}>
                   <svg
                     width="60"
                     height="118"

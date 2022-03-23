@@ -23,19 +23,20 @@ export const Header = () => {
 
   //togleBurger
   const toggleBurger = () => {
-    let body = document.getElementById("body");
+    let body = document.getElementById("root");
     setOpenMenu(openMenu === "open" ? "close" : "open");
 
-    // if (openMenu === "open") {
-    //   setOpenMenu("close");
-    //   body.style.overflow = "scroll";
-    // } else {
-    //   setOpenMenu("open");
-    //   body.style.overflow = "hidden";
-    // }
     if (openMenu === "open") {
-      body.classList.toggle("d-none");
+      setOpenMenu("close");
+      body.classList.remove("hideScroll");
+    } else {
+      setOpenMenu("open");
+      body.classList.add("hideScroll");
     }
+
+    // if (openMenu === "open") {
+    //   body.classList.toggle("d-none");
+    // }
   };
 
   let location = useLocation();
