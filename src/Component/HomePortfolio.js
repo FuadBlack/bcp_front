@@ -1,4 +1,4 @@
-import React, { useState,useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "../css/_homePortfolio.sass";
 import { sliderImages } from "./sliderImages";
@@ -115,7 +115,7 @@ export const HomePortfolio = () => {
           </div>
           <div
             class="progress"
-            style={{ height: "1px", transform: "translateX(110px)" }}
+            style={{ height: "1.5px", transform: "translateX(110px)" }}
           >
             <div
               className="progress-bar"

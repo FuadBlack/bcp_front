@@ -26,13 +26,15 @@ export const Header = () => {
     let body = document.getElementById("root");
     setOpenMenu(openMenu === "open" ? "close" : "open");
 
-    if (openMenu === "open") {
-      setOpenMenu("close");
-      body.style.overflow = "scroll";
-    } else {
-      setOpenMenu("open");
-      body.style.overflow = "hidden";
-    }
+    // if (openMenu === "open") {
+    //   setOpenMenu("close");
+    //   body.style.overflow = "scroll";
+    // } else {
+    //   setOpenMenu("open");
+    //   body.style.overflow = "hidden";
+    // }
+
+    body.classList.toggle("hideScroll");
   };
 
   let location = useLocation();
@@ -246,7 +248,7 @@ export const Header = () => {
                   <Link to="/aboutUs">{t("about")}</Link>
                 </li>
                 <li>
-                  <Link to="/about">{t("projects")}</Link>
+                  <Link to="/aboutUs">{t("projects")}</Link>
                 </li>
                 <li>
                   <Link to="/contact">{t("contact")}</Link>

@@ -1,5 +1,5 @@
 import React from "react";
-import showreelPlay from "../images/ShowreelPlay.svg";
+import showreelText from "../images/showreelText.png";
 import text from "../images/Text.svg";
 import "../css/_showReel.sass";
 
@@ -7,17 +7,10 @@ export const ShowreelText = () => {
   return (
     <div className="d-flex justify-content-between align-items-center px-4">
       <div className="showReel">
-        <svg viewBox="0 0 500 500">
-          <path
-            id="curve"
-            d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97"
-          />
-          <text width="500">
-            <textPath href="#curve">Dangerous Curves Ahead</textPath>
-          </text>
-        </svg>
+        <img src={showreelText} alt="" width="100px" />
 
         <svg
+          id="play"
           width="29"
           height="29"
           viewBox="0 0 29 29"
