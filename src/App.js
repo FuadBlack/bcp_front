@@ -32,9 +32,10 @@ function App() {
 
   const fetchData = async () => {
     await axios
-      .get("http://192.168.1.8:5555/api/main")
+      .get("http://192.168.1.11:1111/api/main")
       .then((res) => {
         setData(res.data);
+    
       })
       .catch((err) => {
         console.log(err);

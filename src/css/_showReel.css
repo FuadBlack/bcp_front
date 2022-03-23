@@ -15,11 +15,11 @@
 }
 
 .showReel #play {
-  transform: translateX(-63px);
+  transform: translate(-64px, -2px);
 }
 
 .showReel img {
-  animation: rotateText infinite 20s linear;
+  animation: rotateText infinite 5s linear;
 }
 
 @keyframes rotateText {

@@ -23,7 +23,7 @@ export const Header = () => {
 
   //togleBurger
   const toggleBurger = () => {
-    let body = document.getElementById("root");
+    let body = document.getElementById("body");
     setOpenMenu(openMenu === "open" ? "close" : "open");
 
     // if (openMenu === "open") {
@@ -33,8 +33,9 @@ export const Header = () => {
     //   setOpenMenu("open");
     //   body.style.overflow = "hidden";
     // }
-
-    body.classList.toggle("hideScroll");
+    if (openMenu === "open") {
+      body.classList.toggle("d-none");
+    }
   };
 
   let location = useLocation();

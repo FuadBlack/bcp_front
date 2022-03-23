@@ -36,13 +36,19 @@
             padding: 0
             width: 200px
             transform: translate(10px,15px)
+            .num
+                span
+                    color: "#F4A442"
+                        
             p
-                transform: translate(140px,-30px) 
+                transform: translate(50px,-30px) 
                 color: #9B9B9B
                 font-size: 30px
                 font-weight: 400
                 margin: 0
                 padding: 0
+                width: 300px
+                text-align: center
 
         .buttons
             cursor: pointer
@@ -60,6 +66,13 @@
                     transform: translateX(-45px) translateY(44px)
             .right
                 transform: translateX(-8px) translateY(-60px)
+                
+            .left
+                .active
+                    transform: translateX(-100px)
+
+                   
+            
         .slide
             opacity: 0
             transition: opacity 1s ease

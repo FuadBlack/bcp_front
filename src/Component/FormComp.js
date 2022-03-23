@@ -35,7 +35,7 @@ export const FormComp = () => {
 
     await axios({
       method: "post",
-      url: "http://192.168.1.8:5555/api/add",
+      url: "http://192.168.1.11:1111/api/add",
       data: formData,
       config: { headers: { "Content-Type": "multipart/form-data" } },
     })
@@ -130,7 +130,7 @@ export const FormComp = () => {
                     as="textarea"
                     name="text"
                     placeholder={t("layihehaqqinda")}
-                    cols="30" 
+                    cols="30"
                     row="3"
                   />
                   <ErrorMessage
