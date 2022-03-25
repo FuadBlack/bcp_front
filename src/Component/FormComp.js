@@ -69,7 +69,7 @@ export const FormComp = () => {
         {({ setFieldValue }) => (
           <Form>
             <div className="form row">
-              <div className="col1">
+              <div className="col1 col-md-6">
                 <div className="name form-group">
                   <Field
                     name="name"
@@ -92,7 +92,7 @@ export const FormComp = () => {
                   />
                 </div>
               </div>
-              <div className="col2">
+              <div className="col2 col-md-6">
                 <div className="phone form-group">
                   <Field name="phone" type="text" placeholder={t("nomreniz")} />
                   <ErrorMessage

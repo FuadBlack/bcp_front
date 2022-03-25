@@ -43,12 +43,19 @@ const AboutUs = () => {
         </nav>
       </div>
       <div className="about_us_container">
-        <div className="row">
-          <div className="title col-md-6">
-            <h4>Haqqmızda</h4>
+        <div className="about_us_title">
+          <div className="title">
+            <h4>Haqqımızda</h4>
           </div>
-          <div className="content col-md-6">
-            <p>{data?.text_up?.[i18n.language]}</p>
+          <div className="content">
+            <p>
+              Şirkət yarandığı gündən, müştərilərimizə öz bizneslərini inkişaf
+              etdirmək üçün rəqəmsal həllər təklif edib. Həmçinin, bu müddətdə
+              yaddaqalan brendlər və müasir dizaynlar hazırlayırıq. Hər il öz
+              texniki bazamızı biraz daha gücləndiririk. Güclü texniki baza və
+              təcrübə hazırladığımız məhsulları ən yaxşı şəkildə ortaya
+              çıxarmağa kömək edir.
+            </p>
           </div>
         </div>
 
@@ -56,13 +63,30 @@ const AboutUs = () => {
           <img src={data?.image} />
         </div>
 
-        <div className="bcpTeam row">
-          <div className="title2 col-md-6 ">
+        <div className="bcp_team_container">
+          <div className="team_name">
             <p>BCP Komandası</p>
             <p>2021 noyabr</p>
           </div>
-          <div className="content2 col-md-6">
-            <p>{data?.text_end?.[i18n.language]}</p>
+          <div className="content2">
+            <p>
+              Şirkət yarandığı gündən, müştərilərimizə öz bizneslərini inkişaf
+              etdirmək üçün rəqəmsal həllər təklif edib. Həmçinin, bu müddətdə
+              yaddaqalan brendlər və müasir dizaynlar hazırlayırıq. Hər il öz
+              texniki bazamızı biraz daha gücləndiririk. Güclü texniki baza və
+              təcrübə hazırladığımız məhsulları ən yaxşı şəkildə ortaya
+              çıxarmağa kömək edir. Şirkət yarandığı gündən, müştərilərimizə öz
+              bizneslərini inkişaf etdirmək üçün rəqəmsal həllər təklif edib.
+              Həmçinin, bu müddətdə yaddaqalan brendlər və müasir dizaynlar
+              hazırlayırıq. Hər il öz texniki bazamızı biraz daha gücləndiririk.
+              Güclü texniki baza və təcrübə hazırladığımız məhsulları ən yaxşı
+              şəkildə ortaya çıxarmağa kömək edir. Şirkət yarandığı gündən,
+              müştərilərimizə öz bizneslərini inkişaf etdirmək üçün rəqəmsal
+              həllər təklif edib. Həmçinin, bu müddətdə yaddaqalan brendlər və
+              müasir dizaynlar hazırlayırıq. Hər il öz texniki bazamızı biraz
+              daha gücləndiririk. Güclü texniki baza və təcrübə hazırladığımız
+              məhsulları şəkildə ortaya çıxarmağa kömək edir.
+            </p>
           </div>
         </div>
         <div className="showreel">

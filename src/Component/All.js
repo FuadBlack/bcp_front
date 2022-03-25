@@ -1,35 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-
+import portfolioShape from '../assets/img/portfolio_shape.svg';
 
 function All({ menuItem }) {
-
-console.log(menuItem)
-
+  console.log(menuItem);
   return (
     <div className="allourwork">
-      <h1 className="work_title">
-        Bütün işlərimiz<sup>55</sup>
-      </h1>
       <div className="workItems">
-        {menuItem.map((item) => {
+        {menuItem?.data?.map((item, key) => {
           return (
-            <Link to="RiconConstruction" className="workItem" key={item.id}>
+            <Link to={item?.slug} className="workItem" key={item?.slug}>
               <div className="name_portfolio">
                 <div>
-                  <span>{item.name_portfolio_1span}</span>
-                  <span>{item.name_portfolio_2span}</span>
+                  <span>{item?.start_date.slice(0, 4)}</span>
+                  <span>qısametrajlı film</span>
                 </div>
               </div>
               <div className="image">
-                <img src={item.img} />
+                <img src={item?.image} />
               </div>
               <div className="content">
-                <div className="title">{item.contentTitle}</div>
-                <p>{item.contentp}</p>
+                <div className="title">{item?.title?.az}</div>
+                <p>
+                  {item?.text_up?.az}
+                </p>
                 <Link to="/" className="link_more_port">
-                  <span>{item.contentLinkSpan}</span>
-                  <img src={item.contentLinkimg} />
+                  <span>Proyekt haqqında daha ətraflı</span>
+                  <img src={portfolioShape} />
                 </Link>
               </div>
             </Link>

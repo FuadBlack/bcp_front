@@ -1,0 +1,120 @@
+.about_us .breadcrumb_container {
+  padding-bottom: 54px;
+}
+
+.about_us .breadcrumb_container .breadcrumb {
+  padding-bottom: 5.5px;
+  border-bottom: 1px solid #5E5E5E;
+  align-items: center;
+}
+
+.about_us .breadcrumb_container .breadcrumb .breadcrumb_item_link {
+  color: #ECF0E6;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 16.98px;
+}
+
+.about_us .breadcrumb_container .breadcrumb .breadcrumb-item.active {
+  color: #E6A250;
+  font-size: 14px;
+  line-height: 17.15px;
+  margin-top: 3px;
+}
+
+.about_us .breadcrumb_container .breadcrumb .breadcrumb-item.active::before {
+  content: ">";
+  color: #ECF0E6;
+}
+
+.about_us .about_us_container .about_us_title {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.about_us .about_us_container .about_us_title .title {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.about_us .about_us_container .about_us_title .title h4 {
+  color: #F4A442;
+  font-size: 65px;
+  line-height: 67px;
+}
+
+.about_us .about_us_container .about_us_title .content {
+  grid-column-start: 8;
+  grid-column-end: 12;
+}
+
+.about_us .about_us_container .about_us_title .content p {
+  font-size: 18px;
+  color: #ECF0E6;
+  line-height: 35px;
+}
+
+.about_us .about_us_container .video img {
+  width: 100%;
+}
+
+.about_us .about_us_container .bcp_team_container {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.about_us .about_us_container .bcp_team_container .team_name p {
+  font-size: 14px;
+  line-height: 16px;
+  padding-bottom: 6px;
+}
+
+.about_us .about_us_container .bcp_team_container .team_name p:first-child {
+  color: #FFFFFF;
+}
+
+.about_us .about_us_container .bcp_team_container .team_name p:last-child {
+  color: #E6A250;
+}
+
+.about_us .about_us_container .bcp_team_container .content2 {
+  grid-column-start: 6;
+  grid-column-end: 13;
+}
+
+.about_us .about_us_container .bcp_team_container .content2 p {
+  font-size: 18px;
+  color: #ECF0E6;
+  line-height: 35px;
+}
+
+.about_us .about_us_container .showreel {
+  padding-top: 56px;
+  display: flex;
+  grid-gap: 27px;
+}
+
+.about_us .about_us_container .showreel .showreel_title {
+  display: flex;
+  grid-gap: 47px;
+  align-items: center;
+}
+
+.about_us .about_us_container .showreel .showreel_title .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.about_us .about_us_container .showreel .showreel_title .content span {
+  font-family: "g-b", "Arial", "sans-serif";
+  font-weight: 700;
+  font-size: 65px;
+  line-height: 67px;
+  color: #E6A250;
+}
+
+.about_us .about_us_container .showreel .showreel_title .content .for {
+  text-align: end;
+  margin-right: 75px;
+}

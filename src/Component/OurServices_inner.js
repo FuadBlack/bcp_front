@@ -1,34 +1,24 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import microphone from '../assets/img/microphone.png';
 
 const OurServicesInner = () => {
-
-  const [data, setData] = useState([]);
-
+  const [data, setDataApi] = useState([]);
+  //API portfolios
   useEffect(() => {
     fetchData();
   }, []);
-
   const fetchData = async () => {
     await axios
-      .get("http://pony.bcptest.online/api/services")
+      .get('http://192.168.1.6:5555/api/service')
       .then((res) => {
-        setData(res.data);
-        console.log(res.data);
+        setDataApi(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
-
-
-
-
-
-
   return (
     <div className="ourServices_inner">
       <div className="breadcrumb_container">
@@ -45,57 +35,36 @@ const OurServicesInner = () => {
           </ol>
         </nav>
       </div>
-      <div className="ourServices_inner_container">
-        <div className="ourServices_inner_title">
-          <h1>
-            Səsyazma <br /> və musiqi xidməti
-          </h1>
-        </div>
-        <div className="ourServices_inner_content">
-          <p>
-            Şirkət yarandığı gündən, müştərilərimizə öz bizneslərini inkişaf
-            etdirmək üçün rəqəmsal həllər təklif edib. Həmçinin, bu müddətdə
-            yaddaqalan brendlər və müasir dizaynlar hazırlayırıq. Hər il öz
-            texniki bazamızı biraz daha gücləndiririk. Güclü texniki baza və
-            təcrübə hazırladığımız məhsulları ən yaxşı şəkildə ortaya çıxarmağa
-            kömək edir. Şirkət yarandığı gündən, müştərilərimizə öz bizneslərini
-            inkişaf etdirmək üçün rəqəmsal həllər təklif edib. Həmçinin, bu
-            müddətdə yaddaqalan brendlər və müasir dizaynlar hazırlayırıq.{' '}
-          </p>
-        </div>
-        <div className="about_company">
-          <div className="content">
-            <p>
-              Şirkət yarandığı gündən, müştərilərimizə öz bizneslərini inkişaf
-              etdirmək üçün rəqəmsal həllər təklif edib. Həmçinin, bu müddətdə
-              yaddaqalan brendlər və müasir dizaynlar hazırlayırıq. Hər il öz
-              texniki bazamızı biraz daha gücləndiririk. Güclü texniki baza və
-              təcrübə hazırladığımız məhsulları ən yaxşı şəkildə ortaya
-              çıxarmağa kömək edir. Şirkət yarandığı gündən, müştərilərimizə öz
-              bizneslərini inkişaf etdirmək üçün rəqəmsal həllər təklif edib.
-              Həmçinin, bu müddətdə yaddaqalan brendlər və müasir dizaynlar
-              hazırlayırıq. Şirkət yarandığı gündən, müştərilərimizə öz
-              bizneslərini inkişaf etdirmək üçün rəqəmsal həllər təklif edib.{' '}
-            </p>
-            <ul></ul>
+      {data?.slice(0, 1).map((item) => {
+        return (
+          <div className="ourServices_inner_container">
+            <div className="ourServices_inner_title">
+              <p>{item?.title?.az}</p>
+            </div>
+            <div className="ourServices_inner_content">
+              <p>
+                {item?.text_up?.az}
+              </p>
+            </div>
+            <div className="about_company">
+              <div className="content">
+                <p>
+                  {item?.text_middle?.az}
+                </p>
+                <ul></ul>
+              </div>
+              <div className="microphone">
+                <img src={item?.image} />
+              </div>
+            </div>
+            <div className="content_bottom">
+              <p>
+                {item?.text_end?.az}
+              </p>
+            </div>
           </div>
-          <div className="microphone">
-            <img src={microphone} />
-          </div>
-        </div>
-        <div className="content_bottom">
-          <p>
-            Şirkət yarandığı gündən, müştərilərimizə öz bizneslərini inkişaf
-            etdirmək üçün rəqəmsal həllər təklif edib. Həmçinin, bu müddətdə
-            yaddaqalan brendlər və müasir dizaynlar hazırlayırıq. Hər il öz
-            texniki bazamızı biraz daha gücləndiririk. Güclü texniki baza və
-            təcrübə hazırladığımız məhsulları ən yaxşı şəkildə ortaya çıxarmağa
-            kömək edir. Şirkət yarandığı gündən, müştərilərimizə öz bizneslərini
-            inkişaf etdirmək üçün rəqəmsal həllər təklif edib. Həmçinin, bu
-            müddətdə yaddaqalan brendlər və müasir dizaynlar hazırlayırıq.{' '}
-          </p>
-        </div>
-      </div>
+        );
+      })}
     </div>
   );
 };

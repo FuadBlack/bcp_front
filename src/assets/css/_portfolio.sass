@@ -11,13 +11,13 @@
                 text-decoration: none
                 font-size: 14px
                 line-height: 16.98px
-                // g-r
+                +g-r
             .breadcrumb-item.active
                 color: #E6A250
                 font-size: 14px
                 line-height: 17.15px
                 margin-top: 3px
-                // +g-sb
+                +g-sb
             .breadcrumb-item.active::before
                 content: url('../img/breadcrumb.svg')
 
@@ -25,9 +25,10 @@
         .title_container
             display: flex
             justify-content: space-between
+            align-items: center
             h1
                 color: #E6A250
-                
+                +g-b
                 font-size: 65px
                 line-height: 67px
                 margin-bottom: 25px
@@ -35,25 +36,38 @@
                 display: none
                 flex-direction: column
                 grid-gap: 4px
+                cursor: pointer
                 span
 
                     font-size: 15px
                     line-height: 12px
                     color: #808080
         .tabs
-            .button_container
-                display: flex
-                justify-content: space-between
-                border-bottom: 1px #808080 solid
+            .swiper-wrapper
+                display: flex !important
+                justify-content: space-between !important
+                &::before
+                    position: absolute
+                    background-color: #808080
+                    width: 72px
+                    height: 2px
+                .swiper-slide
+                    width: max-content !important
                 .btn
                     color: #808080
 
                     font-size: 16px
                     line-height: 19.6px
+                    border: none
+                    &:hover
+                        border: none
                     &.active
                         color: #1BB1A1
-                        border-bottom: #1BB1A1
+                        border: none
+                        border-bottom: #1BB1A1 3px solid
                         border-radius: 0px
+                    &:focus
+                        box-shadow: none
             .allourwork
                 .work_title
 
@@ -71,6 +85,7 @@
                     display: flex
                     flex-direction: column
                     grid-gap: 33px
+                    margin-top: 60px
                     .workItem
                         display: grid
                         grid-template-columns: repeat(3 , auto)
@@ -89,7 +104,7 @@
                                     content: url(../img/name_portfolio.svg)
                                     position: absolute
                                     z-index: 0
-                                    left: 19px
+                                    left: 25px
                                 span
 
                                     font-size: 14px
@@ -100,6 +115,7 @@
                                     &:last-child
                                         display: flex
                                         align-items: flex-end
+
                         .content
                             .title
                                 color: #E6A250
@@ -130,7 +146,82 @@
                 color: #F4A442
                 font-size: 14px
                 line-height: 14px
-                g-r
+                +g-r
                 border-radius: 40px
                 height: 40px
                 width: 183px
+.filter_mobile
+    // display: none
+    position: fixed
+    width: 100%
+    height: 100%
+    opacity: 1
+    visibility: hidden
+    transition: opacity .10s, visibility .10s, width .10s
+    top: 0
+    left: 0
+    z-index: 250
+    &::before
+        content: ''
+        right: -105%
+        top: 0
+        width: 100%
+        height: 100%
+        position: absolute
+        transition: right .30s ease
+        background-image: url('../img/filter_mobile.png')
+        background-repeat: no-repeat
+        background-size: cover
+        z-index: -1
+    &.active
+        visibility: visible
+        height: 100%
+        &::before
+            right: 0
+    .close
+        width: max-content
+        height: max-content
+        display: flex
+        flex-direction: column
+        grid-gap: 10px
+        position: absolute
+        right: 9px
+        top: 20px
+        cursor: pointer
+        z-index: 2
+        span
+            background-color: #ECF0E6
+            width: 30px
+            height: 4px
+            margin: 4px
+            border-radius: 2px
+            &:nth-child(1)
+                transform: rotate(45deg) translateY(15px)
+            &:nth-child(2)
+                transform: rotate(-45deg) translateY(-16px)
+    .filter_button_mobile
+        position: relative
+        z-index: 2
+        display: flex
+        flex-direction: column
+        grid-gap: 28px
+        align-items: center
+        justify-content: center
+        text-align: center
+        top: 50%
+        transform: translateY(-50%)
+        .btn
+            color: #808080
+            +g-sb
+            font-size: 22px
+            line-height: 26.95px
+            border: none
+            &:hover
+                border: none
+            &.active
+                color: #1BB1A1
+                border: none
+                border-bottom: #1BB1A1 3px solid
+                border-radius: 0px
+            &:focus
+                box-shadow: none

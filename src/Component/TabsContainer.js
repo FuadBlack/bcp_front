@@ -1,15 +1,14 @@
-import { React, useEffect, useState } from "react";
-import All from "./All";
-import Data from "./data";
-import Button from "./Button";
-import axios from "axios";
+import { React, useState } from 'react';
+import All from './All';
+import Data from './data';
+import Buttons from './Button';
 
-const TabsContainer = () => {
+const allCategories = ['Hamısı', ...new Set(Data.map((item) => item.category))];
+console.log(allCategories);
+
+const TabsContainer = ( {data} ) => {
   const [menuItem, setMenuItem] = useState(Data);
-  const [buttons, setButtons] = useState([]);
-
-
-
+  const [buttons] = useState(allCategories);
   const filter = (button) => {
     if (button === "Hamısı") {
       setMenuItem(Data);
@@ -20,11 +19,10 @@ const TabsContainer = () => {
     setMenuItem(filteredData);
     console.log('salam qaqas')
   };
-
   return (
     <div className="tabs">
-      <Button button={buttons} filter={filter} />
-      <All menuItem={menuItem} />
+      <Buttons button={buttons} filter={filter} />
+      <All menuItem={data} />
       <div className="button_div">
         <button className="load_more">daha çox bax</button>
       </div>

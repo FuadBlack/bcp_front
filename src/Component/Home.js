@@ -7,9 +7,9 @@ import { ShowreelText } from "./ShowreelText";
 import FooterContact from "./FooterContact";
 import axios from "axios";
 import "../css/_home.sass"
+
 export const Home = () => {
  
-
 
   return (
     <div>

@@ -26,11 +26,12 @@
             .about_us_container
                 .about_us_title
                     .title
-                        font-size: 58px
-                        line-height: 58px
+                        h4
+                            font-size: 58px
+                            line-height: 58px
                 .bcp_team_container
                     .team_name
-                        grid-column-end: 3
+                        grid-column-start: 1
         .ourServices_inner
             .ourServices_inner_container
                 .ourServices_inner_title
@@ -84,8 +85,9 @@
             .about_us_container
                 .about_us_title
                     .title
-                        font-size: 52px
-                        line-height: 52px
+                        h4
+                            font-size: 52px
+                            line-height: 52px
                     .content
                         grid-column-start: 7
                 .showreel
@@ -116,11 +118,8 @@
                     h1
                         font-size: 47px
                         line-height: 50px
-                    .filter_icon
-                        display: flex
+
                 div
-                    .button_container
-                        display: none
                     .allourwork
                         .work_title
                             font-size: 26px
@@ -128,6 +127,11 @@
                         .workItems
                             .workItem
                                 grid-template-columns: auto
+                                .image
+                                    grid-column-start: 1
+                                    grid-column-end: 3
+                                    img
+                                        width: 100%
                                 .content
                                     grid-column-start: 1
                                     grid-column-end: 3
@@ -149,8 +153,9 @@
             .about_us_container
                 .about_us_title
                     .title
-                        font-size: 46px
-                        line-height: 46px
+                        h4
+                            font-size: 46px
+                            line-height: 46px
                     .content
                         grid-column-start: 6
                         grid-column-end: 13
@@ -179,7 +184,7 @@
                     grid-template-columns: repeat(2, 1fr)
                     grid-gap: 115px
 
-@media (max-width: 770px)
+@media (max-width: 768px)
     .sectionn
         .portofolio_main
             .portfolio_container
@@ -187,7 +192,11 @@
                     h1
                         font-size: 41px
                         line-height: 44px
+                    .filter_icon
+                        display: flex
                 div
+                    .button_container
+                        display: none
                     .allourwork
                         y.work_title
                             font-size: 24px
@@ -260,8 +269,18 @@
                     display: flex
                     flex-direction: column
                     .title
-                        font-size: 40px
-                        line-height: 40px
+                        h4
+                            font-size: 40px
+                            line-height: 40px
+                    .content
+                        p
+                            font-size: 16px
+                            line-height: 30px
+                .bcpTeam
+                    .content2
+                        p
+                            font-size: 16px
+                            line-height: 30px
         .ourServices_inner
             .ourServices_inner_container
                 .ourServices_inner_title
@@ -306,6 +325,7 @@
                         .workItems
                             .workItem
                                 align-items: center
+                                grid-template-columns: 1fr 1fr
                                 .name_portfolio
                                     grid-row-start: 2
                                     grid-column-start: 2
@@ -342,8 +362,9 @@
             .about_us_container
                 .about_us_title
                     .title
-                        font-size: 35px
-                        line-height: 35px
+                        h4
+                            font-size: 35px
+                            line-height: 35px
                 .showreel
                     .showreel_title
                         .content
@@ -392,11 +413,17 @@
             .about_us_container
                 .about_us_title
                     .title
-                        font-size: 30px
-                        line-height: 30px
+                        h4
+                            font-size: 30px
+                            line-height: 30px
         .ourServices_inner
             .ourServices_inner_container
                 .ourServices_inner_title
                     p
                         font-size: 30px
                         line-height: 30px
+@media (max-width: 320px)
+    .sectionn
+        .footer_input
+            .social_icon
+                padding: 23px 0 0 24px

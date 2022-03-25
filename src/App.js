@@ -1,5 +1,5 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import React, { Suspense, useEffect, useState } from "react";
+import "./assets/css/App.css";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Outlet,
@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import "./App.sass";
 import "./i18n";
-
 import { Home } from "./Component/Home";
 import { Header } from "./Component/Header";
 import AboutUs from "./Component/aboutUs";
@@ -35,7 +34,6 @@ function App() {
       .get("http://192.168.1.6:5555/api/main")
       .then((res) => {
         setData(res.data);
-    
       })
       .catch((err) => {
         console.log(err);
