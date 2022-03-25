@@ -22,11 +22,11 @@ const AboutUs = () => {
         </nav>
       </div>
       <div className="about_us_container">
-        <div className="row">
-          <div className="title col-md-6">
+        <div className="about_us_title">
+          <div className="title">
             <h4>Haqqımızda</h4>
           </div>
-          <div className="content col-md-6">
+          <div className="content">
             <p>
               Şirkət yarandığı gündən, müştərilərimizə öz bizneslərini inkişaf
               etdirmək üçün rəqəmsal həllər təklif edib. Həmçinin, bu müddətdə
@@ -42,12 +42,12 @@ const AboutUs = () => {
           <img src={video} />
         </div>
 
-        <div className="bcpTeam row">
-          <div className="title2 col-md-6 ">
+        <div className="bcp_team_container">
+          <div className="team_name">
             <p>BCP Komandası</p>
             <p>2021 noyabr</p>
           </div>
-          <div className="content2 col-md-6">
+          <div className="content2">
             <p>
               Şirkət yarandığı gündən, müştərilərimizə öz bizneslərini inkişaf
               etdirmək üçün rəqəmsal həllər təklif edib. Həmçinin, bu müddətdə

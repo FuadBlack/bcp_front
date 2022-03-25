@@ -218,7 +218,7 @@
   content: url(../img/name_portfolio.svg);
   position: absolute;
   z-index: 0;
-  left: 19px;
+  left: 25px;
 }
 
 .portofolio_main .portfolio_container .tabs .allourwork .workItems .workItem .name_portfolio div span {
@@ -347,9 +347,10 @@
           flex-direction: column;
   grid-gap: 10px;
   position: absolute;
-  right: 38px;
-  top: 55px;
+  right: 9px;
+  top: 20px;
   cursor: pointer;
+  z-index: 2;
 }
 
 .filter_mobile .close span {
@@ -380,7 +381,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  grid-gap: 38px;
+  grid-gap: 28px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -764,6 +765,7 @@
 
 .footer .footer_bottom .logo {
   display: none;
+  width: 100%;
 }
 
 .footer .footer_bottom .all_reserved {
@@ -928,13 +930,32 @@
   color: #ECF0E6;
 }
 
-.about_us .about_us_container .row .title h4 {
+.about_us .about_us_container .about_us_title {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+}
+
+.about_us .about_us_container .about_us_title .title {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.about_us .about_us_container .about_us_title .title h4 {
   color: #F4A442;
   font-size: 65px;
   line-height: 67px;
 }
 
-.about_us .about_us_container .row .content p {
+.about_us .about_us_container .about_us_title .content {
+  -ms-grid-column: 8;
+      grid-column-start: 8;
+  grid-column-end: 12;
+}
+
+.about_us .about_us_container .about_us_title .content p {
   font-size: 18px;
   color: #ECF0E6;
   line-height: 35px;
@@ -944,25 +965,35 @@
   width: 100%;
 }
 
-.about_us .about_us_container .bcpTeam {
+.about_us .about_us_container .bcp_team_container {
   padding: 20px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
 }
 
-.about_us .about_us_container .bcpTeam p {
+.about_us .about_us_container .bcp_team_container .team_name p {
   font-size: 14px;
   line-height: 16px;
   padding-bottom: 6px;
 }
 
-.about_us .about_us_container .bcpTeam p:first-child {
+.about_us .about_us_container .bcp_team_container .team_name p:first-child {
   color: #FFFFFF;
 }
 
-.about_us .about_us_container .bcpTeam p:last-child {
+.about_us .about_us_container .bcp_team_container .team_name p:last-child {
   color: #E6A250;
 }
 
-.about_us .about_us_container .bcpTeam .content2 p {
+.about_us .about_us_container .bcp_team_container .content2 {
+  -ms-grid-column: 6;
+      grid-column-start: 6;
+  grid-column-end: 13;
+}
+
+.about_us .about_us_container .bcp_team_container .content2 p {
   font-size: 18px;
   color: #ECF0E6;
   line-height: 35px;
@@ -1005,33 +1036,6 @@
 .about_us .about_us_container .showreel .showreel_title .content .for {
   text-align: end;
   margin-right: 75px;
-}
-
-@media screen and (max-width: 600px) {
-  .about_us .about_us_container .bcpTeam {
-    padding: 10px 0;
-  }
-  .about_us .about_us_container .bcpTeam .title2 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .about_us .about_us_container .bcpTeam .title2 p {
-    margin: 0;
-    padding: 0;
-  }
-  .about_us .about_us_container .bcpTeam .content2 {
-    margin: 20px 0;
-    width: 620px;
-  }
-  .about_us .about_us_container .bcpTeam .content2 p {
-    font-size: 16px;
-    line-height: 24px;
-    color: #ECF0E6;
-  }
 }
 
 .ourServices .breadcrumb_container {
@@ -1195,12 +1199,13 @@
   .sectionn .footer_input .we_call_back span {
     font-size: 60px;
   }
-  .sectionn .about_us .about_us_container .about_us_title .title {
+  .sectionn .about_us .about_us_container .about_us_title .title h4 {
     font-size: 58px;
     line-height: 58px;
   }
   .sectionn .about_us .about_us_container .bcp_team_container .team_name {
-    grid-column-end: 3;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
   }
   .sectionn .ourServices_inner .ourServices_inner_container .ourServices_inner_title p {
     font-size: 60px;
@@ -1255,7 +1260,7 @@
     -ms-grid-column: 6 !important;
         grid-column-start: 6 !important;
   }
-  .sectionn .about_us .about_us_container .about_us_title .title {
+  .sectionn .about_us .about_us_container .about_us_title .title h4 {
     font-size: 52px;
     line-height: 52px;
   }
@@ -1328,7 +1333,7 @@
     -ms-grid-column: 6 !important;
         grid-column-start: 6 !important;
   }
-  .sectionn .about_us .about_us_container .about_us_title .title {
+  .sectionn .about_us .about_us_container .about_us_title .title h4 {
     font-size: 46px;
     line-height: 46px;
   }
@@ -1481,9 +1486,17 @@
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .sectionn .about_us .about_us_container .about_us_title .title {
+  .sectionn .about_us .about_us_container .about_us_title .title h4 {
     font-size: 40px;
     line-height: 40px;
+  }
+  .sectionn .about_us .about_us_container .about_us_title .content p {
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .sectionn .about_us .about_us_container .bcpTeam .content2 p {
+    font-size: 16px;
+    line-height: 30px;
   }
   .sectionn .ourServices_inner .ourServices_inner_container .ourServices_inner_title p {
     font-size: 45px;
@@ -1575,7 +1588,7 @@
     -ms-grid-column: 3 !important;
         grid-column-start: 3 !important;
   }
-  .sectionn .about_us .about_us_container .about_us_title .title {
+  .sectionn .about_us .about_us_container .about_us_title .title h4 {
     font-size: 35px;
     line-height: 35px;
   }
@@ -1615,13 +1628,19 @@
     -ms-grid-column: 2 !important;
         grid-column-start: 2 !important;
   }
-  .sectionn .about_us .about_us_container .about_us_title .title {
+  .sectionn .about_us .about_us_container .about_us_title .title h4 {
     font-size: 30px;
     line-height: 30px;
   }
   .sectionn .ourServices_inner .ourServices_inner_container .ourServices_inner_title p {
     font-size: 30px;
     line-height: 30px;
+  }
+}
+
+@media (max-width: 320px) {
+  .sectionn .footer_input .social_icon {
+    padding: 23px 0 0 24px;
   }
 }
 

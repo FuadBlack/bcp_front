@@ -12,8 +12,8 @@ function All({ menuItem }) {
             <Link to={item?.slug} className="workItem" key={item?.slug}>
               <div className="name_portfolio">
                 <div>
-                  <span></span>
-                  <span></span>
+                  <span>{item?.start_date.slice(0, 4)}</span>
+                  <span>qısametrajlı film</span>
                 </div>
               </div>
               <div className="image">

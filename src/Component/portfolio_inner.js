@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import group from "../assets/img/group_inner_port.svg"
+import group from '../assets/img/group_inner_port.svg';
 import axios from 'axios';
 
 const RiconConstraction = () => {
@@ -14,7 +14,7 @@ const RiconConstraction = () => {
   const fetchData = async () => {
     await axios
       .get(
-        'http://192.168.1.8:5555/api/portfolio/et-aspernatur-velit-nesciunt-expedita'
+        'http://192.168.1.6:5555/api/portfolio/et-aspernatur-velit-nesciunt-expedita'
       )
       .then((res) => {
         setDataApi(res.data.data);

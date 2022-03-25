@@ -14,14 +14,13 @@ const Portfolio = (items) => {
   const [btn, setCahngeButton] = useState(false);
   const toggleColor = () => setCahngeButton(!btn);
   console.log(animate);
-  //API portfolios
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     await axios
-      .get('http://192.168.1.8:5555/api/portfolios')
+      .get('http://192.168.1.6:5555/api/portfolios')
       .then((res) => {
         setDataApi(res.data);
       })
@@ -60,20 +59,106 @@ const Portfolio = (items) => {
         <Footerinput />
       </div>
       <div className={animate ? 'filter_mobile active' : 'filter_mobile'}>
-        <div className="close" onClick={toggle}>
+        <div
+          className="close"
+          onClick={() => {
+            toggle();
+          }}
+        >
           <span></span>
           <span></span>
         </div>
         <div className="filter_button_mobile">
-          <button type="button" onClick={()=>{toggle(); toggleColor()}} className={btn ? 'btn active' : 'btn'}>Hamısı</button>
-          <button type="button" onClick={()=>{toggle(); toggleColor()}} className={btn ? 'btn active' : 'btn'}>Veb sayt</button>
-          <button type="button" onClick={toggle}>3d modelləmə</button>
-          <button type="button" onClick={toggle}>Mobil tətbiq</button>
-          <button type="button" onClick={toggle}>3d animasiya</button>
-          <button type="button" onClick={toggle}>Brendinq</button>
-          <button type="button" onClick={toggle}>SMM</button>
-          <button type="button" onClick={toggle}>Musiqi</button>
-          <button type="button" onClick={toggle}>Qısametrajlı film</button>
+          <button
+            type="button"
+            onClick={() => {
+              toggle();
+              toggleColor();
+            }}
+            className={btn ? 'btn active' : 'btn'}
+          >
+            Hamısı
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              toggle();
+              toggleColor();
+            }}
+            className={btn ? 'btn active' : 'btn'}
+          >
+            Veb sayt
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              toggle();
+              toggleColor();
+            }}
+            className={btn ? 'btn active' : 'btn'}
+          >
+            3d modelləmə
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              toggle();
+              toggleColor();
+            }}
+            className={btn ? 'btn active' : 'btn'}
+          >
+            Mobil tətbiq
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              toggle();
+              toggleColor();
+            }}
+            className={btn ? 'btn active' : 'btn'}
+          >
+            3d animasiya
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              toggle();
+              toggleColor();
+            }}
+            className={btn ? 'btn active' : 'btn'}
+          >
+            Brendinq
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              toggle();
+              toggleColor();
+            }}
+            className={btn ? 'btn active' : 'btn'}
+          >
+            SMM
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              toggle();
+              toggleColor();
+            }}
+            className={btn ? 'btn active' : 'btn'}
+          >
+            Musiqi
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              toggle();
+              toggleColor();
+            }}
+            className={btn ? 'btn active' : 'btn'}
+          >
+            Qısametrajlı film
+          </button>
         </div>
       </div>
     </div>
