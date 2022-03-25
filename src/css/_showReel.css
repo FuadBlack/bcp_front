@@ -1,7 +1,3 @@
-.showReel {
-  transform: translateX(-50px);
-}
-
 .showReel svg {
   font-size: 30px;
 }

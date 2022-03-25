@@ -5,23 +5,23 @@ import img4 from "../images/programmer2.jpg"
 
 export const sliderImages = [
   {
-    name: "Ricon constraction",
-    info: "Ricon",
+    name: "Constraction",
+    info: "Constraction",
     image: img1,
   },
   {
-    name: "Hostarex",
-    info: "Hostarex",
+    name: "Ricon",
+    info: "Ricon",
     image: img2,
   },
   {
-    name: "Ricon constraction",
-    info: "Ricon",
+    name: "Website Developing",
+    info: "Developing",
     image: img3,
   },
   {
-    name: "Hostarex Hostarex",
-    info: "Hostarex",
+    name: "Mobile Application",
+    info: "Application",
     image: img4,
   },
 ];

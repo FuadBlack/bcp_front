@@ -15,7 +15,7 @@ export const Projects = () => {
 
   const fetchData = async () => {
     await axios
-      .get("http://192.168.1.11:1111/api/projects")
+      .get("http://192.168.1.6:5555/api/projects")
       .then((res) => {
         setData(res.data);
       })

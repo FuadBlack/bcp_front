@@ -22,7 +22,6 @@
         position: relative
         display: flex
         align-items: start
-
         img
             width: 700px
             height: 400px
@@ -83,7 +82,46 @@
     .sliderMobile
         display: none
 
-@media screen and ( max-width: 600px)
+@media screen and ( max-width: 380px)
+    .homePortfolio
+        .sliderMobile
+            .info
+                transform: translateX(-30px) !important
+        .title
+            width: 300px !important
+            display: block
+            h2
+                margin-left: 30px
+                transform: translateX(-20px) !important
+            a
+                transform: translateX(50px) !important
+
+
+
+@media screen and ( max-width: 430px)
+     .homePortfolio
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        .title
+            margin-bottom: 20px
+            display: flex
+            justify-content: space-between
+            width: 320px !important
+            h2
+                font-size: 26px !important
+                transform: translateX(-3px) !important
+
+            a
+                transform: translateX(82px)
+                font-size: 15px !important
+    
+
+
+
+    
+@media screen and ( max-width: 770px)
     .homePortfolio
         display: flex
         flex-direction: column
@@ -91,32 +129,33 @@
 
         .title
             margin-bottom: 20px
-
             display: flex
             justify-content: space-between
+            width: 85%
             h2
-                font-size: 30px
+                font-size: 56px
                 transform: translateX(-7px)
 
             a
-                transform: translateX(70px)
+                transform: translateX(82px)
+                font-size: 20px
 
         .slider
             display: none
         .sliderMobile
             display: block
             .info
-                transform: translateX(-50px)
+                transform: translateX(-30px) !important
             img
                 margin: auto
-                width: 380px
+                width: 680px
                 display: flex
             h3
                 color: white
-                font-size: 25px
+                font-size: 40px
                 margin: 5px 20px
             p
                 color: #9B9B9B
-                font-size: 20px
+                font-size: 25px
                 font-weight: 400
                 margin: 2px 20px 30px

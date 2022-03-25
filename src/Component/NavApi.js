@@ -15,7 +15,7 @@ export const NavApi = () => {
 
   const fetchData = async () => {
     await axios
-      .get("http://192.168.1.11:1111/api/service")
+      .get("http://192.168.1.6:5555/api/service")
       .then((res) => {
         console.log(res.data);
         setFetch(res.data);

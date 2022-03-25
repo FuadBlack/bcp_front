@@ -1,11 +1,10 @@
 import React from "react";
 import showreelText from "../images/showreelText.png";
-import text from "../images/Text.svg";
 import "../css/_showReel.sass";
 
 export const ShowreelText = () => {
   return (
-    <div className="d-flex justify-content-between align-items-center px-4">
+    <div className="d-flex justify-content-between align-items-center">
       <div className="showReel">
         <img src={showreelText} alt="" width="100px" />
 

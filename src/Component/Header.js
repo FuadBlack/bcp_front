@@ -26,16 +26,16 @@ export const Header = () => {
     let body = document.getElementById("root");
     setOpenMenu(openMenu === "open" ? "close" : "open");
 
-    if (openMenu === "open") {
-      setOpenMenu("close");
-      body.classList.remove("hideScroll");
-    } else {
-      setOpenMenu("open");
-      body.classList.add("hideScroll");
-    }
+    // if (openMenu === "open" && window.innerWidth < 780) {
+    //   setOpenMenu("close");
+    //   body.classList.remove("hideScroll");
+    // } else {
+    //   setOpenMenu("open");
+    //   body.classList.add("hideScroll");
+    // }
 
-    // if (openMenu === "open") {
-    //   body.classList.toggle("d-none");
+    // if (openMenu === "open" && window.innerWidth < 770) {
+    //   body.classList.toggle(".hideScroll");
     // }
   };
 
@@ -90,7 +90,7 @@ export const Header = () => {
             className={
               location.pathname === "/projects" ||
               location.pathname === "/services" ||
-              location.pathname === "/aboutUs" ||
+              location.pathname === "/about" ||
               location.pathname === "/riconConstruction"
                 ? "btnVisible"
                 : "btnInvisible"
@@ -125,7 +125,7 @@ export const Header = () => {
                 <Link to="portfolio">{t("portfolio")}</Link>
               </li>
               <li>
-                <Link to="aboutUs">{t("about")}</Link>
+                <Link to="about">{t("about")}</Link>
               </li>
               <li>
                 <Link to="projects">{t("projects")}</Link>

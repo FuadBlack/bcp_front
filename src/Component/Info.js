@@ -24,7 +24,7 @@ export const Info = () => {
       </div>
       <div className="brain">
         <div className="brainImg">
-          <img src={brain} alt="" />
+          <img className="img-fluid" src={brain} alt="" />
         </div>
         <div className="dot_brain">
           <a href="#"></a>

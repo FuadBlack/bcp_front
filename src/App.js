@@ -32,7 +32,7 @@ function App() {
 
   const fetchData = async () => {
     await axios
-      .get("http://192.168.1.11:1111/api/main")
+      .get("http://192.168.1.6:5555/api/main")
       .then((res) => {
         setData(res.data);
     
@@ -60,7 +60,7 @@ function App() {
               />
               <Route path="projects" element={<Projects />} />
               <Route path="contact" element={<Contact />} />
-              <Route path="aboutUs" element={<AboutUs />} />
+              <Route path="about" element={<AboutUs />} />
               <Route path="services" element={<Services />} />
             </Route>
           </Routes>

@@ -17,7 +17,7 @@ const AboutUs = () => {
 
   const fetchData = async () => {
     await axios
-      .get("http://192.168.1.11:1111/api/about")
+      .get("http://192.168.1.6:5555/api/about")
       .then((res) => {
         setData(res.data);
       })
