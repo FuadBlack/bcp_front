@@ -4,9 +4,16 @@ import 'swiper/css';
 
 function Button({ button, filter }) {
   console.log(button);
-  const [btn, setCahngeButton] = useState(false);
-  const toggle = () => setCahngeButton(!btn);
+  const [btn, setCahngeButton] = useState(null);
+  const toggle = (e) => {
+    console.log(e.target.getAttribute('data-id'));
+    setCahngeButton(e.target.getAttribute('data-id'));
 
+    // let btns = document.querySelectorAll('.btn');
+
+    // btns.forEach((item) => item.classList.remove('active'));
+    // e.target.classList.add('active');
+  };
   return (
     <div>
       <Swiper
@@ -17,17 +24,19 @@ function Button({ button, filter }) {
           991: { slidesPerView: 6 },
           768: { slidesPerView: 4 },
         }}
-        className="button_container">
+        className="button_container"
+      >
         {button.map((cat, i) => {
           return (
             <SwiperSlide>
               <button
                 type="button"
-                onClick={() => {
+                data-id={i+1}
+                onClick={(e) => {
                   filter(cat);
-                  toggle();
+                  toggle(e);
                 }}
-                className={btn ? 'btn active' : 'btn'}
+                className={btn == i+1 ? 'btn active' : 'btn'}
               >
                 {cat}
               </button>

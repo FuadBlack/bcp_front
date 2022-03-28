@@ -19,53 +19,82 @@
     h2
         margin: 20px 0
         color: #F4A442
-        font-size: 55px
+        font-size: 60px
         font-weight: 700
         font-family: Arial, Helvetica, sans-serif
-    .row
-        margin: 50px 0
-        display: flex
+    .project_container
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
         align-items: center
+        grid-gap: 77px
+        padding-bottom: 20px
         .header
             color: white
             font-size: 40px
-            width: 90%
             font-weight: 700
+            line-height: 44.29px
         .infoDiv
             display: flex
-            align-items: center
             flex-direction: column
-            .info
+            p
                 color: #9B9B9B
-                font-size: 20px
-                width: 350px
-
+                font-size: 19px
+                line-height: 22px
             .goTo
-                transform: translateX(-90px)
                 a
                     text-decoration: none
-                    color: white
-
+                    color: #ECF0E6
+                    font-size: 16px
+                    line-height: 18px
         .image
             img
-                width: 300px
-
-@media screen and ( max-width: 600px )
+                width: 100%
+@media ( max-width: 1200px )
     .section
-        .row
+        h2
+            font-size: 50px
+            line-height: 40px
+        .project_container
+            .header
+                font-size: 30px
+                line-height: 30px
+            .infoDiv
+                p
+                    font-size: 17px
+@media ( max-width: 992px )
+    .section
+        h2
+            font-size: 40px
+            line-height: 40px
+        .project_container
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 20px
+            align-items: start
+            .header
+                font-size: 25px
+                line-height: 25px
+            .image
+                grid-column-start: 1
+                grid-column-end: 3
+@media (max-width: 768px)
+    .section
+        h2
+            font-size: 30px
+            line-height: 30px
+            padding-bottom: 7px
+        .project_container
             .header
                 font-size: 20px
-                width: 650px
-                margin-right: 20px
+                line-height: 20px
             .infoDiv
-                align-items: center
-                .info
-                    width: 250px
+                p
                     font-size: 14px
-                .goTo
-                    transform: translateX(-45px)
-            .image
-              
-                img
-                    width: 400px
-                    
+                    line-height: 22px
+@media (max-width: 576px)
+    .section
+        .project_container
+            .infoDiv
+                p
+                    font-size: 13px
+
+

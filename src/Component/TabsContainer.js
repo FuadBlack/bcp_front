@@ -1,21 +1,23 @@
 import { React, useState } from 'react';
 import All from './All';
-import Data from './data';
 import Buttons from './Button';
 
-const allCategories = ['Hamısı', ...new Set(Data.map((item) => item.category))];
-console.log(allCategories);
-
-const TabsContainer = ( {data} ) => {
-  const [menuItem, setMenuItem] = useState(Data);
+const TabsContainer = ({ data, dataFIlter }) => {
+  const allCategories = [
+    'Hamısı',
+    ...new Set(dataFIlter.map((item) => item.category)),
+  ];
+  console.log(allCategories);
+  const [menuItem, setMenuItem] = useState(dataFIlter);
   const [buttons] = useState(allCategories);
+  console.log(buttons);
   const filter = (button) => {
     if (button === 'Hamısı') {
-      setMenuItem(Data);
+      setMenuItem(dataFIlter);
       return;
     }
 
-    const filteredData = Data.filter((item) => item.category === button);
+    const filteredData = dataFIlter.filter((item) => item.category === button);
     setMenuItem(filteredData);
   };
   return (
