@@ -37,6 +37,10 @@
   transform: translateX(170px);
 }
 
+.headerDesktop .langLogoBar .logoBcp .img-fluid {
+  width: 80%;
+}
+
 .headerDesktop .langLogoBar .btnVisible {
   transform: translateX(220px);
   visibility: visible;
@@ -80,8 +84,8 @@
 
 .headerDesktop .langLogoBar #burgerMenu span {
   background-color: #ECF0E6;
-  width: 25px;
-  height: 2px;
+  width: 1.563rem;
+  height: 0.125rem;
   margin: 4px;
   border-radius: 2px;
   transition: all ease .3s;

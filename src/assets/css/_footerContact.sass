@@ -1,8 +1,8 @@
 *
     margin: 0
     padding: 0
-    box-sizing: border-box    
-        
+    box-sizing: border-box
+
 .footer_input
     width: 1100px
     padding: 40px
@@ -15,14 +15,14 @@
         font-size: 45px
         line-height: 45px
         span
-          
+
     .we_call_back
         display: flex
         flex-direction: column
         padding: 16px 0 56px 0
         span
             color: #ECF0E6
-         
+
             font-size: 65px
             line-height: 75px
             padding: 0 43px 0 63px
@@ -47,7 +47,6 @@
             flex-direction: column
             grid-gap: 11px
             span
-           
                 font-size: 30px
                 line-height: 35px
                 color: #ECF0E6
@@ -68,9 +67,15 @@
         .form
             margin-left: 50px
             display: flex
+            .col2
+                .file
+                    transform: translateY(-10px)
+            .briefButton
+                .brief
+                    font-size: 10px
+                    display: block
             .form-group
-                margin: 40px
-            
+                margin: 30px 0
                 padding: 0
                 button
                     color: white
@@ -102,10 +107,8 @@
                         border-bottom: 1px solid #F4A442
                         background: transparent !important
                     &::before
-                     
 
                     &::placeholder
-                       
 
                     &:focus
                         color: white
@@ -130,19 +133,19 @@
             .textarea
                 display: flex
                 flex-direction: column
-                
+
                 textarea
                     border: 1px solid #F4A442
                     color: white
                     background: transparent
+                    margin-top: 0
                     padding: 5px 10px
                     border-radius: 8px
                     height: 150px
-                
-                   
+
                     &::placeholder
                         color: white
-                        
+
                     &:focus-visible
                         outline: none
             .briefButton
@@ -152,66 +155,100 @@
                     display: flex
                     justify-content: space-between
                     align-items: center
-                    
+
                     p
-                        color:  #1BB1A1
+                        color: #1BB1A1
                         margin-right: 20px
+                        font-size: 18px
                     img
                         margin-bottom: 10px
-@media screen and ( max-width: 380px)
-     .footer_input
+
+@media screen and ( max-width: 320px)
+    .container
+        .row
+            .footer_input
+                font-size: 14px
+                .left_side
+                    width: 290px !important
+                    .fill_form
+                        width: 290px !important
+                    .socials
+                        transform: translateX(-50px) !important
                 .right_side
-                    transform: translateX(-35px) !important
-                    form                 
-                        width: 350px !important
-                        transform: translateX(-4px) !important
+                    transform: translateX(-50px) !important
+                    padding: 0 !important
+                    width: 320px !important
+                    form
+                        width: 315px !important
+                        font-size: 14px
+                        .col2
+                            transform: translateY(-20px)
 
-
-
+@media screen and ( max-width: 380px)
+    .footer_input
+        .right_side
+            transform: translateX(-35px) !important
+            form
+                width: 350px !important
+                font-size: 14px
+                transform: translateX(-4px) !important
+                .col2
+                    margin-top: 0
 
 @media screen and ( max-width: 430px)
-            .footer_input
-                .right_side
-                    width: 380px !important
-                    transform: translateX(-35px) !important
-                    form
-                        .col1
-                            margin-bottom: 0
-                            
-                        .col2
-                            margin-bottom: 20px
-                            .form-group
-                                margin-top: 0
-                                input
-                                    margin-bottom: 20px
+    .footer_input
+        .right_side
+            width: 380px !important
+            transform: translateX(-35px) !important
+            form
+                font-size: 16px
+                .col1
+                    margin-bottom: 0
+
+                    .col2
+                        margin-bottom: 20px
+                        margin-top: 0 !important
+                        .form-group
+                            margin-top: 0
+                            input
+                                margin-bottom: 20px
                         .form-group
                             width: 100%
                             input
                         .textarea
                             margin-top: 0
-
+                .briefButton
+                    .brief
+                        p
+                            font-size: 14px !important
+                            transform: translateX(20px) !important
+                    .btnBrief
+                        font-size: 14px !important
+                        padding: 7px 26px !important
 
 @media screen and ( max-width: 770px)
     .container
         .row
             .footer_input
                 .right_side
-                    width: 680px
-                    transform: translateX(-120px)
+                    font-size: 20px
+                    display: flex
+                    flex-direction: column
+                    width: 750px
+                    transform: translateX(-100px)
                     form
                         .col1
                             margin-bottom: 0
-                            
+
                         .col2
-                            margin-bottom: 20px
+                            transform: translateY(30px) !important
                             .form-group
                                 margin-top: 0
                                 input
-                                    margin-bottom: 20px
-                                    
+
                         .form-group
                             width: 100%
                             input
-                                
+
                         .textarea
                             margin-top: 0

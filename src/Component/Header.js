@@ -26,17 +26,17 @@ export const Header = () => {
     let body = document.getElementById("root");
     setOpenMenu(openMenu === "open" ? "close" : "open");
 
-    // if (openMenu === "open" && window.innerWidth < 780) {
-    //   setOpenMenu("close");
-    //   body.classList.remove("hideScroll");
-    // } else {
-    //   setOpenMenu("open");
-    //   body.classList.add("hideScroll");
-    // }
+    if (openMenu === "open" && window.innerWidth < 780) {
+      setOpenMenu("close");
+      body.classList.remove("hideScroll");
+    } else {
+      setOpenMenu("open");
+      body.classList.add("hideScroll");
+    }
 
-    // if (openMenu === "open" && window.innerWidth < 770) {
-    //   body.classList.toggle(".hideScroll");
-    // }
+    if (openMenu === "open" && window.innerWidth < 770) {
+      body.classList.toggle(".hideScroll");
+    }
   };
 
   let location = useLocation();
@@ -82,7 +82,7 @@ export const Header = () => {
           </div>
           <div className="logoBcp">
             <Link to="/">
-              <img src={logoBcp} alt="" />
+              <img className="img-fluid" src={logoBcp} alt="" />
             </Link>
           </div>
           <button

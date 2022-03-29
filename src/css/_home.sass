@@ -1,73 +1,76 @@
-@media screen and ( max-width: 321px)
+
+@media screen and ( max-width: 770px)
     .info
-        width: 100px !important 
-        padding: 20px !important
-        transform: translateX(-10px)
-    .info_content
-        padding: 0
-        margin: 0
-        p
-            padding: 10px  
-            transform: translate(-20px)
-            
+        .brain
+
     .homeProjects
-        .title
-            display: flex
-            justify-content: center
-            a
-                transform: translateX(-100px) !important
-        .projects
-            .image
-                .swiper
-                    width: 280px !important
-    
-@media screen and ( max-width: 380px)
-    .homeProjects
-        margin: 70px 0
-        
+        margin: 70px 0!important
         .title
             display: flex
             justify-content: space-between
-            width: 300px !important
-            h2
-                font-size: 30px !important
-            a
-                transform: translateX(-50px)
-        .projects
-            .info
-                width: 300px !important
-                transform: translate(20px,100px) !important
-                .header
-            .image
-                .swiper
-                    margin-right: 60px
-                    width: 350px !important
-                    height: 380px !important
-                    .swiper-slide
-                        img
-.info
-    padding: 10px !important
-    transform: translateX(-10px)
-    .info_content
-        padding: 0
-        margin: 0
-        p
-            padding: 10px  
-            transform: translate(-20px)
+            width: 660px
+            transform: translateX(5px) !important
 
+            h2
+                margin-right: 15px
+                font-size: 40px
+
+            a
+                transform: translateX(-10px)!important
+
+        .projects
+            margin-bottom: 0
+            display: flex
+            flex-direction: column-reverse
+            align-items: start
+            .info
+                margin-top: 40px!important
+                margin-bottom: 40px!important
+                transform: translate(0px,160px)!important
+                width: 660px!important
+                .header
+                    font-size: 50px!important
+                    width: 500px!important
+
+            .image
+                display: flex
+                width: 750px
+                height: 200px !important
+                .swiper
+                    height: 440px
+                    width: 660px
+                    transform: translate(375px,-30px)
+                    .swiper-slide
+
+                        img
+                            background: transparent
+                            width: 100%
 
 @media screen and ( max-width: 430px)
+    .info
+        padding: 20px !important
+        transform: translateX(-10px)
+        .title
+            width: 300px
+        .brain
+            .dot_brain
+
+        .info_content
+            width: 300px
+            p
+                padding: 10px
+                width: 300px
+                transform: translate(-20px)
     .homeProjects
         margin: 70px 0
-        
+
         .title
-            padding: 10px !important
             display: flex
             justify-content: space-between
             width: 400px !important
+            margin: 0
             h2
                 font-size: 30px
-                padding: 50px !important
                 width: 200px !important
 
         .projects
@@ -76,70 +79,130 @@
             flex-direction: column-reverse
             align-items: start
             .info
-                margin: 70px 0 !important
+                transform: translate(12px,170px) !important
                 width: 400px !important
+                margin-bottom: 100px !important
                 .header
                     font-size: 35px !important
-                    width: 320px  !important
-                   
+                    width: 320px !important
+
             .image
                 display: flex
-                width: 400px !important
-                height: 200px !important
+                width: 400px
+                height: 200px
                 .swiper
-                    height: 240px 
-                    width: 410px 
-                    transform: translateX(420px) !important                    
+                    height: 340px !important
+                    width: 400px
+                    transform: translate(420px,40px) !important
                     .swiper-slide
-                       
+
                         img
                             background: transparent
-                         
-                            
-@media screen and ( max-width: 770px)
-      .homeProjects
+
+@media screen and ( max-width: 376px)
+    .info
+        .title
+        .brain
+            width: 300px !important
+            .brainImg
+                width: 100% !important
+                .img-fluid
+                    width: 100% !important
+                    transform: translate(-20px) !important
+            .dot_brain
+                transform: translate(-40px,-20px) !important
+
+    .homeProjects
         margin: 70px 0
-       
+        .title
+            display: flex
+            width: 300px !important
+            justify-content: space-between
+
+            h2
+                font-size: 25px !important
+            a
+                font-size: 14px
+                transform: translateX(30px) !important
+                width: 100px
+        .projects
+            .info
+                margin: 0 !important
+                width: 300px !important
+                margin: 20px 0 !important
+                margin-bottom: 90px !important
+                padding: 10px
+                .header
+            .image
+                .swiper
+                    margin-right: 60px
+                    width: 350px !important
+                    height: 350px !important
+                    .swiper-slide
+                        img
+                            width: 100%
+@media screen and ( max-width: 321px)
+    .homeProjects
+
         .title
             display: flex
             justify-content: space-between
-            width: 660px 
-      
-            h2
-                
-                font-size: 40px
+            transform: translateX(-10px) !important
+            .titleInfo
+                font-size: 20px !important
+                transform: translateX(20px)
             a
-                transform: translateX(-10px)
-
-
+                font-size: 10px !important
+                width: auto !important
+                width: 100px
+                transform: translateX(-25px) !important
         .projects
-            margin-bottom: 0
-            display: flex
-            flex-direction: column-reverse
-            align-items: start
-            .info
-                margin-top: 40px
-                margin-bottom: 40px
-                transform: translate(20px,160px) !important
-                width: 660px
-                .header
-                    font-size: 65px
-                  
-                   
             .image
-                display: flex
-                width: 750px
-                height: 200px !important
-                .swiper
-                    height: 440px 
-                    width: 660px 
-                    transform: translate(375px,-30px)                    
+                height: 250px !important
+                margin-right: 10px !important
+                width: 320px !important
+                transform: translateX(-380px) !important
+                .mySwiper
+                    width: 320px !important
+                    height: 100% !important
                     .swiper-slide
-                     
                         img
-                            background: transparent
-                            width: 100%
-                         
-                        
-                   
-    
+                            width: 320px !important
+                            height: 100% !important
+            .info
+                transform: translate(15px,25px) !important
+                width: 300px !important
+                .header
+                    width: 300px !important
+                    font-size: 26px !important
+                .innerInfo
+                    width: 100% !important
+
+    .info
+        width: 100% !important
+        padding: 20px !important
+        transform: translateX(-10px)
+        .title
+            width: 300px !important
+            transform: translateX(-20px)
+            h1
+                font-size: 26px
+            .start
+                button
+                    transform: translateX(10px) !important
+
+        .brain
+            transform: translateX(-20px) !important
+            width: 100%
+            .dots
+            .brainImg
+                width: 100% !important
+                .img-fluid
+                    width: 100% !important
+
+        .info_content
+            padding: 0
+            margin: 0
+            p
+                padding: 10px
+                transform: translate(-20px)

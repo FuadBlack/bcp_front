@@ -23,7 +23,6 @@ const validationSchema = yup.object().shape({
 });
 
 export const FormComp = () => {
-  const { data, setData } = useContext(Context);
   const { i18n, t } = useTranslation();
 
   const handleSubmit = async (data) => {
@@ -37,14 +36,14 @@ export const FormComp = () => {
 
     await axios({
       method: "post",
-      url: "http://192.168.1.6:5555/api/add",
+      url: "http://192.168.1.18:5555/api/add",
       data: formData,
       config: { headers: { "Content-Type": "multipart/form-data" } },
     })
       .then(function (response) {
         //handle success
         console.log(response);
-        alert("New User Successfully Added.");
+        alert("New User Successfully Added!");
       })
       .catch(function (response) {
         //handle error
@@ -103,7 +102,7 @@ export const FormComp = () => {
                 </div>
                 <div
                   className="file form-group"
-                  style={{ transform: "translateY(-10px)" }}
+                  // style={{ transform: "translateY(-10px)" }}
                 >
                   <label htmlFor="file">
                     Brief yüklə
@@ -141,13 +140,13 @@ export const FormComp = () => {
                     e="text-danger"
                   />
                 </div>
-                <div className="briefButton form-group ">
-                  <div className="brief">
-                    <p>Öz brief-ni hazırla</p>
-                    <img src={brief} alt="" />
-                  </div>
-                  <button type="submit">{t("gonder")}</button>
+              </div>
+              <div className="briefButton form-group ">
+                <div className="brief">
+                  <p>Öz brief-ni hazırla</p>
+                  <img src={brief} alt="" />
                 </div>
+                <button className="btnBrief" type="submit">{t("gonder")}</button>
               </div>
             </div>
           </Form>

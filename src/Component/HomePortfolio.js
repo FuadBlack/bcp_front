@@ -42,7 +42,7 @@ export const HomePortfolio = () => {
   }
 
   return (
-    <div className="homePortfolio ">
+    <div className="homePortfolio">
       <div className="title">
         <h2>{t("portfoliomuz")}</h2>
         <Link to="/portfolio">{t("hamisinabax")}</Link>
@@ -197,7 +197,7 @@ export const HomePortfolio = () => {
         {sliderImages.map((images, id) => (
           <div key={id}>
             <img className="img-fluid" src={images.image} alt="" width="370px" />
-            <div className="info text-start">
+            <div className="info">
               <h3>{images.name}</h3>
               <p>{images.info}</p>
             </div>

@@ -92,8 +92,17 @@
   display: flex;
 }
 
+.footer_input .right_side .form .col2 .file {
+  transform: translateY(-10px);
+}
+
+.footer_input .right_side .form .briefButton .brief {
+  font-size: 10px;
+  display: block;
+}
+
 .footer_input .right_side .form .form-group {
-  margin: 40px;
+  margin: 30px 0;
   padding: 0;
 }
 
@@ -164,6 +173,7 @@
   border: 1px solid #F4A442;
   color: white;
   background: transparent;
+  margin-top: 0;
   padding: 5px 10px;
   border-radius: 8px;
   height: 150px;
@@ -191,10 +201,38 @@
 .footer_input .right_side .form .briefButton .brief p {
   color: #1BB1A1;
   margin-right: 20px;
+  font-size: 18px;
 }
 
 .footer_input .right_side .form .briefButton .brief img {
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 320px) {
+  .container .row .footer_input {
+    font-size: 14px;
+  }
+  .container .row .footer_input .left_side {
+    width: 290px !important;
+  }
+  .container .row .footer_input .left_side .fill_form {
+    width: 290px !important;
+  }
+  .container .row .footer_input .left_side .socials {
+    transform: translateX(-50px) !important;
+  }
+  .container .row .footer_input .right_side {
+    transform: translateX(-50px) !important;
+    padding: 0 !important;
+    width: 320px !important;
+  }
+  .container .row .footer_input .right_side form {
+    width: 315px !important;
+    font-size: 14px;
+  }
+  .container .row .footer_input .right_side form .col2 {
+    transform: translateY(-20px);
+  }
 }
 
 @media screen and (max-width: 380px) {
@@ -203,7 +241,11 @@
   }
   .footer_input .right_side form {
     width: 350px !important;
+    font-size: 14px;
     transform: translateX(-4px) !important;
+  }
+  .footer_input .right_side form .col2 {
+    margin-top: 0;
   }
 }
 
@@ -212,42 +254,58 @@
     width: 380px !important;
     transform: translateX(-35px) !important;
   }
+  .footer_input .right_side form {
+    font-size: 16px;
+  }
   .footer_input .right_side form .col1 {
     margin-bottom: 0;
   }
-  .footer_input .right_side form .col2 {
+  .footer_input .right_side form .col1 .col2 {
     margin-bottom: 20px;
+    margin-top: 0 !important;
   }
-  .footer_input .right_side form .col2 .form-group {
+  .footer_input .right_side form .col1 .col2 .form-group {
     margin-top: 0;
   }
-  .footer_input .right_side form .col2 .form-group input {
+  .footer_input .right_side form .col1 .col2 .form-group input {
     margin-bottom: 20px;
   }
-  .footer_input .right_side form .form-group {
+  .footer_input .right_side form .col1 .col2 .form-group {
     width: 100%;
   }
-  .footer_input .right_side form .textarea {
+  .footer_input .right_side form .col1 .col2 .textarea {
     margin-top: 0;
+  }
+  .footer_input .right_side form .briefButton {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer_input .right_side form .briefButton .brief p {
+    font-size: 14px !important;
+    transform: translateX(20px) !important;
+  }
+  .footer_input .right_side form .briefButton .btnBrief {
+    font-size: 14px !important;
+    padding: 7px 26px !important;
   }
 }
 
 @media screen and (max-width: 770px) {
   .container .row .footer_input .right_side {
-    width: 680px;
-    transform: translateX(-120px);
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+    transform: translateX(-100px);
   }
   .container .row .footer_input .right_side form .col1 {
     margin-bottom: 0;
   }
   .container .row .footer_input .right_side form .col2 {
-    margin-bottom: 20px;
+    transform: translateY(30px) !important;
   }
   .container .row .footer_input .right_side form .col2 .form-group {
     margin-top: 0;
-  }
-  .container .row .footer_input .right_side form .col2 .form-group input {
-    margin-bottom: 20px;
   }
   .container .row .footer_input .right_side form .form-group {
     width: 100%;

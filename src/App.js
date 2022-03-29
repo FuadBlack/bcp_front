@@ -31,7 +31,7 @@ function App() {
 
   const fetchData = async () => {
     await axios
-      .get("http://192.168.1.6:5555/api/main")
+      .get("http://192.168.1.13:5555/api/main")
       .then((res) => {
         setData(res.data);
       })

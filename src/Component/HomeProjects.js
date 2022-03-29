@@ -1,12 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, {
-  Autoplay,
-  Navigation,
-  Pagination,
-  Scrollbar,
-} from "swiper";
+import SwiperCore, { Autoplay } from "swiper";
 import { useTranslation } from "react-i18next";
 import "../css/_homeProjects.sass";
 import shape from "../images/Shape.svg";
@@ -22,7 +17,7 @@ export const HomeProjects = () => {
   return (
     <div className="homeProjects mt-4">
       <div className="title">
-        <h2>{t("layihelerimiz")}</h2>
+        <h2 className="titleInfo">{t("layihelerimiz")}</h2>
         <Link to="/projects">{t("hamisinabax")}</Link>
       </div>
 
@@ -31,7 +26,7 @@ export const HomeProjects = () => {
           <span className="line"></span>
           <h3 className="header"> {t("wibtysosialsebeke")}</h3>
           <span className="line"></span>
-          <p>
+          <p className="innerInfo">
             Wibty ilk musiqi və sosial platforması wibty ilk musiqi və sosial
             platforması ilbk musiqi və sosial ...
           </p>

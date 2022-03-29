@@ -17,7 +17,7 @@ const AboutUs = () => {
 
   const fetchData = async () => {
     await axios
-      .get("http://192.168.1.6:5555/api/about")
+      .get("http://192.168.1.18:5555/api/about")
       .then((res) => {
         setData(res.data);
       })
@@ -100,11 +100,11 @@ const AboutUs = () => {
                   <img src={showreel_img} />
                 </div>
                 <div className="content">
-                  <span>{data?.text?.[i18n.language].split(" ", 3)}</span>
+                  <span>{data?.text?.[i18n.language].split(" ", 2)}</span>
                   <span className="for">
-                    {data?.text?.[i18n.language].split(" ", 2)}
+                    {data?.text?.[i18n.language].split(" ", 3)}
                   </span>
-                  <span>{data?.text?.[i18n.language].split(" ", 7)}</span>
+                  <span>{data?.text?.[i18n.language].split(" ", 2)}</span>
                 </div>
               </div>
             </div>

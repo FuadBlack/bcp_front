@@ -8,7 +8,7 @@ import "../assets/css/_footerContact.sass"
 function FooterContact({ data }) {
 
   return (
-    <div className="contrainer">
+    <div className="container">
       <div className="row">
         <div className="footer_input">
           <div className="left_side">

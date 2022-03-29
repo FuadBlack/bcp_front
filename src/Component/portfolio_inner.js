@@ -14,7 +14,7 @@ const RiconConstraction = () => {
   const fetchData = async () => {
     await axios
       .get(
-        'http://192.168.1.6:5555/api/portfolio/et-aspernatur-velit-nesciunt-expedita'
+        'http://192.168.1.4:5555/api/portfolio/et-aspernatur-velit-nesciunt-expedita'
       )
       .then((res) => {
         setDataApi(res.data.data);

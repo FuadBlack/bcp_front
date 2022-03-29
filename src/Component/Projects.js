@@ -15,7 +15,7 @@ export const Projects = () => {
 
   const fetchData = async () => {
     await axios
-      .get("http://192.168.1.6:5555/api/projects")
+      .get("http://192.168.1.18:5555/api/projects")
       .then((res) => {
         setData(res.data);
       })
@@ -46,7 +46,9 @@ export const Projects = () => {
           {data.map((project, id) => (
             <div key={id} className="row">
               <div className="col-md-8 d-flex align-items-center">
-                <h3 className="header">{project?.data?.title?.[i18n.language]}</h3>
+                <h3 className="header">
+                  {project?.data?.title?.[i18n.language]}
+                </h3>
                 <div className="infoDiv">
                   <p className="info">{project?.data?.text?.[i18n.language]}</p>
                   <div className="goTo">
@@ -56,7 +58,7 @@ export const Projects = () => {
                 </div>
               </div>
               <div className="image col-md-4 mt-4">
-                <img src={project?.data?.image} alt="" />
+                <img className="img-fluid" src={project?.data?.image} alt="" />
               </div>
             </div>
           ))}

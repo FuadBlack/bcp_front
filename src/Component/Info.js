@@ -18,7 +18,7 @@ export const Info = () => {
     <div className="info">
       <div className="title">
         <h1>{data?.slogan?.[i18n.language]}</h1>
-        <Link to="#">
+        <Link className="start" to="#">
           <button>{t("layiheyebasla")}</button>
         </Link>
       </div>
@@ -26,26 +26,28 @@ export const Info = () => {
         <div className="brainImg">
           <img className="img-fluid" src={brain} alt="" />
         </div>
-        <div className="dot_brain">
-          <a href="#"></a>
-        </div>
-        <div className="dot_brain">
-          <a href="#"></a>
-        </div>
-        <div className="dot_brain">
-          <a href="#"></a>
-        </div>
-        <div className="dot_brain">
-          <a href="#"></a>
-        </div>
-        <div className="dot_brain">
-          <a href="#"></a>
-        </div>
-        <div className="dot_brain">
-          <a href="#"></a>
+        <div className="dots">
+          <div className="dot_brain">
+            <a href="#"></a>
+          </div>
+          <div className="dot_brain">
+            <a href="#"></a>
+          </div>
+          <div className="dot_brain">
+            <a href="#"></a>
+          </div>
+          <div className="dot_brain">
+            <a href="#"></a>
+          </div>
+          <div className="dot_brain">
+            <a href="#"></a>
+          </div>
+          <div className="dot_brain">
+            <a href="#"></a>
+          </div>
         </div>
         <div className="socialLinks">
-          <Socials/>
+          <Socials />
         </div>
       </div>
       <div className="info_content">
