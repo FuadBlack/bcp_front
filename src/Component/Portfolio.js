@@ -39,7 +39,7 @@ const Portfolio = (items) => {
 
   const fetchData = async () => {
     await axios
-      .get('http://192.168.1.18:5555/api/portfolios')
+      .get('http://192.168.1.13:5555/api/portfolios')
       .then((res) => {
         setDataApi(res.data);
       })

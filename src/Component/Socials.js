@@ -12,7 +12,7 @@ export const Socials = () => {
 
   const fetchData = async () => {
     await axios
-      .get("http://192.168.1.18:5555/api/socials")
+      .get("http://192.168.1.13:5555/api/socials")
       .then((res) => {
         setData(res.data);
       })
