@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import "../css/_projects.sass";
-import shape from "../images/Shape.svg";
-import axios from "axios";
-import { useTranslation } from "react-i18next";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import '../css/_projects.sass';
+import shape from '../images/Shape.svg';
+import wibty from '../images/wibty.png';
 
 export const Projects = () => {
   const { t, i18n } = useTranslation();
@@ -15,7 +16,7 @@ export const Projects = () => {
 
   const fetchData = async () => {
     await axios
-      .get("http://192.168.1.18:5555/api/projects")
+      .get("http://192.168.1.13:5555/api/projects")
       .then((res) => {
         setData(res.data);
       })

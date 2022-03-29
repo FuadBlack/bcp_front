@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import portfolioShape from '../assets/img/portfolio_shape.svg';
+import RiconConstraction from './portfolio_inner';
 
 function All({ menuItem }) {
   console.log(menuItem);
@@ -9,27 +10,27 @@ function All({ menuItem }) {
       <div className="workItems">
         {menuItem?.data?.map((item, key) => {
           return (
-            <Link to={item?.slug} className="workItem" key={item?.slug}>
-              <div className="name_portfolio">
-                <div>
-                  <span>{item?.start_date.slice(0, 4)}</span>
-                  <span>qısametrajlı film</span>
+            <React.Fragment key={item?.slug}>
+              <Link to={item?.slug} className="workItem">
+                <div className="name_portfolio">
+                  <div>
+                    <span>{item?.start_date.slice(0, 4)}</span>
+                    <span>qısametrajlı film</span>
+                  </div>
                 </div>
-              </div>
-              <div className="image">
-                <img src={item?.image} />
-              </div>
-              <div className="content">
-                <div className="title">{item?.title?.az}</div>
-                <p>
-                  {item?.text_up?.az}
-                </p>
-                <Link to="/" className="link_more_port">
-                  <span>Proyekt haqqında daha ətraflı</span>
-                  <img src={portfolioShape} />
-                </Link>
-              </div>
-            </Link>
+                <div className="image">
+                  <img src={item?.image} />
+                </div>
+                <div className="content">
+                  <div className="title">{item?.title?.az}</div>
+                  <p>{item?.text_up?.az}</p>
+                  <Link to="/" className="link_more_port">
+                    <span>Proyekt haqqında daha ətraflı</span>
+                    <img src={portfolioShape} />
+                  </Link>
+                </div>
+              </Link>
+            </React.Fragment>
           );
         })}
       </div>

@@ -6,17 +6,36 @@ import Footerinput from './FooterContact';
 import TabsContainer from './TabsContainer';
 import filterIcon from '../assets/img/filter_icon.svg';
 import axios from 'axios';
+import DataFIlter from './data';
+
+const allCategories = [
+  'Hamısı',
+  ...new Set(DataFIlter.map((item) => item.category)),
+];
 
 const Portfolio = (items) => {
   const [animate, setAnimate] = useState(false);
   const toggle = () => setAnimate(!animate);
   const [data, setDataApi] = useState([]);
-  const [btn, setCahngeButton] = useState(false);
-  const toggleColor = () => setCahngeButton(!btn);
+  const [btn, setCahngeButton] = useState(null);
+  const toggleColor = (e) => {
+    setCahngeButton(e.target.getAttribute('data-id'));
+  };
   console.log(animate);
   useEffect(() => {
     fetchData();
   }, []);
+  const [menuItem, setMenuItem] = useState(DataFIlter);
+  const [buttons] = useState(allCategories);
+  const filter = (button) => {
+    if (button === 'Hamısı') {
+      setMenuItem(DataFIlter);
+      return;
+    }
+
+    const filteredData = DataFIlter.filter((item) => item.category === button);
+    setMenuItem(filteredData);
+  };
 
   const fetchData = async () => {
     await axios
@@ -54,7 +73,7 @@ const Portfolio = (items) => {
               <span>filter</span>
             </div>
           </div>
-          <TabsContainer data={data} />
+          <TabsContainer data={data} dataFIlter={DataFIlter} />
         </div>
         <Footerinput />
       </div>
@@ -69,96 +88,21 @@ const Portfolio = (items) => {
           <span></span>
         </div>
         <div className="filter_button_mobile">
-          <button
-            type="button"
-            onClick={() => {
-              toggle();
-              toggleColor();
-            }}
-            className={btn ? 'btn active' : 'btn'}
-          >
-            Hamısı
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              toggle();
-              toggleColor();
-            }}
-            className={btn ? 'btn active' : 'btn'}
-          >
-            Veb sayt
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              toggle();
-              toggleColor();
-            }}
-            className={btn ? 'btn active' : 'btn'}
-          >
-            3d modelləmə
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              toggle();
-              toggleColor();
-            }}
-            className={btn ? 'btn active' : 'btn'}
-          >
-            Mobil tətbiq
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              toggle();
-              toggleColor();
-            }}
-            className={btn ? 'btn active' : 'btn'}
-          >
-            3d animasiya
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              toggle();
-              toggleColor();
-            }}
-            className={btn ? 'btn active' : 'btn'}
-          >
-            Brendinq
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              toggle();
-              toggleColor();
-            }}
-            className={btn ? 'btn active' : 'btn'}
-          >
-            SMM
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              toggle();
-              toggleColor();
-            }}
-            className={btn ? 'btn active' : 'btn'}
-          >
-            Musiqi
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              toggle();
-              toggleColor();
-            }}
-            className={btn ? 'btn active' : 'btn'}
-          >
-            Qısametrajlı film
-          </button>
+          {buttons.map((cat, i) => {
+            return (
+              <button
+                type="button"
+                data-id={i + 1}
+                onClick={(e) => {
+                  toggle();
+                  toggleColor(e);
+                }}
+                className={btn == i + 1 ? 'btn active' : 'btn'}
+              >
+                {cat}
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>

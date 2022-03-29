@@ -973,11 +973,13 @@
 }
 
 .about_us .about_us_container .bcp_team_container {
-  padding: 20px 0;
+  padding: 20px 0 0 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr);
   grid-template-columns: repeat(12, 1fr);
+  padding-bottom: 71px;
+  border-bottom: #757575 1px solid;
 }
 
 .about_us .about_us_container .bcp_team_container .team_name p {
@@ -1012,6 +1014,12 @@
   display: -ms-flexbox;
   display: flex;
   grid-gap: 27px;
+}
+
+.about_us .about_us_container .showreel img {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 .about_us .about_us_container .showreel .showreel_title {
@@ -1430,6 +1438,12 @@
 }
 
 @media (max-width: 768px) {
+  .sectionn .portofolio_main .portfolio_container .title_container {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: start;
+  }
+
   .sectionn .portofolio_main .portfolio_container .title_container h1 {
     font-size: 41px;
     line-height: 44px;
@@ -1546,6 +1560,10 @@
     grid-column-start: 4 !important;
   }
 
+  .sectionn .about_us .breadcrumb_container {
+    padding-bottom: 27px;
+  }
+
   .sectionn .about_us .about_us_container .about_us_title {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1566,9 +1584,22 @@
     line-height: 30px;
   }
 
-  .sectionn .about_us .about_us_container .bcpTeam .content2 p {
+  HEAD .sectionn .about_us .about_us_container .bcpTeam .content2 p {
     font-size: 16px;
     line-height: 30px;
+  }
+
+  .sectionn .about_us .about_us_container .bcp_team_container {
+    padding-bottom: 40px;
+  }
+
+  .sectionn .about_us .about_us_container .bcp_team_container .content2 p {
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .sectionn .about_us .about_us_container .showreel {
+    padding-top: 28px;
   }
 
   .sectionn .ourServices_inner .ourServices_inner_container .ourServices_inner_title p {
@@ -1736,9 +1767,7 @@
     font-size: 30px;
     line-height: 30px;
   }
-}
 
-@media (max-width: 320px) {
   .sectionn .footer_input .social_icon {
     padding: 23px 0 0 24px;
   }
