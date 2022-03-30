@@ -31,12 +31,12 @@ function Button({ button, filter }) {
             <SwiperSlide>
               <button
                 type="button"
-                data-id={i+1}
+                data-id={i + 1}
                 onClick={(e) => {
                   filter(cat);
                   toggle(e);
                 }}
-                className={btn == i+1 ? 'btn active' : 'btn'}
+                className={btn == i + 1 ? 'btn active' : 'btn'}
               >
                 {cat}
               </button>

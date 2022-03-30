@@ -3,7 +3,6 @@ import video from '../assets/img/bcp_team.png';
 import showreel_music from '../assets/img/showreel_music.png';
 import showreel_img from '../assets/img/showreel_img.svg';
 import { Link } from 'react-router-dom';
-import '../assets/css/_aboutUs.sass';
 import axios from 'axios';
 
 const AboutUs = () => {
@@ -13,7 +12,7 @@ const AboutUs = () => {
   }, []);
   const fetchData = async () => {
     await axios
-      .get('http://192.168.1.18:5555/api/about')
+      .get('http://192.168.1.13:5555/api/about')
       .then((res) => {
         setDataApi(res.data);
       })

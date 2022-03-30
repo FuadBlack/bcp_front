@@ -12,8 +12,8 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: url("../fonts/Gilroy-SemiBold.eot");
-  src: url("../fonts/Gilroy-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-SemiBold.woff") format("woff"), url("../fonts/Gilroy-SemiBold.ttf") format("truetype");
+  src: url("../fonts/Gilroy-Semibold.eot");
+  src: url("../fonts/Gilroy-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-Semibold.woff") format("woff"), url("../fonts/Gilroy-Semibold.ttf") format("truetype");
 }
 
 @font-face {
@@ -30,8 +30,8 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: url("../fonts/Gilroy-ExtraBold.eot");
-  src: url("../fonts/Gilroy-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-ExtraBold.woff") format("woff"), url("../fonts/Gilroy-ExtraBold.ttf") format("truetype");
+  src: url("../fonts/Gilroy-Extrabold.eot");
+  src: url("../fonts/Gilroy-Extrabold.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-Extrabold.woff") format("woff"), url("../fonts/Gilroy-Extrabold.ttf") format("truetype");
 }
 
 .portofolio_main .breadcrumb_container {
@@ -727,15 +727,13 @@
   color: #ffffff;
 }
 
-.footer {
-  padding: 30px;
-}
-
 .footer .footer_top {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .footer .footer_top .menu {
@@ -743,11 +741,13 @@
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-  grid-gap: 22px;
+  grid-gap: 22px 57px;
 }
 
 .footer .footer_top .menu .link_footer {
   text-decoration: none;
+  font-family: "g-b", "Arial", "sans-serif";
+  font-weight: 400;
   color: #ffffff;
   font-size: 14px;
   line-height: 20px;
@@ -769,6 +769,8 @@
 }
 
 .footer .footer_bottom .all_reserved {
+  font-family: "g-r", "Arial", "sans-serif";
+  font-weight: 400;
   color: #FFFFFF;
   font-size: 12px;
   line-height: 20px;
@@ -916,6 +918,8 @@
   text-decoration: none;
   font-size: 14px;
   line-height: 16.98px;
+  font-family: "g-r", "Arial", "sans-serif";
+  font-weight: 400;
 }
 
 .about_us .breadcrumb_container .breadcrumb .breadcrumb-item.active {
@@ -923,6 +927,8 @@
   font-size: 14px;
   line-height: 17.15px;
   margin-top: 3px;
+  font-family: "g-sb", "Arial", "sans-serif";
+  font-weight: 400;
 }
 
 .about_us .breadcrumb_container .breadcrumb .breadcrumb-item.active::before {
@@ -947,6 +953,8 @@
   color: #F4A442;
   font-size: 65px;
   line-height: 67px;
+  font-family: "g-b", "Arial", "sans-serif";
+  font-weight: 400;
 }
 
 .about_us .about_us_container .about_us_title .content {
@@ -959,10 +967,13 @@
   font-size: 18px;
   color: #ECF0E6;
   line-height: 35px;
+  font-family: "g-r", "Arial", "sans-serif";
+  font-weight: 400;
 }
 
 .about_us .about_us_container .video img {
   width: 100%;
+  border-radius: 5px;
 }
 
 .about_us .about_us_container .bcp_team_container {
@@ -979,6 +990,8 @@
   font-size: 14px;
   line-height: 16px;
   padding-bottom: 6px;
+  font-family: "g-r", "Arial", "sans-serif";
+  font-weight: 400;
 }
 
 .about_us .about_us_container .bcp_team_container .team_name p:first-child {
@@ -999,6 +1012,8 @@
   font-size: 18px;
   color: #ECF0E6;
   line-height: 35px;
+  font-family: "g-r", "Arial", "sans-serif";
+  font-weight: 400;
 }
 
 .about_us .about_us_container .showreel {
@@ -1013,6 +1028,7 @@
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  border-radius: 5px;
 }
 
 .about_us .about_us_container .showreel .showreel_title {
@@ -1464,8 +1480,11 @@
   .sectionn .footer .footer_top {
     display: block;
   }
-  .sectionn .footer .footer_top .logo {
+  .sectionn .footer .footer_top div .logo {
     display: none;
+  }
+  .sectionn .footer .footer_top .menu {
+    grid-gap: 22px 60px;
   }
   .sectionn .footer .footer_bottom {
     -webkit-box-pack: justify;

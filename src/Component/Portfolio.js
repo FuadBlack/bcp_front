@@ -1,4 +1,3 @@
-import '../assets/css/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -39,7 +38,7 @@ const Portfolio = (items) => {
 
   const fetchData = async () => {
     await axios
-      .get('http://192.168.1.18:5555/api/portfolios')
+      .get('http://192.168.1.13:5555/api/portfolios')
       .then((res) => {
         setDataApi(res.data);
       })
