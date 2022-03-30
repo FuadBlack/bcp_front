@@ -33,7 +33,7 @@ export const HomeServices = () => {
       <div className="services">
         <div className="services_item">
           <div className="services_inner">
-            <Link to="OurServices_inner" className="website">
+            <Link to="services/OurServices_inner" className="website">
               <div className="name">
                 <svg
                   width="74"
@@ -58,7 +58,7 @@ export const HomeServices = () => {
                 franchise
               </p>
             </Link>
-            <Link to="OurServices_inner" className="marketing">
+            <Link to="services/OurServices_inner" className="marketing">
               <div className="name">
                 <svg
                   width="37"
