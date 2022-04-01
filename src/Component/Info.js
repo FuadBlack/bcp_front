@@ -1,81 +1,54 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../css/_info.sass";
 import brain from "../images/brain1.png";
-import insta from "../images/insta.svg";
-import dribble from "../images/dribble.svg";
-import youtube from "../images/youtube.svg";
-import behance from "../images/behance.svg";
-import linkedin from "../images/linkedin.svg";
-import facebook from "../images/facebook.svg";
 import "../css/_responsive_info.sass";
+import { Context } from "../Context";
+import { useTranslation } from "react-i18next";
+import { Socials } from "./Socials";
 
-export const Info = ({data}) => {
-  
+export const Info = () => {
+  //get data
+  const { data, setData } = useContext(Context);
 
+  //get translator
+  const { t, i18n } = useTranslation();
 
   return (
     <div className="info">
       <div className="title">
-        <h1>{data?.slogan?.az}</h1>
-        <Link to="#">
-          <button>layihəyə başla</button>
+        <h1>{data?.slogan?.[i18n.language]}</h1>
+        <Link className="start" to="#">
+          <button>{t("layiheyebasla")}</button>
         </Link>
       </div>
       <div className="brain">
         <div className="brainImg">
-          <img src={brain} alt="" />
+          <img className="img-fluid" src={brain} alt="" />
         </div>
-        <div className="dot_brain">
-          <a href="#"></a>
+        <div className="dots">
+          <div className="dot_brain">
+            <a href="#"></a>
+          </div>
+          <div className="dot_brain">
+            <a href="#"></a>
+          </div>
+          <div className="dot_brain">
+            <a href="#"></a>
+          </div>
+          <div className="dot_brain">
+            <a href="#"></a>
+          </div>
+          <div className="dot_brain">
+            <a href="#"></a>
+          </div>
+          <div className="dot_brain">
+            <a href="#"></a>
+          </div>
         </div>
-        <div className="dot_brain">
-          <a href="#"></a>
+        <div className="socialLinks">
+          <Socials />
         </div>
-        <div className="dot_brain">
-          <a href="#"></a>
-        </div>
-        <div className="dot_brain">
-          <a href="#"></a>
-        </div>
-        <div className="dot_brain">
-          <a href="#"></a>
-        </div>
-        <div className="dot_brain">
-          <a href="#"></a>
-        </div>
-        <ul className="socialLinks">
-          <li>
-            <Link to="/">
-              <img src={insta} alt="" />
-            </Link>
-          </li>
-          <li>
-            <Link to="/">
-              <img src={dribble} alt="" />
-            </Link>
-          </li>
-          <li>
-            <Link to="/">
-              <img src={youtube} alt="" />
-            </Link>
-          </li>
-          <li>
-            <Link to="/">
-              <img src={behance} alt="" />
-            </Link>
-          </li>
-          <li>
-            <Link to="/">
-              <img src={linkedin} alt="" />
-            </Link>
-          </li>
-          <li>
-            <Link to="/">
-              <img src={facebook} alt="" />
-            </Link>
-          </li>
-        </ul>
       </div>
       <div className="info_content">
         <p>
@@ -96,9 +69,7 @@ export const Info = ({data}) => {
             />
           </svg>
 
-          <span>
-           {data?.sm_text?.az}
-          </span>
+          <span>{data?.text?.[i18n.language]}</span>
         </p>
       </div>
     </div>

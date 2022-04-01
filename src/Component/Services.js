@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../css/_services.sass";
 import { HomeServices } from "./HomeServices";
 import FooterContact from "./FooterContact";
+import axios from "axios";
 
 export const Services = () => {
+
+
+
   return (
     <div className="services">
    

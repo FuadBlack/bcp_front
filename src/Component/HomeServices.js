@@ -1,33 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../css/_homeServices.sass";
-import axios from "axios";
-
-
+import { useTranslation } from "react-i18next";
 
 export const HomeServices = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    await axios
-      .get("http://pony.bcptest.online/api/home")
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  const { i18n, t } = useTranslation();
 
   return (
     <div className="homeServices">
       <div className="title">
-        <h2>{data?.title?.az}</h2>
-        <Link to="/services">hamısına bax</Link>
+        <h2>{t("xidmetlerimiz")}</h2>
+        <Link to="/services">{t("hamisinabax")}</Link>
       </div>
 
       <div className="services">
@@ -51,7 +34,7 @@ export const HomeServices = () => {
                     fill="#468680"
                   />
                 </svg>
-                <h3>Veb saytlar</h3>
+                <h3>{t("vebsaytlar")}</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
@@ -78,7 +61,7 @@ export const HomeServices = () => {
                   />
                 </svg>
 
-                <h3>Rəqəmsal marketinq</h3>
+                <h3>{t("reqemsalmarketinq")}</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
@@ -103,7 +86,7 @@ export const HomeServices = () => {
                     fill="#468680"
                   />
                 </svg>
-                <h3>UX/UI dizayn</h3>
+                <h3>{t("uiuxdizayn")}</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
@@ -131,7 +114,7 @@ export const HomeServices = () => {
                     fill="#468680"
                   />
                 </svg>
-                <h3>Video çəkilişlər</h3>
+                <h3>{t("videocekilisler")}</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
@@ -158,7 +141,7 @@ export const HomeServices = () => {
                     fill="#468680"
                   />
                 </svg>
-                <h3>Brendinq</h3>
+                <h3>{t("brending")}</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
@@ -182,7 +165,7 @@ export const HomeServices = () => {
                     strokeWidth="2"
                   />
                 </svg>
-                <h3>Film çəkilişləri</h3>
+                <h3>{t("filmcekilisleri")}</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
@@ -208,7 +191,7 @@ export const HomeServices = () => {
                     strokeWidth="2"
                   />
                 </svg>
-                <h3>BTL və Təqdimatlar</h3>
+                <h3>{t("btlveteqdimatlar")}</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
@@ -234,7 +217,7 @@ export const HomeServices = () => {
                     strokeWidth="2"
                   />
                 </svg>
-                <h3>İT-Kommunikasiya</h3>
+                <h3>{t("itkomunikasiya")}</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
@@ -254,7 +237,7 @@ export const HomeServices = () => {
                 >
                   <circle cx="18" cy="18" r="18" fill="#468680" />
                 </svg>
-                <h3>Mobil tətbiqlər</h3>
+                <h3>{t("mobiltetbiqler")}</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
@@ -279,7 +262,7 @@ export const HomeServices = () => {
                     fill="#468680"
                   />
                 </svg>
-                <h3>Server / Hostinq</h3>
+                <h3>{t("serverhostinq")}</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
@@ -304,7 +287,7 @@ export const HomeServices = () => {
                     stroke="#468680"
                   />
                 </svg>
-                <h3>Səsyazma və musiqi xidməti</h3>
+                <h3>{t("sesyazmavəmusiqixidmeti")}</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing
@@ -330,7 +313,7 @@ export const HomeServices = () => {
                     fill="#468680"
                   />
                 </svg>
-                <h3>3d modelləmə</h3>
+                <h3>{t("3Dmodelleme")}</h3>
               </div>
               <p>
                 Business audit, marketing strategy, positioning, check cashing

@@ -1,25 +1,27 @@
 import img1 from "../images/construction.jfif";
 import img2 from "../images/Ricon.png";
+import img3 from "../images/programmer.jpg"
+import img4 from "../images/programmer2.jpg"
 
 export const sliderImages = [
   {
-    name: "Ricon constraction",
-    info: "Brending",
+    name: "Constraction",
+    info: "Constraction",
     image: img1,
   },
   {
-    name: "Ricon constraction",
-    info: "Brending",
+    name: "Ricon",
+    info: "Ricon",
     image: img2,
   },
   {
-    name: "Ricon constraction",
-    info: "Brending",
-    image: img1,
+    name: "Website Developing",
+    info: "Developing",
+    image: img3,
   },
   {
-    name: "Ricon constraction",
-    info: "Brending",
-    image: img2,
+    name: "Mobile Application",
+    info: "Application",
+    image: img4,
   },
 ];

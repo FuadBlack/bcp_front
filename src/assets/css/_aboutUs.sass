@@ -1,3 +1,4 @@
+@import "./_vars.sass"
 .about_us
     .breadcrumb_container
         padding-bottom: 54px
@@ -20,13 +21,19 @@
                 content: ">"
                 color: #ECF0E6
     .about_us_container
-        .row
+        .about_us_title
+            display: grid
+            grid-template-columns: repeat(12, 1fr)
             .title
+                grid-column-start: 1
+                grid-column-end: 5
                 h4
                     color: #F4A442
                     font-size: 65px
                     line-height: 67px
             .content
+                grid-column-start: 8
+                grid-column-end: 12
                 p
                     font-size: 18px
                     color: #ECF0E6
@@ -35,26 +42,34 @@
         .video
             img
                 width: 100%
-        .bcpTeam
-            padding: 20px 0
-            p
-                font-size: 14px
-                line-height: 16px
-                padding-bottom: 6px
-                &:first-child
-                    color: #FFFFFF
-                &:last-child
-                    color: #E6A250
+        .bcp_team_container
+            padding: 20px 0 0 0
+            display: grid
+            grid-template-columns: repeat(12, 1fr)
+            padding-bottom: 71px
+            border-bottom: #757575 1px solid
+            .team_name
+                p
+                    font-size: 14px
+                    line-height: 16px
+                    padding-bottom: 6px
+                    &:first-child
+                        color: #FFFFFF
+                    &:last-child
+                        color: #E6A250
             .content2
+                grid-column-start: 6
+                grid-column-end: 13
                 p
                     font-size: 18px
                     color: #ECF0E6
                     line-height: 35px
-
         .showreel
             padding-top: 56px
             display: flex
             grid-gap: 27px
+            img
+                height: max-content
             .showreel_title
                 display: flex
                 grid-gap: 47px
@@ -62,28 +77,12 @@
                 .content
                     display: flex
                     flex-direction: column
-                    color: #F4A442
+
                     span
+                        +g-b
                         font-size: 65px
                         line-height: 67px
+                        color: #E6A250
                     .for
                         text-align: end
-                        margin-right: 75p
-
-    @media screen and ( max-width: 600px )
-        .about_us_container
-            .bcpTeam
-                padding: 10px 0
-                .title2
-                    display: flex
-                    justify-content: space-between
-                    p
-                        margin: 0
-                        padding: 0
-                .content2
-                    margin: 20px 0
-                    width: 620px
-                    p
-                        font-size: 16px
-                        line-height: 24px
-                        color: #ECF0E6
+                        margin-right: 75px

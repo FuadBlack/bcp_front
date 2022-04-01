@@ -1,41 +1,41 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../css/_header.sass";
 import logoBcp from "../images/Group48.svg";
-import { navLinks } from "./navLinks";
 import insta from "../images/insta.svg";
 import dribble from "../images/dribble.svg";
 import youtube from "../images/youtube.svg";
 import behance from "../images/behance.svg";
 import linkedin from "../images/linkedin.svg";
 import facebook from "../images/facebook.svg";
+import { useTranslation } from "react-i18next";
+import { NavApi } from "./NavApi";
 
-const langs = [
-  { id: 1, name: "az" },
-  { id: 2, name: "ru" },
-  { id: 3, name: "en" },
-];
 export const Header = () => {
-  const [changLang, setChangLang] = useState(
-    localStorage.getItem("language") || "az"
-  );
+  const { i18n, t } = useTranslation();
 
-  const changeLanguage = (id) => {
-    localStorage.setItem("language", id);
-    setChangLang(id);
+  const changeLang = (lng) => {
+    i18n.changeLanguage(lng);
   };
 
+  //Open Menu
   const [openMenu, setOpenMenu] = useState("close");
+
+  //togleBurger
   const toggleBurger = () => {
-    let bodyClass = document.querySelector("body").classList;
+    let body = document.getElementById("root");
     setOpenMenu(openMenu === "open" ? "close" : "open");
 
-    if (openMenu === "open") {
+    if (openMenu === "open" && window.innerWidth < 780) {
       setOpenMenu("close");
-      bodyClass.remove("hideScroll");
+      body.classList.remove("hideScroll");
     } else {
       setOpenMenu("open");
-      bodyClass.add("hideScroll");
+      body.classList.add("hideScroll");
+    }
+
+    if (openMenu === "open" && window.innerWidth < 770) {
+      body.classList.toggle(".hideScroll");
     }
   };
 
@@ -51,23 +51,38 @@ export const Header = () => {
         <div className="langLogoBar">
           <div>
             <ul>
-              {langs.map((lang, id) => {
-                return (
-                  <li key={id} onClick={() => changeLanguage(id)}>
-                    <Link
-                      className={changLang == id ? "activeLang" : " "}
-                      to="/"
-                    >
-                      {lang.name}
-                    </Link>
-                  </li>
-                );
-              })}
+              <li>
+                <button
+                  type="button"
+                  className={i18n.language === "az" && "activeLang"}
+                  onClick={() => changeLang("az")}
+                >
+                  az
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className={i18n.language === "en" && "activeLang"}
+                  onClick={() => changeLang("en")}
+                >
+                  en
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className={i18n.language === "ru" && "activeLang"}
+                  onClick={() => changeLang("ru")}
+                >
+                  ru
+                </button>
+              </li>
             </ul>
           </div>
           <div className="logoBcp">
             <Link to="/">
-              <img src={logoBcp} alt="" />
+              <img className="img-fluid" src={logoBcp} alt="" />
             </Link>
           </div>
           <button
@@ -75,7 +90,7 @@ export const Header = () => {
             className={
               location.pathname === "/projects" ||
               location.pathname === "/services" ||
-              location.pathname === "/aboutUs" ||
+              location.pathname === "/about" ||
               location.pathname === "/riconConstruction"
                 ? "btnVisible"
                 : "btnInvisible"
@@ -104,29 +119,23 @@ export const Header = () => {
           <nav>
             <ul className="link1">
               <li>
-                <Link to="services">Xidmətlər</Link>
+                <Link to="services">{t("services")}</Link>
               </li>
               <li>
-                <Link to="portfolio">Portfolio</Link>
+                <Link to="portfolio">{t("portfolio")}</Link>
               </li>
               <li>
-                <Link to="aboutUs">Haqqımızda</Link>
+                <Link to="about">{t("about")}</Link>
               </li>
               <li>
-                <Link to="projects">Layihələr</Link>
+                <Link to="projects">{t("projects")}</Link>
               </li>
               <li>
-                <Link to="contact">Əlaqə</Link>
+                <Link to="contact">{t("contact")}</Link>
               </li>
             </ul>
           </nav>
-          <ul className="link2">
-            {navLinks.links.map((link, id) => (
-              <li key={id}>
-                <Link to="/">{link.name}</Link>
-              </li>
-            ))}
-          </ul>
+          <NavApi />
         </div>
       </div>
 
@@ -139,18 +148,35 @@ export const Header = () => {
               </Link>
             </div>
             <ul>
-              {langs.map((lang, id) => {
-                return (
-                  <li key={id} onClick={() => changeLanguage(id)}>
-                    <Link
-                      className={changLang == id ? "activeLang" : " "}
-                      to="/"
-                    >
-                      {lang.name}
-                    </Link>
-                  </li>
-                );
-              })}
+              <ul>
+                <li>
+                  <button
+                    type="button"
+                    className={i18n.language === "az" && "activeLang"}
+                    onClick={() => changeLang("az")}
+                  >
+                    az
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    className={i18n.language === "ru" && "activeLang"}
+                    onClick={() => changeLang("ru")}
+                  >
+                    ru
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    className={i18n.language === "en" && "activeLang"}
+                    onClick={() => changeLang("en")}
+                  >
+                    en
+                  </button>
+                </li>
+              </ul>
             </ul>
             <div
               id="burgerMenuMobile"
@@ -168,18 +194,35 @@ export const Header = () => {
           >
             <div className="langLogoBar d-flex justify-content-between">
               <ul>
-                {langs.map((lang, id) => {
-                  return (
-                    <li key={id} onClick={() => changeLanguage(id)}>
-                      <Link
-                        className={changLang == id ? "activeLang" : " "}
-                        to="/"
-                      >
-                        {lang.name}
-                      </Link>
-                    </li>
-                  );
-                })}
+                <ul>
+                  <li>
+                    <button
+                      type="button"
+                      className={i18n.language === "az" && "activeLang"}
+                      onClick={() => changeLang("az")}
+                    >
+                      az
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      className={i18n.language === "ru" && "activeLang"}
+                      onClick={() => changeLang("ru")}
+                    >
+                      ru
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      className={i18n.language === "en" && "activeLang"}
+                      onClick={() => changeLang("en")}
+                    >
+                      en
+                    </button>
+                  </li>
+                </ul>
               </ul>
               <div
                 id="burgerMenuMobile"
@@ -197,30 +240,20 @@ export const Header = () => {
             <nav>
               <ul className="link1">
                 <li>
-                  <Link to="/services">Xidmətlər</Link>
+                  <Link to="/services">{t("services")}</Link>
                 </li>
-                <ul className="link2">
-                  {navLinks.links
-                    .filter((link) => link.id < 7)
-                    .map((link, id) => (
-                      <li>
-                        <Link key={id} to="/">
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                </ul>
+                <NavApi />
                 <li>
-                  <Link to="/portfolio">Portfolio</Link>
+                  <Link to="/portfolio">{t("portfolio")}</Link>
                 </li>
                 <li>
-                  <Link to="/aboutUs">Haqqımızda</Link>
+                  <Link to="/aboutUs">{t("about")}</Link>
                 </li>
                 <li>
-                  <Link to="/about">Layihələr</Link>
+                  <Link to="/aboutUs">{t("projects")}</Link>
                 </li>
                 <li>
-                  <Link to="/contact">Əlaqə</Link>
+                  <Link to="/contact">{t("contact")}</Link>
                 </li>
               </ul>
             </nav>

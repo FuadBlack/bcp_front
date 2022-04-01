@@ -6,33 +6,19 @@ import { Info } from "./Info";
 import { ShowreelText } from "./ShowreelText";
 import FooterContact from "./FooterContact";
 import axios from "axios";
+import "../css/_home.sass"
 
 export const Home = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    await axios
-      .get("http://pony.bcptest.online/api/home")
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+ 
 
   return (
     <div>
-      <Info data={data} />
+      <Info  />
       <ShowreelText />
       <HomePortfolio />
       <HomeServices />
       <HomeProjects />
-      <FooterContact data={data} />
+      <FooterContact  />
     </div>
   );
 };

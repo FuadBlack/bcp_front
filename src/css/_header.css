@@ -1,0 +1,310 @@
+.headerDesktop {
+  padding-top: 10px;
+  position: relative;
+}
+
+.headerDesktop .langLogoBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerDesktop .langLogoBar ul {
+  display: flex;
+  padding: 0;
+}
+
+.headerDesktop .langLogoBar ul li {
+  list-style: none;
+  padding: 0 10px;
+}
+
+.headerDesktop .langLogoBar ul li button {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: sans-serif;
+  color: #9B9B9B;
+  text-decoration: none;
+  border: none;
+  background: transparent;
+}
+
+.headerDesktop .langLogoBar ul li button.activeLang {
+  color: #ECF0E6;
+}
+
+.headerDesktop .langLogoBar .logoBcp {
+  transform: translateX(170px);
+}
+
+.headerDesktop .langLogoBar .logoBcp .img-fluid {
+  width: 80%;
+}
+
+.headerDesktop .langLogoBar .btnVisible {
+  transform: translateX(220px);
+  visibility: visible;
+  color: white;
+  background: #1BB1A1;
+  padding: 5px 20px 5.5px 20px;
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  align-self: center;
+  transition: all .2s ease;
+}
+
+.headerDesktop .langLogoBar .btnVisible:hover {
+  background: #E6A250;
+}
+
+.headerDesktop .langLogoBar .btnInvisible {
+  transform: translateX(220px);
+  visibility: hidden;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+}
+
+.headerDesktop .langLogoBar #burgerMenu {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.headerDesktop .langLogoBar #burgerMenu:hover span:nth-child(1) {
+  transform: translateX(0);
+}
+
+.headerDesktop .langLogoBar #burgerMenu:hover span:nth-child(3) {
+  transform: translateX(0);
+}
+
+.headerDesktop .langLogoBar #burgerMenu span {
+  background-color: #ECF0E6;
+  width: 1.563rem;
+  height: 0.125rem;
+  margin: 4px;
+  border-radius: 2px;
+  transition: all ease .3s;
+}
+
+.headerDesktop .langLogoBar #burgerMenu span:nth-child(1) {
+  transform: translateX(12px);
+}
+
+.headerDesktop .langLogoBar #burgerMenu span:nth-child(3) {
+  transform: translateX(-12px);
+}
+
+.headerDesktop .langLogoBar #burgerMenu.open span:nth-child(1) {
+  transform: rotate(47deg) translateY(14px);
+}
+
+.headerDesktop .langLogoBar #burgerMenu.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.headerDesktop .langLogoBar #burgerMenu.open span:nth-child(3) {
+  transform: rotate(-46deg) translateY(-16px);
+}
+
+.headerDesktop .links {
+  background-image: url("../images/Group120.png");
+  position: absolute;
+  width: 1150px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .2s, visibility .5s;
+  display: flex;
+  top: 100%;
+  padding: 40px;
+  z-index: 12;
+}
+
+.headerDesktop .links.linksActive {
+  opacity: 1;
+  visibility: visible;
+}
+
+.headerDesktop .links nav {
+  display: flex;
+}
+
+.headerDesktop .links nav::after {
+  width: 2px;
+  height: auto;
+  content: "";
+  border-right: 1px solid #1BB1A1;
+  margin: 0 50px;
+}
+
+.headerDesktop .links nav .link1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerDesktop .links nav .link1 li {
+  list-style: none;
+  margin: 10px 0;
+}
+
+.headerDesktop .links nav .link1 li a {
+  text-decoration: none;
+  color: #F4A442;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.headerDesktop .links .link2 {
+  margin: auto 0;
+  width: 80%;
+  flex-wrap: wrap;
+}
+
+.headerDesktop .links .link2 a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #F4A442;
+}
+
+.headerMobile {
+  display: none;
+}
+
+.hideScroll {
+  overflow: hidden !important;
+}
+
+@media screen and (max-width: 768px) {
+  .headerDesktop {
+    display: none;
+  }
+  .headerMobile {
+    display: block;
+    padding-top: 20px;
+  }
+  .headerMobile .langLogoBar {
+    z-index: 12;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .headerMobile .langLogoBar ul {
+    display: flex;
+    padding: 0 10px;
+  }
+  .headerMobile .langLogoBar ul li {
+    list-style: none;
+  }
+  .headerMobile .langLogoBar ul li button {
+    color: #9B9B9B;
+    padding: 0 10px;
+    text-decoration: none;
+    border: none;
+    background: transparent;
+  }
+  .headerMobile .langLogoBar ul li button.activeLang {
+    color: #ECF0E6;
+  }
+  .headerMobile .langLogoBar #burgerMenuMobile {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+  }
+  .headerMobile .langLogoBar #burgerMenuMobile:hover span:nth-child(1) {
+    transform: translateX(0);
+  }
+  .headerMobile .langLogoBar #burgerMenuMobile:hover span:nth-child(3) {
+    transform: translateX(0);
+  }
+  .headerMobile .langLogoBar #burgerMenuMobile span {
+    background-color: #ECF0E6;
+    width: 30px;
+    height: 4px;
+    margin: 4px;
+    border-radius: 2px;
+    transition: all ease .3s;
+  }
+  .headerMobile .langLogoBar #burgerMenuMobile span:nth-child(1) {
+    transform: translateX(12px);
+  }
+  .headerMobile .langLogoBar #burgerMenuMobile span:nth-child(3) {
+    transform: translateX(-12px);
+  }
+  .headerMobile .langLogoBar #burgerMenuMobile.open span:nth-child(1) {
+    transform: rotate(45deg) translateY(17px);
+  }
+  .headerMobile .langLogoBar #burgerMenuMobile.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .headerMobile .langLogoBar #burgerMenuMobile.open span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-18px);
+  }
+  .headerMobile .mobile {
+    position: fixed;
+    right: -100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 12;
+    transition: all .3s linear;
+    width: 100%;
+    background-image: url("../images/Group120.png");
+    align-items: center;
+    padding-top: 40px;
+    top: 0;
+  }
+  .headerMobile .mobile .socialLinks ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .headerMobile .mobile .socialLinks ul li a {
+    display: inline-block;
+    font-size: 29px;
+  }
+  .headerMobile .mobile nav .link1 li {
+    padding: 20px 0;
+  }
+  .headerMobile .mobile nav .link1 li a {
+    font-size: 25px;
+    font-weight: 700;
+    padding: 20px;
+    color: #F4A442;
+  }
+  .headerMobile .mobile nav .link2 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #4D5B5A;
+    margin-right: 20px;
+  }
+  .headerMobile .mobile nav .link2 li a {
+    font-size: 16px;
+  }
+  .headerMobile .mobile.mobileActive {
+    right: 0;
+  }
+  .headerMobile .mobile .langLogoBar {
+    margin: 0;
+    padding: 0;
+  }
+  .headerMobile .mobile .langLogoBar ul {
+    display: flex;
+    flex-direction: row;
+  }
+  .headerMobile .mobile ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .headerMobile .mobile ul li {
+    list-style: none;
+  }
+  .headerMobile .mobile ul li a {
+    padding: 0 10px;
+    text-decoration: none;
+  }
+  .headerMobile .mobile ul li a.activeLang {
+    color: #ECF0E6;
+  }
+}
