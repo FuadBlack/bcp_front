@@ -1,20 +1,24 @@
-.section
-    margin-top: 20px
-    background: transparent
-    .breadcrumbContainer
-        padding: 10px 10px 10px 0
-        margin: 0
-        border-bottom: 1px solid #999999
-        ol
-            li
-                a
-                    text-decoration: none
-                    color: #ECF0E6
-                    &::after
-                        content: ">"
-                        margin: 0 10px
-            .breadcrumbItem
+.projects
+    .breadcrumb_container
+        padding-bottom: 54px
+        .breadcrumb
+            padding-bottom: 5.5px
+            border-bottom: 1px solid #5E5E5E
+            align-items: center
+            .breadcrumb_item_link
+                color: #ECF0E6
+                text-decoration: none
+                font-size: 14px
+                line-height: 16.98px
+                +g-r
+            .breadcrumb-item.active
                 color: #E6A250
+                font-size: 14px
+                line-height: 17.15px
+                margin-top: 3px
+                +g-sb
+            .breadcrumb-item.active::before
+                content: url('../img/breadcrumb.svg')
 
     h2
         margin: 20px 0
@@ -49,6 +53,8 @@
         .image
             img
                 width: 100%
+                border-radius: 5px
+                object-fit: cover
 @media ( max-width: 1200px )
     .section
         h2
@@ -96,5 +102,3 @@
             .infoDiv
                 p
                     font-size: 13px
-
-

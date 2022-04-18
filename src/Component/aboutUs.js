@@ -4,15 +4,17 @@ import showreel_music from '../assets/img/showreel_music.png';
 import showreel_img from '../assets/img/showreel_img.svg';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useTranslation } from "react-i18next";
 
 const AboutUs = () => {
+  const { i18n, t } = useTranslation();
   const [data, setDataApi] = useState([]);
   useEffect(() => {
     fetchData();
   }, []);
   const fetchData = async () => {
     await axios
-      .get('http://192.168.1.13:5555/api/about')
+      .get('http://192.168.1.9:5555/api/about')
       .then((res) => {
         setDataApi(res.data);
       })
@@ -33,7 +35,7 @@ const AboutUs = () => {
               </Link>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
-              Haqqımızda
+            {t("about")}
             </li>
           </ol>
         </nav>
@@ -41,10 +43,10 @@ const AboutUs = () => {
       <div className="about_us_container">
         <div className="about_us_title">
           <div className="title">
-            <h4>Haqqımızda</h4>
+            <h4>{t("about")}</h4>
           </div>
           <div className="content">
-            <p>{data?.text_up?.az}</p>
+            <p>{data?.text_up?.[i18n.language]}</p>
           </div>
         </div>
         <div className="video">
@@ -52,11 +54,11 @@ const AboutUs = () => {
         </div>
         <div className="bcp_team_container">
           <div className="team_name">
-            <p>BCP Komandası</p>
-            <p>2021 noyabr</p>
+            <p>{t("BCPkomandasi")}</p>
+            <p>{t("2021noyabr")}</p>
           </div>
           <div className="content2">
-            <p>{data?.text_end?.az}</p>
+            <p>{data?.text_end?.[i18n.language]}</p>
           </div>
         </div>
         <div className="showreel">
@@ -69,7 +71,7 @@ const AboutUs = () => {
               {/* <span>Showreel</span>
                   <span className="for">üçün</span>
                   <span>yer qoymuşam</span> */}
-              <span>{data?.text?.az.slice(0, 20)}</span>
+              <span>{data?.text?.[i18n.language].slice(0, 20)}</span>
             </div>
           </div>
         </div>

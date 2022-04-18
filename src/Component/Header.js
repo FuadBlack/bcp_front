@@ -1,68 +1,75 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import "../css/_header.sass";
-import logoBcp from "../images/Group48.svg";
-import { navLinks } from "./navLinks";
-import insta from "../images/insta.svg";
-import dribble from "../images/dribble.svg";
-import youtube from "../images/youtube.svg";
-import behance from "../images/behance.svg";
-import linkedin from "../images/linkedin.svg";
-import facebook from "../images/facebook.svg";
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import logoBcp from '../images/Group48.svg';
+import { navLinks } from './navLinks';
+import insta from '../images/insta.svg';
+import dribble from '../images/dribble.svg';
+import youtube from '../images/youtube.svg';
+import behance from '../images/behance.svg';
+import linkedin from '../images/linkedin.svg';
+import facebook from '../images/facebook.svg';
+import { useTranslation } from 'react-i18next';
 
-const langs = [
-  { id: 1, name: "az" },
-  { id: 2, name: "ru" },
-  { id: 3, name: "en" },
-];
 export const Header = () => {
-  const [changLang, setChangLang] = useState(
-    localStorage.getItem("language") || "az"
-  );
+  const { i18n, t } = useTranslation();
 
-  const changeLanguage = (id) => {
-    localStorage.setItem("language", id);
-    setChangLang(id);
+  const changeLang = (lng) => {
+    i18n.changeLanguage(lng);
   };
 
-  const [openMenu, setOpenMenu] = useState("close");
+  const [openMenu, setOpenMenu] = useState('close');
   const toggleBurger = () => {
-    let bodyClass = document.querySelector("body").classList;
-    setOpenMenu(openMenu === "open" ? "close" : "open");
+    let bodyClass = document.querySelector('body').classList;
+    setOpenMenu(openMenu === 'open' ? 'close' : 'open');
 
-    if (openMenu === "open") {
-      setOpenMenu("close");
-      bodyClass.remove("hideScroll");
+    if (openMenu === 'open') {
+      setOpenMenu('close');
+      bodyClass.remove('hideScroll');
     } else {
-      setOpenMenu("open");
-      bodyClass.add("hideScroll");
+      setOpenMenu('open');
+      bodyClass.add('hideScroll');
     }
   };
 
   let location = useLocation();
 
   useEffect(() => {
-    setOpenMenu("close");
+    setOpenMenu('close');
   }, [location]);
 
   return (
     <div className="header">
       <div className="headerDesktop">
         <div className="langLogoBar">
-          <div>
+          <div className="language">
             <ul>
-              {langs.map((lang, id) => {
-                return (
-                  <li key={id} onClick={() => changeLanguage(id)}>
-                    <Link
-                      className={changLang == id ? "activeLang" : " "}
-                      to="/"
-                    >
-                      {lang.name}
-                    </Link>
-                  </li>
-                );
-              })}
+              <li>
+                <button
+                  type="button"
+                  className={i18n.language === 'az' && 'activeLang'}
+                  onClick={() => changeLang('az')}
+                >
+                  az
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className={i18n.language === 'en' && 'activeLang'}
+                  onClick={() => changeLang('en')}
+                >
+                  en
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className={i18n.language === 'ru' && 'activeLang'}
+                  onClick={() => changeLang('ru')}
+                >
+                  ru
+                </button>
+              </li>
             </ul>
           </div>
           <div className="logoBcp">
@@ -70,27 +77,30 @@ export const Header = () => {
               <img src={logoBcp} alt="" />
             </Link>
           </div>
-          <button
-            type="button"
-            className={
-              location.pathname === "/projects" ||
-              location.pathname === "/services" ||
-              location.pathname === "/aboutUs" ||
-              location.pathname === "/riconConstruction"
-                ? "btnVisible"
-                : "btnInvisible"
-            }
-          >
-            layihəyə başla
-          </button>
 
-          <div className="d-flex">
+          <div className="burgerside">
+            <button
+              type="button"
+              className={
+                location.pathname === '/projects' ||
+                location.pathname === '/services' ||
+                location.pathname === '/services/OurServices_inner' ||
+                location.pathname === '/portfolio/portfolio_inner' ||
+                location.pathname === '/contact' ||
+                location.pathname === '/aboutUs' ||
+                location.pathname === '/riconConstruction'
+                  ? 'btnVisible'
+                  : 'btnInvisible'
+              }
+            >
+              <Link to="contact">{t('layiheyebasla')}</Link>
+            </button>
             <div
               id="burgerMenu"
               className={openMenu}
               role="button"
               onClick={() =>
-                setOpenMenu(openMenu === "open" ? "close" : "open")
+                setOpenMenu(openMenu === 'open' ? 'close' : 'open')
               }
             >
               <span></span>
@@ -99,105 +109,115 @@ export const Header = () => {
             </div>
           </div>
         </div>
-
-        <div className={openMenu === "open" ? "linksActive links" : "links"}>
-          <nav>
-            <ul className="link1">
-              <li>
-                <Link to="services">Xidmətlər</Link>
-              </li>
-              <li>
-                <Link to="portfolio">Portfolio</Link>
-              </li>
-              <li>
-                <Link to="aboutUs">Haqqımızda</Link>
-              </li>
-              <li>
-                <Link to="projects">Layihələr</Link>
-              </li>
-              <li>
-                <Link to="contact">Əlaqə</Link>
-              </li>
-            </ul>
-          </nav>
-          <ul className="link2">
-            {navLinks.links.map((link, id) => (
-              <li key={id}>
-                <Link to="/">{link.name}</Link>
-              </li>
-            ))}
-          </ul>
+      </div>
+      <div className={openMenu === 'open' ? 'linksActive links' : 'links'}>
+        <div className="container">
+          <div className="row">
+            <div className="linkContainer">
+              <nav className="linkMenu">
+                <ul className="link1">
+                  <li>
+                    <Link to="services">{t('services')}</Link>
+                  </li>
+                  <li>
+                    <Link to="portfolio">{t('portfolio')}</Link>
+                  </li>
+                  <li>
+                    <Link to="aboutUs">{t('about')}</Link>
+                  </li>
+                  <li>
+                    <Link to="projects">{t('projects')}</Link>
+                  </li>
+                  <li>
+                    <Link to="contact">{t('contact')}</Link>
+                  </li>
+                </ul>
+              </nav>
+              <div className="services_side">
+                <ul className="link2">
+                  {navLinks.links.map((link, id) => (
+                    <li key={id}>
+                      <Link to="/">{link.name}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="headerMobile">
         <div>
-          <div className="langLogoBar d-flex justify-content-between">
+          <div className="langLogoBar">
             <div>
               <Link to="/">
                 <img src={logoBcp} alt="" />
               </Link>
             </div>
-            <ul>
-              {langs.map((lang, id) => {
-                return (
-                  <li key={id} onClick={() => changeLanguage(id)}>
-                    <Link
-                      className={changLang == id ? "activeLang" : " "}
-                      to="/"
-                    >
-                      {lang.name}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-            <div
-              id="burgerMenuMobile"
-              className={openMenu}
-              role="button"
-              onClick={toggleBurger}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-          <div
-            className={openMenu === "open" ? "mobileActive mobile" : "mobile"}
-          >
-            <div className="langLogoBar d-flex justify-content-between">
-              <ul>
-                {langs.map((lang, id) => {
-                  return (
-                    <li key={id} onClick={() => changeLanguage(id)}>
-                      <Link
-                        className={changLang == id ? "activeLang" : " "}
-                        to="/"
-                      >
-                        {lang.name}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
+            <div className="burgerside">
               <div
                 id="burgerMenuMobile"
                 className={openMenu}
                 role="button"
-                onClick={() =>
-                  setOpenMenu(openMenu === "open" ? "close" : "open")
-                }
+                onClick={toggleBurger}
               >
                 <span></span>
                 <span></span>
                 <span></span>
               </div>
             </div>
+          </div>
+          <div
+            className={openMenu === 'open' ? 'mobileActive mobile' : 'mobile'}
+          >
+            <div className="langLogoBar d-flex justify-content-between">
+              <ul>
+                <li>
+                  <button
+                    type="button"
+                    className={i18n.language === 'az' && 'activeLang'}
+                    onClick={() => changeLang('az')}
+                  >
+                    az
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    className={i18n.language === 'en' && 'activeLang'}
+                    onClick={() => changeLang('en')}
+                  >
+                    en
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    className={i18n.language === 'ru' && 'activeLang'}
+                    onClick={() => changeLang('ru')}
+                  >
+                    ru
+                  </button>
+                </li>
+              </ul>
+              <div className="burgerside">
+                <div
+                  id="burgerMenuMobile"
+                  className={openMenu}
+                  role="button"
+                  onClick={toggleBurger}
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
             <nav>
               <ul className="link1">
                 <li>
-                  <Link to="/services">Xidmətlər</Link>
+                  <Link to="/services">{t('services')}</Link>
                 </li>
                 <ul className="link2">
                   {navLinks.links
@@ -211,16 +231,16 @@ export const Header = () => {
                     ))}
                 </ul>
                 <li>
-                  <Link to="/portfolio">Portfolio</Link>
+                  <Link to="/portfolio">{t('portfolio')}</Link>
                 </li>
                 <li>
-                  <Link to="/aboutUs">Haqqımızda</Link>
+                  <Link to="/aboutUs">{t('about')}</Link>
                 </li>
                 <li>
-                  <Link to="/about">Layihələr</Link>
+                  <Link to="/projects">{t('projects')}</Link>
                 </li>
                 <li>
-                  <Link to="/contact">Əlaqə</Link>
+                  <Link to="/contact">{t('contact')}</Link>
                 </li>
               </ul>
             </nav>

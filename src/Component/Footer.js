@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import footer_logo from '../assets/img/footer_logo.svg';
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+  const { i18n, t } = useTranslation();
+
   return (
     <div className="footer">
       <div className="footer_top">
@@ -13,19 +16,19 @@ function Footer() {
         </div>
         <div className="menu">
           <Link className="link_footer" to="portfolio">
-            Portfolio
+            {t("portfolio")}
           </Link>
           <Link className="link_footer" to="aboutUs">
-            Haqqımızda
+            {t("about")}
           </Link>
           <Link className="link_footer" to="contact">
-            Əlaqə
+            {t("contact")}
           </Link>
           <Link className="link_footer" to="services">
-            Xidmətlər
+            {t("services")}
           </Link>
           <Link className="link_footer" to="projects">
-            Layihələr
+            {t("projects")}
           </Link>
         </div>
       </div>

@@ -16,7 +16,7 @@ export const Home = () => {
 
   const fetchData = async () => {
     await axios
-      .get('http://pony.bcptest.online/api/home')
+      .get('http://192.168.1.9:5555/api/main')
       .then((res) => {
         setData(res.data);
       })
@@ -26,7 +26,7 @@ export const Home = () => {
   };
 
   return (
-    <div>
+    <div className='home'>
       <Info data={data} />
       <ShowreelText />
       <HomePortfolio />

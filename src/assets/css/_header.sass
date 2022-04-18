@@ -1,0 +1,274 @@
+.header
+    .headerDesktop
+        padding-top: 10px
+        position: relative
+        .langLogoBar
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding-top: 35px
+            padding-bottom: 33px
+            .language
+                width: max-content
+                ul
+                    padding-left: 0
+                    display: flex
+                    grid-gap: 15px
+                    justify-content: flex-start
+                    li
+                        list-style: none
+                        button
+                            background: none
+                            border: none
+                            color: #828282
+                            +g-r
+                            font-size: 14px
+                            line-height: 16.8px
+                            &.activeLang
+                                color: #ECF0E6
+            .logoBcp
+
+            .burgerside
+                display: flex
+                position: relative
+                .btnVisible
+                    position: absolute
+                    color: white
+                    background: #1BB1A1
+                    padding: 5px 20px
+                    border: none
+                    border-radius: 20px
+                    transition: all 0.5s
+                    left: -180px
+                    &:hover
+                        background: #E6A250
+                    a
+                        +g-eb
+                        font-size: 18px
+                        line-height: 22.5px
+                        text-decoration: none
+                        color: #FFFFFF
+                .btnInvisible
+                    display: none
+                #burgerMenu
+                    display: flex
+                    flex-direction: column
+                    span
+                        background-color: #ECF0E6
+                        width: 30px
+                        height: 2px
+                        margin: 4px
+                        border-radius: 2px
+                        transition: all ease .3s
+                        &:nth-child(1)
+                            transform: translateX(12px)
+                        &:nth-child(3)
+                            transform: translateX(-12px)
+                    &:hover
+                        span
+                            &:nth-child(1)
+                                transform: translateX(0)
+                            &:nth-child(3)
+                                transform: translateX(0)
+
+                    &.open
+                        span
+                            &:nth-child(1)
+                                transform: rotate(48deg) translateY(15px)
+                            &:nth-child(2)
+                                opacity: 0
+                            &:nth-child(3)
+                                transform: rotate(-51deg) translateY(-16px)
+
+    .links
+        background-image: url("../img/background_img.png")
+        background-repeat: no-repeat
+        background-size: cover
+        position: absolute
+        width: 100%
+        visibility: hidden
+        opacity: 0
+        transition: opacity .2s, visibility .5s
+        z-index: 12
+        left: 0
+        padding: 38px 38px
+        &.linksActive
+            opacity: 1
+            visibility: visible
+        .linkContainer
+            display: flex
+            grid-gap: 50px
+            align-items: center
+            .linkMenu
+                padding-right: 50px
+                border-right: #1BB1A1 1px solid
+                .link1
+                    display: flex
+                    flex-direction: column
+                    grid-gap: 30px
+                    li
+                        list-style: none
+                        a
+                            text-decoration: none
+                            color: #F4A442
+                            font-size: 20px
+                            +g-b
+                            line-height: 20px
+            .services_side
+                .link2
+                    display: grid
+                    grid-template-columns: repeat(3, 1fr)
+                    grid-gap: 20px 117px
+                    li
+                        list-style: none
+                        width: max-content
+                        a
+                            text-decoration: none
+                            font-size: 16px
+                            line-height: 20px
+                            +g-r
+                            color: #F4A442
+.headerMobile
+    display: none
+
+.hideScroll
+    overflow: hidden !important
+
+@media ( max-width: 768px)
+    .header
+        .headerDesktop
+            display: none
+        .links
+            display: none
+        .headerMobile
+            display: block
+            padding-top: 10px
+            padding-bottom: 10px
+            .langLogoBar
+                z-index: 12
+                display: flex
+                justify-content: space-between
+                align-items: center
+                padding-top: 35px
+                padding-bottom: 26px
+                .burgerside
+                    display: flex
+                    #burgerMenuMobile
+                        display: flex
+                        flex-direction: column
+                        span
+                            background-color: #ECF0E6
+                            width: 30px
+                            height: 2px
+                            margin: 4px
+                            border-radius: 2px
+                            transition: all ease .3s
+                            &:nth-child(1)
+                                transform: translateX(12px)
+                            &:nth-child(3)
+                                transform: translateX(-12px)
+                        &:hover
+                            span
+                                &:nth-child(1)
+                                    transform: translateX(0)
+                                &:nth-child(3)
+                                    transform: translateX(0)
+                        &.open
+                            span
+                                &:nth-child(1)
+                                    transform: rotate(48deg) translateY(15px)
+                                &:nth-child(2)
+                                    opacity: 0
+                                &:nth-child(3)
+                                    transform: rotate(-51deg) translateY(-16px)
+            .mobile
+                position: fixed
+                right: -100%
+                height: 100%
+                overflow: auto
+                z-index: 12
+                transition: all .3s linear
+                width: 100%
+                background-image: url("../img/background_img.png")
+                align-items: center
+                padding-top: 40px
+                top: 0
+                .burgerside
+                    display: flex
+                    #burgerMenuMobile
+                        display: flex
+                        flex-direction: column
+                        span
+                            background-color: #ECF0E6
+                            width: 30px
+                            height: 2px
+                            margin: 4px
+                            border-radius: 2px
+                            transition: all ease .3s
+                            &:nth-child(1)
+                                transform: translateX(12px)
+                            &:nth-child(3)
+                                transform: translateX(-12px)
+                        &:hover
+                            span
+                                &:nth-child(1)
+                                    transform: translateX(0)
+                                &:nth-child(3)
+                                    transform: translateX(0)
+                        &.open
+                            span
+                                &:nth-child(1)
+                                    transform: rotate(48deg) translateY(15px)
+                                &:nth-child(2)
+                                    opacity: 0
+                                &:nth-child(3)
+                                    transform: rotate(-51deg) translateY(-16px)
+                .socialLinks
+                    ul
+                        display: flex
+                        flex-direction: row
+                        justify-content: space-between
+                        li
+                            a
+                                display: inline-block
+                                font-size: 29px
+                nav
+                    .link1
+                        li
+                            list-style: none
+                            padding: 20px 0
+                            a
+                                text-decoration: none
+                                font-size: 25px
+                                font-weight: 700
+                                padding: 20px
+                                color: #F4A442
+                    .link2
+                        padding-bottom: 10px
+                        border-bottom: 1px solid #4D5B5A
+                        margin-right: 20px
+
+                        li
+                            a
+                                font-size: 16px
+
+                &.mobileActive
+                    right: 0
+
+            .langLogoBar
+                margin: 0
+                padding: 0
+                ul
+                    display: flex
+                    grid-gap: 15px
+                    li
+                        list-style: none
+                        button
+                            background: none
+                            border: none
+                            color: #828282
+                            +g-r
+                            font-size: 14px
+                            line-height: 16.8px
+                            &.activeLang
+                                color: #ECF0E6

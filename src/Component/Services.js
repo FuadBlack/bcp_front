@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../css/_services.sass";
 import { HomeServices } from "./HomeServices";
 import FooterContact from "./FooterContact";
+import { useTranslation } from 'react-i18next';
 
 export const Services = () => {
+  const { i18n, t } = useTranslation();
   return (
     <div className="services">
    
@@ -17,7 +18,7 @@ export const Services = () => {
               </Link>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
-              Xidmətlərimiz
+              {t("xidmetlerimiz")}
             </li>
           </ol>
         </nav>

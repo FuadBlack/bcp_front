@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../css/_headerWithBtn.sass";
 import logoBcp from "../images/Group48.svg";
 import { navLinks } from "./navLinks";
 

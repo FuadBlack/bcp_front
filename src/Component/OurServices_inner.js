@@ -11,7 +11,7 @@ const OurServicesInner = () => {
   }, []);
   const fetchData = async () => {
     await axios
-      .get('http://192.168.1.18:5555/api/service')
+      .get('http://192.168.1.9:5555/api/service')
       .then((res) => {
         setDataApi(res.data);
       })

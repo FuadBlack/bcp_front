@@ -1,23 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FooterContact from "./FooterContact";
-import "../css/_contact.sass";
+import { useTranslation } from "react-i18next";
 
 export const Contact = () => {
+  const uluru = { lat: 40.372250, lng: 49.833732 };
+  const { i18n, t } = useTranslation();
   return (
     <div className="contact">
-      <div className="breadcrumbContainer">
-        <nav aria-label="breadcrumb">
-          <ol className="breadcrumb">
-            <li className="breadcrumbItem">
-              <Link to="/">BCP</Link>
-            </li>
-            <li className="breadcrumbItem active" aria-current="page">
-              Əlaqə
-            </li>
-          </ol>
-        </nav>
-      </div>
+      <div className="breadcrumb_container">
+          <nav aria-label="breadcrumb">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item">
+                <Link className="breadcrumb_item_link" to="/">
+                  BCP
+                </Link>
+              </li>
+              <li className="breadcrumb-item active" aria-current="page">
+                {t("contact")}
+              </li>
+            </ol>
+          </nav>
+        </div>
 
  
 

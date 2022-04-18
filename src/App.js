@@ -10,6 +10,7 @@ import {
 } from 'react-router-dom';
 import RiconConstraction from './Component/portfolio_inner';
 import './App.sass';
+import "./i18n";
 import { Home } from './Component/Home';
 import { Header } from './Component/Header';
 import AboutUs from './Component/aboutUs';

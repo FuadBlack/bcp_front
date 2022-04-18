@@ -10,6 +10,7 @@
                     .allourwork
                         .workItems
                             .workItem
+                                grid-gap: 50px
                                 .content
                                     .title
                                         font-size: 37px
@@ -41,6 +42,33 @@
 
 @media (max-width:1200px)
     .sectionn
+        .header
+            .links
+                .linkContainer
+                    .services_side
+                        .link2
+                            grid-gap: 20px 41px
+        .home
+            .info
+                .title_brain_container
+                    .title
+                        h1
+                            font-size: 50px
+                            line-height: 50px
+                    .brain
+                        .brainImg
+                            width: 676px
+                        .socialLinks
+                            display: none
+            .homePortfolio
+                .slider
+                    .right
+                        .num_container
+                            .num
+                                transform: translateX(43px)
+        .homeServices
+            .services
+                grid-template-columns: repeat(2, auto)
         .portofolio_main
             .portfolio_container
                 .title_container
@@ -110,8 +138,75 @@
                         img
                             width: 100%
 
+@media (max-width:992px)
+    .sectionn
+        .header
+            .links
+                padding: 38px 0px
+                .linkContainer
+                    grid-gap: 0
+                    .linkMenu
+                        padding-right: 20px
+                    .services_side
+                        .link2
+                            grid-gap: 20px 20px
+                            li
+                                width: 50%
+                                a
+                                    width: 50%
+        .info
+            .title_brain_container
+                flex-direction: column
+        .homeProjects
+            .title
+                justify-content: space-between
+                h2
+                    font-size: 40px
+                    line-height: 40px
+            .projects
+                flex-direction: column-reverse
+                .info
+                    padding: 18px 0
+                    .header
+                        width: 100%
+                        font-size: 60px
+                        line-height: 60px
+                .image
+                    position: relative
+                    .swiper
+                        width: 100%
+                        height: 410px
+        .portofolio_main
+            .portfolio_container
+                div
+                    .allourwork
+                        .workItems
+                            .workItem
+                                display: grid
+                                grid-template-columns: auto
 @media (max-width: 991px)
     .sectionn
+        .home
+            .homePortfolio
+                .title
+                    justify-content: space-between
+                    h2
+                        font-size: 50px
+                        line-height: 50px
+                .slider
+                    .right
+                        grid-gap: 20px
+                        .num_container
+                            .num
+                                transform: translateX(0px)
+        .homeServices
+            .title
+                justify-content: space-between
+                h2
+                    font-size: 50px
+                    line-height: 50px
+            .services
+                grid-template-columns: repeat(2, auto)
         .portofolio_main
             .portfolio_container
                 .title_container
@@ -126,18 +221,26 @@
                             line-height: 31px
                         .workItems
                             .workItem
-                                grid-template-columns: auto
+                                .name_portfolio
+                                    grid-row-start: 2
+                                    grid-column-start: 2
                                 .image
                                     grid-column-start: 1
                                     grid-column-end: 3
                                     img
+                                        max-width: none
                                         width: 100%
                                 .content
+                                    grid-row-start: 2
                                     grid-column-start: 1
                                     grid-column-end: 3
                                     .title
                                         font-size: 32px
                                         line-height: 32px
+                                    p
+                                        display: none
+                                    .link_more_port
+                                        display: none
         .ricon_constraction
             .ricon_constraction_contain
                 .title
@@ -177,15 +280,32 @@
                 .ourServices_inner_content
                     p
                         grid-column-start: 1
-        .homeServices
-            .services
-                .services_item
-                    display: grid !important
-                    grid-template-columns: repeat(2, 1fr)
-                    grid-gap: 115px
 
 @media (max-width: 768px)
     .sectionn
+        .home
+            .info
+                .title_brain_container
+                    .brain
+                        .brainImg
+                            width: 100%
+                            height: max-content
+                            img
+                                height: max-content
+                        .dot_brain
+                            display: none
+
+        .homeServices
+            .title
+                justify-content: space-between
+                h2
+                    font-size: 40px
+                    line-height: 40px
+                a
+                    font-size: 13px
+                    line-height: 13px
+            .services
+                grid-gap: 40px 9px
         .portofolio_main
             .portfolio_container
                 .title_container
@@ -312,9 +432,59 @@
             .langLogoBar
                 .language_side
                     display: none
-
+        .homeProjects
+            .projects
+                .info
+                    .header
+                        width: 100%
+                        font-size: 50px
+                        line-height: 50px
 @media (max-width: 576px)
     .sectionn
+        .home
+            .info
+                .title_brain_container
+                    .title
+                        h1
+                            font-size: 40px
+                            line-height: 40px
+            .homePortfolio
+                .title
+                    justify-content: space-between
+                    h2
+                        font-size: 35px
+                        line-height: 35px
+            .homeProjects
+                .projects
+                    .info
+                        .header
+                            width: 100%
+                            font-size: 40px
+                            line-height: 40px
+        .homeServices
+            .title
+                h2
+                    font-size: 30px
+                    line-height: 30px
+            .services
+                grid-template-columns: repeat(1, auto)
+                .services_inner
+                    justify-content: center
+                    transform: translateX(10px)
+            .homeProjects
+                .title
+                    h2
+                        font-size: 30px
+                        line-height: 30px
+                .projects
+                    .info
+                        .header
+                            font-size: 35px
+                            line-height: 35px
+
+                    .image
+                        .swiper
+                            height: 279.32px
         .portofolio_main
             .portfolio_container
                 .title_container
@@ -347,8 +517,10 @@
                 .fill_form
                     font-size: 30px
                     line-height: 30px
+                    width: 100%
                 .we_call_back
                     span
+                        padding: 0
                         font-size: 50px
         .ricon_constraction
             .ricon_constraction_contain
@@ -429,3 +601,27 @@
         .footer_input
             .social_icon
                 padding: 23px 0 0 24px
+            .right_side
+                form
+                    .button_send
+                        .briefDownload
+                            grid-gap: 0
+        .homeProjects
+            .projects
+                .info
+                    .header
+                        width: 100%
+                        font-size: 35px
+                        line-height: 35px
+        .homeServices
+            .services
+                .services_inner
+                    transform: translateX(25px)
+                    a
+                        width: 239px
+@media (max-width: 400px)
+    .sectionn
+        .footer
+            .footer_top
+                .menu
+                    grid-gap: 22px 50px
