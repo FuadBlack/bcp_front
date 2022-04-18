@@ -1,37 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import data from '../data';
+import portfolioShape from '../assets/img/portfolio_shape.svg';
+import { useTranslation } from "react-i18next";
 
-function All(props) {
-  const { element } = props;
-  const slice = data.itemData.slice(0, element);
+function All({ menuItem }) {
+  const { i18n, t } = useTranslation();
+
   return (
     <div className="allourwork">
-      <h1 className="work_title">
-        Bütün işlərimiz<sup>55</sup>
-      </h1>
       <div className="workItems">
-        {slice.map((item, index) => {
+        {menuItem?.map((item, key) => {
           return (
-            <Link to="RiconConstruction" className="workItem" key={index}>
-              <div className="name_portfolio">
-                <div>
-                  <span>{item.name_portfolio_1span}</span>
-                  <span>{item.name_portfolio_2span}</span>
+            <React.Fragment key={item?.slug}>
+              <div className="workItem">
+                <Link to={item?.slug} className="name_portfolio">
+                  <div>
+                    <span>{item?.start_date.slice(0, 4)}</span>
+                    <span>{t("qisametrajlifilm")}</span>
+                  </div>
+                </Link>
+                <Link to={item?.slug} className="image">
+                  <div>
+                    <img src={item?.image} />
+                  </div>
+                </Link>
+                <div className="content">
+                  <div className="title">{item?.title?.[i18n.language]}</div>
+                  <p>{item?.text_up?.[i18n.language]}</p>
+                  <Link to={item?.slug} className="link_more_port">
+                    <span>{t("proyekthaqqindadahaetrafli")}</span>
+                    <img src={portfolioShape} />
+                  </Link>
                 </div>
               </div>
-              <div className="image">
-                <img src={item.img} />
-              </div>
-              <div className="content">
-                <div className="title">{item.contentTitle}</div>
-                <p>{item.contentp}</p>
-                <Link to="/" className="link_more_port">
-                  <span>{item.contentLinkSpan}</span>
-                  <img src={item.contentLinkimg} />
-                </Link>
-              </div>
-            </Link>
+            </React.Fragment>
           );
         })}
       </div>

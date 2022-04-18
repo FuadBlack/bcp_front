@@ -11,6 +11,8 @@
                 font-size: 14px
                 line-height: 16.98px
                 +g-r
+            .breadcrumb-item+.breadcrumb-item::before
+                content: url('../img/breadcrumb.svg')
             .breadcrumb-item.active
                 color: #E6A250
                 font-size: 14px
@@ -43,22 +45,22 @@
                     font-size: 16px
                     line-height: 27px
         .image_bussines_cards
-            display: grid
-            grid-template-columns: auto
-            grid-gap: 25px
+            display: flex
+            flex-direction: column
+            grid-gap: 20px
             .ricon_bussines_card
-                grid-column-start: 1
-                grid-column-end: 3
-                width: 100%
-                border-radius: 5px
-            .wibty_image1
-                width: 100%
-                grid-column-start: 1
-                grid-column-end: 2
-            .wibty_image
-                width: 100%
-                grid-column-start: 2
-                grid-column-end: 3
+                img
+                    width: 100%
+                    max-height: 691px
+                    border-radius: 5px
+                    object-fit: cover
+            .image_flex
+                display: flex
+                grid-gap: 20px
+                img
+                    width: 100%
+                    border-radius: 5px
+                    object-fit: cover
         .branding
             display: grid
             grid-template-columns: repeat(12, 1fr)

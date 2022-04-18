@@ -1,43 +1,40 @@
-@import "./_mixin"
-
 .homeServices
     .title
         display: flex
-        align-items: center
+        margin-bottom: 50px
+        align-items: end
         h2
-            font-family: Arial, Helvetica, sans-serif
-            font-style: normal
-            font-weight: 700
-            font-size: 45px
+            +g-b
+            font-size: 65px
+            line-height: 57px
             color: #F4A442
             margin-right: 30px
-        a
+        .home_serv
+            +g-eb
             font-size: 16px
+            line-height: 20px
             color: #9B9B9B
             text-decoration: none
+        .serv
+            display: none
     .services
-        margin: 80px
-        .services_item
-            display: grid
-            grid-template-columns: repeat(3, 1fr)
-            grid-gap: 131px
-            .services_inner
-                width: 100%
-                display: flex
-                flex-direction: column
-                grid-gap: 85px
-                text-overflow: clip
+        display: grid
+        grid-template-columns: repeat(3, auto)
+        grid-gap: 85px 158px
+        .services_inner
+            display: flex
+            text-overflow: clip
             a
                 text-decoration: none
                 display: flex
                 flex-direction: column
                 grid-gap: 13px
-                width: max-content
+                width: 264px
             p
                 color: #1BB1A1
                 font-size: 16px
-                font-weight: 400
-                font-family: Arial, Helvetica, sans-serif
+                +g-r
+                line-height: 23px
                 width: 220px
             .name
                 display: flex
@@ -47,10 +44,10 @@
                 font-family: Gilroy
                 position: relative
                 h3
+                    +g-b
                     font-size: 25px
-                    font-weight: 700
-                    color: white
-                    font-family: Arial, Helvetica, sans-serif
+                    line-height: 30.95px
+                    color: #E9E9E9
                     z-index: 2
                     text-overflow: clip
                 svg
@@ -153,6 +150,8 @@
                                 transform: translateY(32px)
 
             .record
+                h3
+                    width: 200px
                 svg
                     *
                         transition: transform .3s ease

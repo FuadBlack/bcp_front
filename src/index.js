@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import 'swiper/css/bundle';
-
+import './i18n';
 
 ReactDOM.render(
   <React.StrictMode>

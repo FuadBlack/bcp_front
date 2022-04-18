@@ -1,69 +1,65 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "../css/_projects.sass";
-import shape from "../images/Shape.svg";
-import wibty from "../images/wibty.png";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import shape from '../images/Shape.svg';
+import wibty from '../images/wibty.png';
+import axios from 'axios';
+import { useTranslation } from "react-i18next";
+
 
 export const Projects = () => {
+  const { i18n, t } = useTranslation();
+  const [data, setDataApi] = useState([]);
+  console.log(data);
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const fetchData = async () => {
+    await axios
+      .get('http://192.168.1.9:5555/api/projects')
+      .then((res) => {
+        setDataApi(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div className="projects">
       <div className="section">
-        <div className="breadcrumbContainer container">
+        <div className="breadcrumb_container">
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
-              <li className="breadcrumbItem">
-                <Link className="breadcrumbItemLink" to="/">
+              <li className="breadcrumb-item">
+                <Link className="breadcrumb_item_link" to="/">
                   BCP
                 </Link>
               </li>
-              <li className="breadcrumbItem active" aria-current="page">
-                Layihələr
+              <li className="breadcrumb-item active" aria-current="page">
+                {t("projects")}
               </li>
             </ol>
           </nav>
         </div>
-        <h2>Layihələrimiz</h2>
-        <div className="row">
-          <div className="col-md-8 d-flex align-items-center">
-            <h3 className="header">
-              Wibty ilk musiqi və sosial <br /> şəbəkə
-            </h3>
-            <div className="infoDiv">
-              <p className="info">
-                Wibty ilk musiqi və sosial platforması wibty ilk musiqi və
-                sosial platforması ilk musiqi və sosial ...
-              </p>
-              <div className="goTo">
-                <Link to="/">keçid et</Link> <img src={shape} alt="" />{" "}
+        <h2>{t("layihelerimiz")}</h2>
+        {data?.map((item) => {
+          console.log(item);
+          return (
+            <div className="project_container" key={item?.data}>
+              <h3 className="header">{item?.data?.title?.[i18n.language]}</h3>
+              <div className="infoDiv">
+                <p>
+                  {item?.data?.text?.[i18n.language]} ...
+                </p>
+                <div className="goTo">
+                  <Link to={item.data?.url}>keçid et</Link> <img src={shape} alt="" />{' '}
+                </div>
+              </div>
+              <div className="image">
+                <img src={item?.data?.image} alt="" />
               </div>
             </div>
-          </div>
-          <div className="image col-md-4 mt-4">
-            <img src={wibty} alt="" />
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-md-8 d-flex align-items-center">
-            <h3 className="header">
-              Wibty ilk musiqi və sosial <br /> şəbəkə
-            </h3>
-            <div className="infoDiv">
-              <p className="info">
-                Wibty ilk musiqi və sosial platforması wibty ilk musiqi və
-                sosial platforması ilk musiqi və sosial ...
-              </p>
-              <div className="goTo">
-                <Link to="/">keçid et</Link> <img src={shape} alt="" />{" "}
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4 mt-4">
-            <div className="image">
-              <img src={wibty} alt="" />
-            </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
     </div>
   );

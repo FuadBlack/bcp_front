@@ -1,15 +1,16 @@
 .footer
-    padding: 30px
+    padding-top: 20px
+    padding-bottom: 50px
     .footer_top
-        display: grid
-        grid-template-columns: 1fr 1fr
+        display: flex
+        justify-content: space-between
         .menu
             display: grid
             grid-template-columns: repeat(3, 1fr)
-            grid-gap: 22px
+            grid-gap: 22px 57px
             .link_footer
                 text-decoration: none
-                g-b
+                +g-b
                 color: #ffffff
                 font-size: 14px
                 line-height: 20px
@@ -19,8 +20,9 @@
         justify-content: flex-end
         .logo
             display: none
+            width: 100%
         .all_reserved
-        g-r
+            +g-r
             color: #FFFFFF
             font-size: 12px
             line-height: 20px
